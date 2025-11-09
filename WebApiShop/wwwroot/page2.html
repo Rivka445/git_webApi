@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <script defer src="page2.js"></script>
+    <title></title>
+    <style>
+        .cont {
+            display: flex;
+            flex-direction: column;
+            gap: 10%;
+        }
+
+        .ic {
+            font-size: xx-large;
+        }
+
+        .upUser {
+            display: flex;
+            flex-direction: column;
+            width: 20vw;
+            margin: 2vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="ic">✅</div>
+        <h2 class="titleName"></h2>
+        <h1>לעדכון הפרטים</h1>
+        <div class="upUser">
+            <lable for="userName">שם משתמש</lable>
+            <input type="email" id="userName" name="userName" required />
+            <lable for="firstName">שם פרטי</lable>
+            <input type="text" id="firstName" name="firstName" required placeholder="שם אחר" />
+            <lable for="lastName">שם משפחה</lable>
+            <input type="text" id="lastName" name="lastName" required placeholder="שם אחר"/>
+            <lable for="password">סיסמא</lable>
+            <input type="password" id="password" name="password" required />
+            <button onClick="upDate()">עדכן</button>
+        </div>
+    </div>
+</body>
+</html>

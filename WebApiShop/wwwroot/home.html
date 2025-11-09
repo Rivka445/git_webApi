@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html dir="rtl">
+    <head>
+        <meta charset="utf-8" />
+        <script defer src="script.js"></script>
+        <title></title>
+        <style>
+            .cont {
+                display: flex;
+                flex-direction: row;
+            }
+            .existUser {
+                display: flex;
+                flex-direction: column;
+                width: 20vw;
+                margin: 2vw;
+            }
+            .newUser {
+                display: flex;
+                flex-direction: column;
+                width: 20vw;
+                margin: 2vw;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cont">
+            <div class="existUser">
+                <h3>משתמש רשום</h3>
+                <label for="username">שם משתמש</label>
+                <input type="email" id="username" name="usrname" required />
+                <label for="password">סיסמא</label>
+                <input type="password" id="pasword" name="pasword" required />
+                <button type="button" onclick="logIn()">כניסה</button>
+            </div>
+            <div class="newUser">
+                <h3>משתמש חדש</h3>
+                <label for="userName">שם משתמש</label>
+                <input type="email" id="userName" name="userName" required />
+                <label for="firstName">שם פרטי</label>
+                <input type="text" id="firstName" name="firstName" required />
+                <label for="lastName">שם משפחה</label>
+                <input type="text" id="lastName" name="lastName" required />
+                <label for="password">סיסמא</label>
+                <input type="password" id="password" name="password" required />
+                <button type="button" onClick="postResponse()">הרשמה</button>
+            </div>
+        </div>
+    </body>
+</html>
