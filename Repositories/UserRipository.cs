@@ -3,13 +3,13 @@ using System.Reflection.PortableExecutable;
 using System.Text.Json;
 namespace Repositories
 {
-    public class UserRipository
+    public class UserRipository : IUserRipository
     {
         string _filePath = "D:\\webAPI\\WebApiShop\\WebApiShop\\users.txt";
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();
-            using(StreamReader reader = System.IO.File.OpenText(_filePath))
+            using (StreamReader reader = System.IO.File.OpenText(_filePath))
             {
                 string? currentUserInFile;
                 while ((currentUserInFile = reader.ReadLine()) != null)
@@ -34,7 +34,7 @@ namespace Repositories
             }
             return null;
         }
-        public User addUser(User user)
+        public User AddUser(User user)
         {
             int numberOfUsers = System.IO.File.ReadLines(_filePath).Count();
             user.Id = numberOfUsers + 1;
@@ -42,7 +42,7 @@ namespace Repositories
             System.IO.File.AppendAllText(_filePath, userJson + Environment.NewLine);
             return user;
         }
-        public User logIn(User user)
+        public User LogIn(User user)
         {
             using (StreamReader reader = System.IO.File.OpenText(_filePath))
             {
@@ -56,7 +56,7 @@ namespace Repositories
             }
             return null;
         }
-        public void updateUser(int id, User updateUser)
+        public void UpdateUser(int id, User updateUser)
         {
             string textToReplace = string.Empty;
             using (StreamReader reader = System.IO.File.OpenText(_filePath))

@@ -56,12 +56,13 @@ async function checkPassword() {
             throw new Error(`HTTP error! status ${response.status}`);
         }        
         else {
+            const a = await response.json() 
             bar.innerHTML = ""
             bar.style.display = "flex"
             for (let i = 0; i < a; i++) {
                 const step = document.createElement("div")
                 step.className = "stage"
-                array.push(step)
+                bar.appendChild(step)
             }
         }
     }

@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities; 
+
 namespace Repositories
 {
-    public class UserPasswordRipository
+    public class UserPasswordRipository : IUserPasswordRipository
     {
-        public int checkPassword(UserPassword password)
+        public int CheckPassword(UserPassword password)
         {
             return 0;
         }

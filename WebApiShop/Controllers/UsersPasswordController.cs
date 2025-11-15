@@ -13,7 +13,12 @@ namespace WebApiShop.Controllers
     [ApiController]
     public class UsersPasswordController : ControllerBase
     {
-        UserPasswordService userPasswordService = new UserPasswordService();
+        IUserPasswordService _userPasswordService;
+
+        public UsersPasswordController(IUserPasswordService userPassword)
+        {
+            _userPasswordService=userPassword;
+        }
 
         // GET: api/<UsersPasswordController>
         [HttpGet]
@@ -24,17 +29,18 @@ namespace WebApiShop.Controllers
 
         // GET api/<UsersPasswordController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public string Get(UserPassword password)
         {
             return "value";
+             
         }
 
         // POST api/<UsersPasswordController>
         [HttpPost]
-        public ActionResult<int>checkPassword([FromBody] UserPassword password)
+        public ActionResult<int>CheckPassword([FromBody] UserPassword password)
         {
-            int score = userPasswordService.checkPassword(password.Password);
-            if (score > 2)
+            int score = _userPasswordService.CheckPassword(password.Password);
+            if (score > 1)
                 return Ok(score);
             return BadRequest();
         }

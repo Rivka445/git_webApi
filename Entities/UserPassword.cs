@@ -9,7 +9,9 @@ namespace Entities
 {
     public class UserPassword
     {
+
         [StringLength( 200,MinimumLength =2 ), Required]
         public string Password { get; set; } = "";
+        
     }
 }

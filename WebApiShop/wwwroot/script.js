@@ -11,7 +11,7 @@ const extrctDataFromInputUser = () => {
 const extrctDataFromInputLogIn = () => {
     const userName = document.querySelector("#username").value
     const password = document.querySelector("#pasword").value
-    const   id = 1,firstName= "aaa", lastName ="aaa"
+    const id = 1,firstName= "aaa", lastName ="aaa"
     return { id, userName, firstName , lastName , password }
 }
 
@@ -22,12 +22,12 @@ async function registIn() {
     else {
         const newUser = extrctDataFromInputUser()
         try {
-            const response = await fetch(
-                "https://localhost:44362/api/Users", {
+            const response = await fetch (
+                "https://localhost:44362/api/Users",{
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newUser)
-            }
+                }
             )
             if (!response.ok) {
                 throw new Error(`HTTP error! status ${response.status}`);
@@ -64,22 +64,22 @@ async function logIn() {
 }
 async function checkPassword() {
     const bar = document.querySelector(".bar") 
-    const password = document.querySelector("#password").value
-    const userPassword ={ password }
+    const Password = document.querySelector("#password").value
+    const userPassword = { Password }
     try {
         const response = await fetch(
                 "https://localhost:44362/api/UsersPassword", {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(userPassword)
+                body: JSON.stringify(userPassword)
             }
         )
         if (!response.ok) {
-            throw new Error(`HTTP error! status ${response.status}`);
+            throw new Error(`HTTP error! status ${response.status}`)
         }
         else {
             const a = await response.json() 
-            bar.innerHTML = "";
+            bar.innerHTML = ""
             bar.style.display="flex"
             for (let i = 0; i < a; i++) {  
                 const step = document.createElement("div")
@@ -89,7 +89,7 @@ async function checkPassword() {
         }
     }
     catch (e) {
-        bar.innerHTML = "";
+        bar.innerHTML = ""
         alert(e)
         return 0
     }

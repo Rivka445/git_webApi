@@ -9,14 +9,18 @@ using Zxcvbn;
 
 namespace Services
 {
-    public class UserPasswordService
+    public class UserPasswordService : IUserPasswordService
     {
-        public UserPasswordRipository userPasswordRipo = new UserPasswordRipository();
-       
-        public int checkPassword(string password)
-        {
-          return Zxcvbn.Core.EvaluatePassword(password).Score;
+        private readonly IUserPasswordRipository _userPasswordRipo;
 
+        public UserPasswordService(IUserPasswordRipository userPassword)
+        {
+            _userPasswordRipo = userPassword;
+        }
+
+        public int CheckPassword(string password)
+        {
+            return Zxcvbn.Core.EvaluatePassword(password).Score;
         }
     }
 }

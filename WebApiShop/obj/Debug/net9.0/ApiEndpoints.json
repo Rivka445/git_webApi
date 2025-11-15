@@ -173,7 +173,7 @@
   },
   {
     "ContainingType": "WebApiShop.Controllers.UsersPasswordController",
-    "Method": "checkPassword",
+    "Method": "CheckPassword",
     "RelativePath": "api/UsersPassword",
     "HttpMethod": "POST",
     "IsController": true,
@@ -206,8 +206,13 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "password",
+        "Type": "Entities.UserPassword",
+        "IsRequired": true
+      },
+      {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "",
         "IsRequired": true
       }
     ],

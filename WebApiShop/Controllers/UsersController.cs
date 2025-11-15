@@ -13,13 +13,18 @@ namespace WebApiShop.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        UserService userService=new UserService();
+        private readonly IUserService _userService;
+
+        public UsersController(IUserService userService)
+        {
+            _userService = userService; 
+        }
 
         // GET: api/<UsersController>
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get()
         {
-            List <User> users= userService.GetUsers();
+            List <User> users= _userService.GetUsers();
             if(users.Count()==0)
                 return NoContent();
             return Ok(users);
@@ -29,7 +34,7 @@ namespace WebApiShop.Controllers
         [HttpGet("{Id}")]
         public ActionResult<User> GetId(int id)
         {
-            User user = userService.GetUserById(id);
+            User user = _userService.GetUserById(id);
             return user != null ? Ok(user) : NotFound();
         }
 
@@ -37,7 +42,7 @@ namespace WebApiShop.Controllers
         [HttpPost]
         public ActionResult<User> Post([FromBody] User newUser)
         {
-            User user=userService.addUser(newUser);
+            User user=_userService.AddUser(newUser);
             return CreatedAtAction(nameof(Get), new { Id= user.Id}, user);
         }
 
@@ -45,7 +50,7 @@ namespace WebApiShop.Controllers
         [HttpPost("{login}")]
         public ActionResult<User> LogIn([FromBody] User existUser)
         {
-            User user = userService.logIn(existUser);
+            User user = _userService.LogIn(existUser);
             if(user==null)
                 return NotFound();
             return CreatedAtAction(nameof(Get), new { Id = user.Id }, user);
@@ -54,7 +59,7 @@ namespace WebApiShop.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] User updateUser)
         {
-            userService.updateUser(id, updateUser);
+            _userService.UpdateUser(id, updateUser);
         }
 
         // DELETE api/<UsersController>/5

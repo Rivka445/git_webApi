@@ -2,28 +2,34 @@
 using Repositories;
 namespace Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
-        public UserRipository userRipo =new UserRipository();
+        private readonly IUserRipository _userRipository;
+
+        public UserService(IUserRipository userRipository)
+        {
+            _userRipository = userRipository;
+        }
+
         public List<User> GetUsers()
         {
-            return userRipo.GetUsers();
+            return _userRipository.GetUsers();
         }
         public User GetUserById(int id)
         {
-            return userRipo.GetUserById(id);
+            return _userRipository.GetUserById(id);
         }
-        public User addUser(User user)
+        public User AddUser(User user)
         {
-            return userRipo.addUser(user);
+            return _userRipository.AddUser(user);
         }
-        public User logIn(User user)
+        public User LogIn(User user)
         {
-            return userRipo.logIn(user);
+            return _userRipository.LogIn(user);
         }
-        public void updateUser(int id, User updateUser)
+        public void UpdateUser(int id, User updateUser)
         {
-             userRipo.updateUser(id, updateUser);   
+            _userRipository.UpdateUser(id, updateUser);
         }
 
     }
