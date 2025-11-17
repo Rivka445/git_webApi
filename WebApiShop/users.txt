@@ -1,6 +1,0 @@
-{"UserName":"ff@ds","FirstName":"hj","LastName":"hjj","Id":1,"Password":"htt@@!#@#@"}
-{"UserName":"ntb@gd","FirstName":"vfd","LastName":"bgf","Id":2,"Password":"123w#33333"}
-{"UserName":"jn@thg","FirstName":"fr","LastName":"rf","Id":3,"Password":"ge32@#@!"}
-{"UserName":"jn@thg","FirstName":"fr","LastName":"rf","Id":4,"Password":"ge3htr2@#@!"}
-{"UserName":"jn@thg","FirstName":"fr","LastName":"rf","Id":5,"Password":"ge3htr2@#@!"}
-{"UserName":"hz23q@rtgerf","FirstName":"tgrf","LastName":"tgr","Id":6,"Password":"gret54grfde43"}

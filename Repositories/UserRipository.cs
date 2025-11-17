@@ -5,7 +5,7 @@ namespace Repositories
 {
     public class UserRipository : IUserRipository
     {
-        string _filePath = "D:\\webAPI\\WebApiShop\\WebApiShop\\users.txt";
+        string _filePath = "D:\\webAPI\\WebApiShop\\users.txt";
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();

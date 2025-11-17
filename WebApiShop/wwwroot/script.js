@@ -16,29 +16,24 @@ const extrctDataFromInputLogIn = () => {
 }
 
 async function registIn() {
-    const check = await checkPassword()
-    if (check === 0)
-        alert("הסיסמא חלשה מידי אנא בדוק חוזק סיסמא")
-    else {
-        const newUser = extrctDataFromInputUser()
-        try {
-            const response = await fetch (
-                "https://localhost:44362/api/Users",{
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(newUser)
-                }
-            )
-            if (!response.ok) {
-                throw new Error(`HTTP error! status ${response.status}`);
+    const newUser = extrctDataFromInputUser()
+    try {
+        const response = await fetch (
+            "https://localhost:44362/api/Users",{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newUser)
             }
-            else {
-                alert("המשתמש נרשם בהצלחה")
-                const newUserFull = await response.json()
-            }
+        )
+        if (!response.ok) {
+            throw new Error(`HTTP error! status ${response.status}`);
         }
-        catch (e) { alert(e) }
+        else {
+            alert("המשתמש נרשם בהצלחה")
+            const newUserFull = await response.json()
+        }
     }
+    catch (e) { alert(e) }
 }
 
 async function logIn() {
@@ -91,7 +86,6 @@ async function checkPassword() {
     catch (e) {
         bar.innerHTML = ""
         alert(e)
-        return 0
     }
 }
 

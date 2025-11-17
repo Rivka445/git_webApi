@@ -14,10 +14,11 @@ namespace WebApiShop.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
-
-        public UsersController(IUserService userService)
+        private IUserPasswordService _userPasswordService;
+        public UsersController(IUserService userService, IUserPasswordService userPasswordService)
         {
-            _userService = userService; 
+            _userService = userService;
+            _userPasswordService = userPasswordService;
         }
 
         // GET: api/<UsersController>
@@ -40,8 +41,11 @@ namespace WebApiShop.Controllers
 
         // POST api/<UsersController>
         [HttpPost]
-        public ActionResult<User> Post([FromBody] User newUser)
+        public ActionResult<User> AddUser([FromBody] User newUser)
         {
+            int _passwordScore= _userPasswordService.CheckPassword(newUser.Password);
+            if(_passwordScore<2)
+                return BadRequest();
             User user=_userService.AddUser(newUser);
             return CreatedAtAction(nameof(Get), new { Id= user.Id}, user);
         }
@@ -57,9 +61,13 @@ namespace WebApiShop.Controllers
         }
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] User updateUser)
+        public ActionResult<int> Put(int id, [FromBody] User updateUser)
         {
+            int _passwordScore = _userPasswordService.CheckPassword(updateUser.Password);
+            if (_passwordScore < 2)
+                return BadRequest();
             _userService.UpdateUser(id, updateUser);
+            return Ok(updateUser);
         }
 
         // DELETE api/<UsersController>/5

@@ -21,7 +21,7 @@
   },
   {
     "ContainingType": "WebApiShop.Controllers.UsersController",
-    "Method": "Post",
+    "Method": "AddUser",
     "RelativePath": "api/Users",
     "HttpMethod": "POST",
     "IsController": true,
@@ -66,8 +66,12 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]

@@ -13,32 +13,25 @@ const extrctDataFromInput = () => {
 
 
 async function upDate() {
-    const check = await checkPassword()
-    if (check === 0)
-        alert("הסיסמא חלשה מידי אנא בדוק חוזק סיסמא")
-    else {
-        const currenrtUser = extrctDataFromInput()
-        try {
-            const response = await fetch(
-                `https://localhost:44362/api/Users/${currenrtUser.id}`,
-                {
-                    method: `PUT`,
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(currenrtUser)
-                }
-            )
-            if (!response.ok) {
-                throw new Error(`HTTP error! status ${response.status}`);
+    const currenrtUser = extrctDataFromInput()
+    try {
+        const response = await fetch(
+            `https://localhost:44362/api/Users/${currenrtUser.id}`,
+            {
+                method: `PUT`,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(currenrtUser)
             }
-            else {
-                sessionStorage.setItem("currentUser", JSON.stringify(currenrtUser))
-                alert("המשתמש עודכן בהצלחה")
-            }
+        )
+        if (!response.ok) {
+            throw new Error(`HTTP error! status ${response.status}`);
         }
-        catch (e) {
-            alert(e)
+        else {
+            sessionStorage.setItem("currentUser", JSON.stringify(currenrtUser))
+            alert("המשתמש עודכן בהצלחה")
         }
     }
+    catch (e) {alert(e) }
 }
 async function checkPassword() {
     const bar = document.querySelector(".bar")

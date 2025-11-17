@@ -5,38 +5,114 @@
     <script defer src="page2.js"></script>
     <title></title>
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            padding: 5vh 5vw;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
         .cont {
             display: flex;
             flex-direction: column;
             gap: 10%;
+            align-items: center;
         }
 
         .ic {
-            font-size: xx-large;
+            font-size: 3em;
+            color: #4fc1e9;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .ic:hover {
+            transform: scale(1.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin: 0.3em 0;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            color: #4fc1e9;
         }
 
         .upUser {
             display: flex;
             flex-direction: column;
-            width: 20vw;
-            margin: 2vw;
+            width: 25vw;
+            min-width: 300px;
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 1em;
+            box-shadow: 0 0.5em 1em rgba(0,0,0,0.1);
+            gap: 1em;
         }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 0.3em;
+        }
+
+        input {
+            padding: 0.8em;
+            border-radius: 0.5em;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #4fc1e9;
+            outline: none;
+        }
+
+        button {
+            padding: 0.8em;
+            border-radius: 0.5em;
+            border: none;
+            background-color: #4fc1e9;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1em;
+            transition: 0.2s;
+            margin-top: 0.5em;
+        }
+
+        button:hover {
+            background-color: #38a4d1;
+        }
+
         .bar {
-            margin: 5%;
-            display: flex;
-            flex-direction: row;
-            background-color: gray;
-            width: 12.5vw;
             display: none;
+            flex-direction: row;
+            margin: 0.5em 0;
+            background-color: #e0e0e0;
+            width: 100%;
+            height: 1.5em;
+            border-radius: 0.5em;
         }
 
         .stage {
-            border: solid gray 0.05px;
+            border: solid #ccc 0.05em;
             background-color: greenyellow;
-            width: 3vw;
-            height: 3vh;
+            width: 25%;
+            height: 100%;
+            transition: width 0.3s ease-in-out;
         }
     </style>
+
 </head>
 <body>
     <div class="cont">
