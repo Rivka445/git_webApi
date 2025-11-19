@@ -4,33 +4,32 @@ namespace Services
 {
     public class UserService : IUserService
     {
-        private readonly IUserRipository _userRipository;
+        private readonly IUserRipository _userRepository;
 
-        public UserService(IUserRipository userRipository)
+        public UserService(IUserRipository userRepository)
         {
-            _userRipository = userRipository;
+            _userRepository = userRepository;
         }
 
         public List<User> GetUsers()
         {
-            return _userRipository.GetUsers();
+            return _userRepository.GetUsers();
         }
         public User GetUserById(int id)
         {
-            return _userRipository.GetUserById(id);
+            return _userRepository.GetUserById(id);
         }
         public User AddUser(User user)
         {
-            return _userRipository.AddUser(user);
+            return _userRepository.AddUser(user);
         }
         public User LogIn(User user)
         {
-            return _userRipository.LogIn(user);
+            return _userRepository.LogIn(user);
         }
         public void UpdateUser(int id, User updateUser)
         {
-            _userRipository.UpdateUser(id, updateUser);
+            _userRepository.UpdateUser(id, updateUser);
         }
-
     }
 }

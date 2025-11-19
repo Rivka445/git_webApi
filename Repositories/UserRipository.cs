@@ -5,7 +5,7 @@ namespace Repositories
 {
     public class UserRipository : IUserRipository
     {
-        string _filePath = "D:\\webAPI\\WebApiShop\\users.txt";
+        private readonly string _filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "users.txt");
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();

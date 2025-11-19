@@ -14,7 +14,8 @@ namespace WebApiShop.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
-        private IUserPasswordService _userPasswordService;
+        private readonly IUserPasswordService _userPasswordService;
+        
         public UsersController(IUserService userService, IUserPasswordService userPasswordService)
         {
             _userService = userService;
@@ -43,31 +44,31 @@ namespace WebApiShop.Controllers
         [HttpPost]
         public ActionResult<User> AddUser([FromBody] User newUser)
         {
-            int _passwordScore= _userPasswordService.CheckPassword(newUser.Password);
-            if(_passwordScore<2)
-                return BadRequest();
-            User user=_userService.AddUser(newUser);
-            return CreatedAtAction(nameof(Get), new { Id= user.Id}, user);
+            int passwordScore = _userPasswordService.CheckPassword(newUser.Password);
+            if(passwordScore < 2)
+                return BadRequest("Password is not strong enough");
+            User user = _userService.AddUser(newUser);
+            return CreatedAtAction(nameof(Get), new { Id = user.Id }, user);
         }
 
         // POST api/<UsersController>
-        [HttpPost("{login}")]
-        public ActionResult<User> LogIn([FromBody] User existUser)
+        [HttpPost("login")]
+        public ActionResult<User> LogIn([FromBody] User existingUser)
         {
-            User user = _userService.LogIn(existUser);
-            if(user==null)
-                return NotFound();
-            return CreatedAtAction(nameof(Get), new { Id = user.Id }, user);
+            User user = _userService.LogIn(existingUser);
+            if(user == null)
+                return Unauthorized();
+            return Ok(user);
         }
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
-        public ActionResult<int> Put(int id, [FromBody] User updateUser)
+        public IActionResult Put(int id, [FromBody] User updateUser)
         {
-            int _passwordScore = _userPasswordService.CheckPassword(updateUser.Password);
-            if (_passwordScore < 2)
-                return BadRequest();
+            int passwordScore = _userPasswordService.CheckPassword(updateUser.Password);
+            if (passwordScore < 2)
+                return BadRequest("Password is not strong enough");
             _userService.UpdateUser(id, updateUser);
-            return Ok(updateUser);
+            return NoContent();
         }
 
         // DELETE api/<UsersController>/5

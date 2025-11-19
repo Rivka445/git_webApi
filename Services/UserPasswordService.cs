@@ -11,11 +11,11 @@ namespace Services
 {
     public class UserPasswordService : IUserPasswordService
     {
-        private readonly IUserPasswordRipository _userPasswordRipo;
+        private readonly IUserPasswordRipository _userPasswordRepository;
 
-        public UserPasswordService(IUserPasswordRipository userPassword)
+        public UserPasswordService(IUserPasswordRipository userPasswordRepository)
         {
-            _userPasswordRipo = userPassword;
+            _userPasswordRepository = userPasswordRepository;
         }
 
         public int CheckPassword(string password)
