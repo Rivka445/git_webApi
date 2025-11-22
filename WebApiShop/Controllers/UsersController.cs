@@ -57,7 +57,7 @@ namespace WebApiShop.Controllers
         {
             User user = _userService.LogIn(existingUser);
             if(user == null)
-                return Unauthorized();
+                return NotFound();
             return Ok(user);
         }
         // PUT api/<UsersController>/5
@@ -68,7 +68,7 @@ namespace WebApiShop.Controllers
             if (passwordScore < 2)
                 return BadRequest("Password is not strong enough");
             _userService.UpdateUser(id, updateUser);
-            return NoContent();
+            return Ok(updateUser);
         }
 
         // DELETE api/<UsersController>/5
