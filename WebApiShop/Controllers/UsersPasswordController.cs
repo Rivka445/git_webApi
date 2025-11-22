@@ -19,7 +19,20 @@ namespace WebApiShop.Controllers
         {
             _userPasswordService = userPasswordService;
         }
+        // GET: api/<UsersPasswordController>
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
 
+        // GET api/<UsersPasswordController>/5
+        [HttpGet("{id}")]
+        public string Get(UserPassword password)
+        {
+            return "value";
+        }
+        
         // POST api/<UsersPasswordController>
         [HttpPost]
         public ActionResult<int> CheckPassword([FromBody] UserPassword password)
@@ -28,6 +41,18 @@ namespace WebApiShop.Controllers
             if (score > 1)
                 return Ok(score);
             return BadRequest("Password is not strong enough");
+        }
+        
+        // PUT api/<UsersPasswordController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
+        // DELETE api/<UsersPasswordController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
         }
     }
 }
