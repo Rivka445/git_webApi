@@ -69,11 +69,5 @@ namespace WebApiShop.Controllers
             _userService.UpdateUser(id, updateUser);
             return Ok(updateUser);
         }
-
-        // DELETE api/<UsersController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
