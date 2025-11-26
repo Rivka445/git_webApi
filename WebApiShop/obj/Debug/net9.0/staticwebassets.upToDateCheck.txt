@@ -1,0 +1,8 @@
+D:\webAPI\WebApiShop\WebApiShop\wwwroot\page2.js
+D:\webAPI\WebApiShop\WebApiShop\wwwroot\script.js
+D:\webAPI\WebApiShop\WebApiShop\wwwroot\home.html
+D:\webAPI\WebApiShop\WebApiShop\wwwroot\page2.html
+wwwroot\home.html
+wwwroot\page2.html
+wwwroot\page2.js
+wwwroot\script.js

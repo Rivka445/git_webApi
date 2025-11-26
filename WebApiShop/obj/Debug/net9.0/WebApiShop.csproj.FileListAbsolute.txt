@@ -1,0 +1,294 @@
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\appsettings.Development.json
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\appsettings.json
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.staticwebassets.runtime.json
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.staticwebassets.endpoints.json
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.exe
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.deps.json
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.runtimeconfig.json
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.pdb
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.GeneratedMSBuildEditorConfig.editorconfig
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.AssemblyInfoInputs.cache
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.AssemblyInfo.cs
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.CoreCompileInputs.cache
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.MvcApplicationPartsAssemblyInfo.cache
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjimswa.dswa.cache.json
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\scopedcss\bundle\WebApiShop.styles.css
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json.cache
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.development.json
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.dll
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\refint\WebApiShop.dll
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.pdb
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.genruntimeconfig.cache
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\ref\WebApiShop.dll
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\appsettings.Development.json
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\appsettings.json
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.staticwebassets.runtime.json
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.staticwebassets.endpoints.json
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.exe
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.deps.json
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.runtimeconfig.json
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.dll
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.pdb
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.GeneratedMSBuildEditorConfig.editorconfig
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.AssemblyInfoInputs.cache
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.AssemblyInfo.cs
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.CoreCompileInputs.cache
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.MvcApplicationPartsAssemblyInfo.cache
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\scopedcss\bundle\WebApiShop.styles.css
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.development.json
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.dll
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\refint\WebApiShop.dll
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.pdb
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.genruntimeconfig.cache
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\ref\WebApiShop.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\appsettings.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.staticwebassets.runtime.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.staticwebassets.endpoints.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.exe
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.deps.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.runtimeconfig.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.pdb
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.AssemblyInfoInputs.cache
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.AssemblyInfo.cs
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.CoreCompileInputs.cache
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.sourcelink.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\scopedcss\bundle\WebApiShop.styles.css
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\dsl5nreg3f-7vpdluuxoz.gz
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\u9gna8e2di-obmu50rpd9.gz
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\1aa4p0wbdf-5olft43s1w.gz
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\co1eup8ul9-15jtyvpasy.gz
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\refint\WebApiShop.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.pdb
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.genruntimeconfig.cache
+C:\Users\user1\Desktop\ריקי\שנה ב'\python\python4ml-main\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\ref\WebApiShop.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Entities.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Repositories.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Services.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Services.pdb
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Entities.pdb
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Repositories.pdb
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.AssemblyReference.cache
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.Up2Date
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zxcvbn-core.dll
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\appsettings.Development.json
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\appsettings.json
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.staticwebassets.endpoints.json
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.staticwebassets.runtime.json
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.exe
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.deps.json
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.runtimeconfig.json
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.dll
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\WebApiShop.pdb
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zxcvbn-core.dll
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Entities.dll
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Repositories.dll
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Services.dll
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Services.pdb
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Entities.pdb
+F:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Repositories.pdb
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.AssemblyReference.cache
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rpswa.dswa.cache.json
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.GeneratedMSBuildEditorConfig.editorconfig
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.AssemblyInfoInputs.cache
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.AssemblyInfo.cs
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.CoreCompileInputs.cache
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.MvcApplicationPartsAssemblyInfo.cache
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.sourcelink.json
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjimswa.dswa.cache.json
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\scopedcss\bundle\WebApiShop.styles.css
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\dsl5nreg3f-qxx7j07nbu.gz
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\u9gna8e2di-nl1zwcg8s6.gz
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\1aa4p0wbdf-n2g6151ygz.gz
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\co1eup8ul9-hh1pnyr1us.gz
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json.cache
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.development.json
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.Up2Date
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.dll
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\refint\WebApiShop.dll
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.pdb
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.genruntimeconfig.cache
+F:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\ref\WebApiShop.dll
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zxcvbn-core.dll
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Entities.dll
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Repositories.dll
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Services.dll
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Services.pdb
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Entities.pdb
+E:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Repositories.pdb
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.AssemblyReference.cache
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.sourcelink.json
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.csproj.Up2Date
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\dsl5nreg3f-e4f2vzkylc.gz
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\u9gna8e2di-16w8k1ouib.gz
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\1aa4p0wbdf-12z4c8z9hz.gz
+E:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\co1eup8ul9-naeexad5xs.gz
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\dsl5nreg3f-bgnemu9fba.gz
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\u9gna8e2di-yp15rvf0wx.gz
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\1aa4p0wbdf-378rf7u0kc.gz
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Azure.Core.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Azure.Identity.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.ClientModel.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Formats.Asn1.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Memory.Data.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Runtime.Caching.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Security.Permissions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Text.Json.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Windows.Extensions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Humanizer.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.CodeDom.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\co1eup8ul9-lswmok6wnh.gz

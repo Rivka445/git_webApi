@@ -1,0 +1,80 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Repositories;
+using Entities;
+using Services;
+using System.Collections.Generic;
+using System.Text.Json;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace WebApiShop.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UsersController : ControllerBase
+    {
+        private readonly IUserService _userService;
+        private readonly IUserPasswordService _userPasswordService;
+        
+        public UsersController(IUserService userService, IUserPasswordService userPasswordService)
+        {
+            _userService = userService;
+            _userPasswordService = userPasswordService;
+        }
+
+        // GET: api/<UsersController>
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<User>>> Get()
+        {
+            List<User> users=await _userService.GetUsers();
+            if(users.Count()==0)
+                return NoContent();
+            return Ok(users);
+        }
+
+        // GET api/<UsersController>/5
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<User>> GetId(int id)
+        {
+            User user = await _userService.GetUserById(id);
+            return user != null ? Ok(user) : NotFound();
+        }
+
+        // POST api/<UsersController>
+        [HttpPost]
+        public async Task<ActionResult<User>> AddUser([FromBody] User newUser)
+        {
+            int passwordScore = _userPasswordService.CheckPassword(newUser.Password);
+            if(passwordScore < 2)
+                return BadRequest("Password is not strong enough");
+            User user = await _userService.AddUser(newUser);
+            return CreatedAtAction(nameof(Get), new { Id = user.Id }, user);
+        }
+
+        // POST api/<UsersController>
+        [HttpPost("login")]
+        public async Task<ActionResult<User>> LogIn([FromBody] User existingUser)
+        {
+            User user = await _userService.LogIn(existingUser);
+            if(user == null)
+                return NotFound();
+            return Ok(user);
+        }
+        // PUT api/<UsersController>/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] User updateUser)
+        {
+            int passwordScore = _userPasswordService.CheckPassword(updateUser.Password);
+            if (passwordScore < 2)
+                return BadRequest("Password is not strong enough");
+            await _userService.UpdateUser(id, updateUser);
+            return Ok(updateUser);
+        }
+
+        // DELETE api/<UsersController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
+    }
+}
