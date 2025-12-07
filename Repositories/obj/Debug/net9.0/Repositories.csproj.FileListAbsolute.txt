@@ -1,4 +1,5 @@
 D:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.deps.json
+D:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.runtimeconfig.json
 D:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.dll
 D:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.pdb
 D:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Entities.dll
@@ -8,49 +9,10 @@ D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.GeneratedMSBuild
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.AssemblyInfoInputs.cache
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.AssemblyInfo.cs
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
-=======
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.sourcelink.json
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Reposito.787EC4B2.Up2Date
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.dll
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\refint\Repositories.dll
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.pdb
-D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\ref\Repositories.dll
-F:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.deps.json
-F:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.dll
-F:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.pdb
-F:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Entities.dll
-F:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Entities.pdb
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.csproj.AssemblyReference.cache
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.AssemblyInfoInputs.cache
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.AssemblyInfo.cs
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.csproj.CoreCompileInputs.cache
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.sourcelink.json
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Reposito.787EC4B2.Up2Date
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.dll
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\refint\Repositories.dll
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.pdb
-F:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\ref\Repositories.dll
-E:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.deps.json
-E:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.dll
-E:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.pdb
-E:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Entities.dll
-E:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Entities.pdb
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.csproj.AssemblyReference.cache
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.AssemblyInfoInputs.cache
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.AssemblyInfo.cs
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.csproj.CoreCompileInputs.cache
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.sourcelink.json
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Reposito.787EC4B2.Up2Date
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.dll
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\refint\Repositories.dll
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.pdb
-E:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\ref\Repositories.dll
-<<<<<<< HEAD
-D:\webAPI\WebApiShop\Repositories\bin\Debug\net9.0\Repositories.runtimeconfig.json
 D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\Repositories.genruntimeconfig.cache
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
+D:\webAPI\WebApiShop\Repositories\obj\Debug\net9.0\ref\Repositories.dll

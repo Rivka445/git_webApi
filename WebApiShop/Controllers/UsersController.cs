@@ -57,7 +57,7 @@ namespace WebApiShop.Controllers
         {
             User user = await _userService.LogIn(existingUser);
             if(user == null)
-                return NotFound();
+                return NotFound(existingUser);
             return Ok(user);
         }
         // PUT api/<UsersController>/5

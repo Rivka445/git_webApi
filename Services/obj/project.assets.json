@@ -2,7 +2,6 @@
   "version": 3,
   "targets": {
     "net9.0": {
-<<<<<<< HEAD
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -990,8 +989,6 @@
           }
         }
       },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
       "zxcvbn-core/7.0.92": {
         "type": "package",
         "compile": {
@@ -1019,13 +1016,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-<<<<<<< HEAD
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.11"
-=======
-          "Entities": "1.0.0"
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
         },
         "compile": {
           "bin/placeholder/Repositories.dll": {}
@@ -1037,7 +1030,6 @@
     }
   },
   "libraries": {
-<<<<<<< HEAD
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -2785,8 +2777,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
     "zxcvbn-core/7.0.92": {
       "sha512": "3CKGKJe4SnFrks38EuF4iq1DT6IqsyNu/zMQp9GOpaipb7qdZndjjTXQa1/dkNh/OoxD0/aTcIBrRrbD4ALeGQ==",
       "type": "package",

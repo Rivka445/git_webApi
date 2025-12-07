@@ -120,7 +120,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-<<<<<<< HEAD
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -137,8 +136,6 @@
               "version": "[9.0.11, )"
             }
           },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
           "imports": [
             "net461",
             "net462",
@@ -285,25 +282,16 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-<<<<<<< HEAD
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.11, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[9.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.11, )"
+              "version": "[9.0.6, )"
             }
           },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
           "imports": [
             "net461",
             "net462",

@@ -2,7 +2,6 @@
   "version": 3,
   "targets": {
     "net9.0": {
-<<<<<<< HEAD
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -1600,8 +1599,6 @@
           }
         }
       },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -1615,7 +1612,6 @@
     }
   },
   "libraries": {
-<<<<<<< HEAD
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -4716,8 +4712,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
@@ -4726,14 +4720,10 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-<<<<<<< HEAD
       "Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.11"
-=======
-      "Entities >= 1.0.0"
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
     ]
   },
   "packageFolders": {
@@ -4790,7 +4780,6 @@
     "frameworks": {
       "net9.0": {
         "targetAlias": "net9.0",
-<<<<<<< HEAD
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -4807,8 +4796,6 @@
             "version": "[9.0.11, )"
           }
         },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
         "imports": [
           "net461",
           "net462",

@@ -27,9 +27,9 @@ namespace Repositories
         }
         public async Task<User> LogIn(User user)
         {
-            List<User>listUser = await _webApiShopContext.Users.Where(u => u.UserName == user.UserName && u.Password == user.Password).ToListAsync();
-            if (listUser.Count()>0)
-                return  listUser[0];
+            User currentUser = await _webApiShopContext.Users.FirstOrDefaultAsync(u=> u.UserName == user.UserName && u.Password == user.Password);
+            if (currentUser !=null )
+                return currentUser;
              return null;
         }
         public async Task UpdateUser(int id, User updateUser)

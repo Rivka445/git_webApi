@@ -15,7 +15,6 @@
           "Services.dll": {}
         }
       },
-<<<<<<< HEAD
       "Azure.Core/1.38.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -589,8 +588,6 @@
           }
         }
       },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
       "zxcvbn-core/7.0.92": {
         "runtime": {
           "lib/netstandard2.0/zxcvbn-core.dll": {
@@ -609,13 +606,9 @@
       },
       "Repositories/1.0.0": {
         "dependencies": {
-<<<<<<< HEAD
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.11"
-=======
-          "Entities": "1.0.0"
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
         },
         "runtime": {
           "Repositories.dll": {
@@ -632,7 +625,6 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< HEAD
     "Azure.Core/1.38.0": {
       "type": "package",
       "serviceable": true,
@@ -1018,8 +1010,6 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-=======
->>>>>>> 04d96632f8f1392e48ac2d8e158e6ad09cabbf8c
     "zxcvbn-core/7.0.92": {
       "type": "package",
       "serviceable": true,

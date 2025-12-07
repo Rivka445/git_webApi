@@ -76,10 +76,10 @@ async function checkPassword() {
             throw new Error(`HTTP error! status ${response.status}`)
         }
         else {
-            const a = await response.json() 
+            const score = await response.json() 
             bar.innerHTML = ""
             bar.style.display="flex"
-            for (let i = 0; i < a; i++) {  
+            for (let i = 0; i < score; i++) {  
                 const step = document.createElement("div")
                 step.className ="stage"
                 bar.appendChild(step)
