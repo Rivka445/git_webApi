@@ -2,7 +2,7 @@
 
 namespace Repositories
 {
-    public interface IUserRipository
+    public interface IUserRepository
     {
          Task<User> AddUser(User user);
          Task<User> GetUserById(int id);
