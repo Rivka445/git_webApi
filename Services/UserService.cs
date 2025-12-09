@@ -4,9 +4,9 @@ namespace Services
 {
     public class UserService : IUserService
     {
-        private readonly IUserRipository _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(IUserRipository userRepository)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }

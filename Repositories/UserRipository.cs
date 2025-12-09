@@ -4,10 +4,10 @@ using System.Reflection.PortableExecutable;
 using System.Text.Json;
 namespace Repositories
 {
-    public class UserRipository : IUserRipository
+    public class UserRepository : IUserRepository
     {
         private readonly WebApiShopContext _webApiShopContext;
-        public UserRipository(WebApiShopContext webApiShopContext)
+        public UserRepository(WebApiShopContext webApiShopContext)
         {
             _webApiShopContext = webApiShopContext;
         }
