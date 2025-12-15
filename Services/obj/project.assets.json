@@ -1031,9 +1031,22 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTOs.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "DTOs": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -2853,6 +2866,11 @@
         "zxcvbn-core.7.0.92.nupkg.sha512",
         "zxcvbn-core.nuspec"
       ]
+    },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "path": "../DTOs/DTOs.csproj",
+      "msbuildProject": "../DTOs/DTOs.csproj"
     },
     "Entities/1.0.0": {
       "type": "project",

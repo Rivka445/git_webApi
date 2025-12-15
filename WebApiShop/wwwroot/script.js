@@ -1,22 +1,36 @@
 ﻿
 const extrctDataFromInputUser = () => {
-    const userName = document.querySelector("#userName").value
+    const email = document.querySelector("#userName").value
     const firstName = document.querySelector("#firstName").value
     const lastName = document.querySelector("#lastName").value
     const password = document.querySelector("#password").value
-    const UserId =0
-    return { UserId, userName, firstName, lastName, password }
+    const id = 0
+    if (email.indexOf("@") < 1 && userName) {
+        alert("השם חייב להכיל @ באמצע")
+        return ""
+    }
+    if (password.length < 4 && password) {
+        alert("אורך הסיסמא קצר מידי")
+        return ""
+    }
+    if (!email || !firstName || !lastName || !password) {
+        alert("לפחות אחד מהנתונים חסרים")
+        return ""
+    }    
+    return { id, email, firstName, lastName, password }
 }
 
 const extrctDataFromInputLogIn = () => {
-    const userName = document.querySelector("#username").value
+    const email = document.querySelector("#username").value
     const password = document.querySelector("#pasword").value
-    const UserId = 1,firstName= "aaa", lastName ="aaa"
-    return { UserId, userName, firstName , lastName , password }
+    const id = 1,firstName= "aaa", lastName ="aaa"
+    return { id, email, firstName , lastName , password }
 }
 
 async function registIn() {
     const newUser = extrctDataFromInputUser()
+    if (newUser === "")
+        return
     try {
         const response = await fetch (
             "https://localhost:44362/api/Users",{
@@ -38,6 +52,8 @@ async function registIn() {
 
 async function logIn() {
     const existUser = extrctDataFromInputLogIn()
+    if (existUser === "")
+        return
     try {
         const response = await fetch(
             "https://localhost:44362/api/Users/login",{

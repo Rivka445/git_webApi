@@ -76,6 +76,36 @@
           }
         }
       },
+      "BouncyCastle.Cryptography/2.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MailKit/4.7.1.1": {
+        "type": "package",
+        "dependencies": {
+          "MimeKit": "4.7.1",
+          "System.Formats.Asn1": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/MailKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MailKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/9.0.11": {
         "type": "package",
         "dependencies": {
@@ -636,6 +666,91 @@
           }
         }
       },
+      "MimeKit/4.7.1": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.4.0",
+          "System.Formats.Asn1": "8.0.1",
+          "System.Security.Cryptography.Pkcs": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/MimeKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MimeKit.dll": {
+            "related": ".dll.config;.pdb;.xml"
+          }
+        }
+      },
+      "NLog/6.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/NLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/NLog.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Logging": "8.0.0",
+          "NLog": "6.0.6"
+        },
+        "compile": {
+          "lib/net8.0/NLog.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/NLog.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NLog.MailKit/6.0.5": {
+        "type": "package",
+        "dependencies": {
+          "MailKit": "4.7.1.1",
+          "NLog": "6.0.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/NLog.MailKit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/NLog.MailKit.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NLog.Web.AspNetCore/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "NLog.Extensions.Logging": "6.1.0"
+        },
+        "compile": {
+          "lib/net8.0/NLog.Web.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/NLog.Web.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Swashbuckle.AspNetCore/9.0.6": {
         "type": "package",
         "dependencies": {
@@ -790,7 +905,7 @@
       "System.Formats.Asn1/9.0.11": {
         "type": "package",
         "compile": {
-          "lib/net9.0/_._": {
+          "lib/net9.0/System.Formats.Asn1.dll": {
             "related": ".xml"
           }
         },
@@ -947,6 +1062,31 @@
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Formats.Asn1": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -1140,9 +1280,22 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTOs.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "DTOs": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -1248,6 +1401,70 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "BouncyCastle.Cryptography/2.4.0": {
+      "sha512": "SwXsAV3sMvAU/Nn31pbjhWurYSjJ+/giI/0n6tCrYoupEK34iIHCuk3STAd9fx8yudM85KkLSVdn951vTng/vQ==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.4.0.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
+      ]
+    },
+    "MailKit/4.7.1.1": {
+      "sha512": "Y3okmIxu8g/ZcoJiE2i+dCeKgnNyddsXmcJslZnCPGVPP0aRyeVINHV1h97V+OVMdqjQI6O12J2p8Duwq5UEqQ==",
+      "type": "package",
+      "path": "mailkit/4.7.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/ExchangeOAuth2.md",
+        "docs/FAQ.md",
+        "docs/GMailOAuth2.md",
+        "docs/README.md",
+        "icons/mailkit-50.png",
+        "lib/net462/MailKit.dll",
+        "lib/net462/MailKit.dll.config",
+        "lib/net462/MailKit.pdb",
+        "lib/net462/MailKit.xml",
+        "lib/net47/MailKit.dll",
+        "lib/net47/MailKit.dll.config",
+        "lib/net47/MailKit.pdb",
+        "lib/net47/MailKit.xml",
+        "lib/net48/MailKit.dll",
+        "lib/net48/MailKit.dll.config",
+        "lib/net48/MailKit.pdb",
+        "lib/net48/MailKit.xml",
+        "lib/net6.0/MailKit.dll",
+        "lib/net6.0/MailKit.dll.config",
+        "lib/net6.0/MailKit.pdb",
+        "lib/net6.0/MailKit.xml",
+        "lib/net8.0/MailKit.dll",
+        "lib/net8.0/MailKit.dll.config",
+        "lib/net8.0/MailKit.pdb",
+        "lib/net8.0/MailKit.xml",
+        "lib/netstandard2.0/MailKit.dll",
+        "lib/netstandard2.0/MailKit.dll.config",
+        "lib/netstandard2.0/MailKit.pdb",
+        "lib/netstandard2.0/MailKit.xml",
+        "lib/netstandard2.1/MailKit.dll",
+        "lib/netstandard2.1/MailKit.dll.config",
+        "lib/netstandard2.1/MailKit.pdb",
+        "lib/netstandard2.1/MailKit.xml",
+        "mailkit.4.7.1.1.nupkg.sha512",
+        "mailkit.nuspec"
       ]
     },
     "Microsoft.AspNetCore.OpenApi/9.0.11": {
@@ -2354,6 +2571,137 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "MimeKit/4.7.1": {
+      "sha512": "Qoj4aVvhX14A1FNvaJ33hzOP4VZI2j+Mr38I9wSGcjMq4BYDtWLJG89aJ9nRW2cNfH6Czjwyp7+Mh++xv3AZvg==",
+      "type": "package",
+      "path": "mimekit/4.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/FAQ.md",
+        "docs/README.md",
+        "icons/mimekit-50.png",
+        "lib/net462/MimeKit.dll",
+        "lib/net462/MimeKit.dll.config",
+        "lib/net462/MimeKit.pdb",
+        "lib/net462/MimeKit.xml",
+        "lib/net47/MimeKit.dll",
+        "lib/net47/MimeKit.dll.config",
+        "lib/net47/MimeKit.pdb",
+        "lib/net47/MimeKit.xml",
+        "lib/net48/MimeKit.dll",
+        "lib/net48/MimeKit.dll.config",
+        "lib/net48/MimeKit.pdb",
+        "lib/net48/MimeKit.xml",
+        "lib/net6.0/MimeKit.dll",
+        "lib/net6.0/MimeKit.dll.config",
+        "lib/net6.0/MimeKit.pdb",
+        "lib/net6.0/MimeKit.xml",
+        "lib/net8.0/MimeKit.dll",
+        "lib/net8.0/MimeKit.dll.config",
+        "lib/net8.0/MimeKit.pdb",
+        "lib/net8.0/MimeKit.xml",
+        "lib/netstandard2.0/MimeKit.dll",
+        "lib/netstandard2.0/MimeKit.dll.config",
+        "lib/netstandard2.0/MimeKit.pdb",
+        "lib/netstandard2.0/MimeKit.xml",
+        "lib/netstandard2.1/MimeKit.dll",
+        "lib/netstandard2.1/MimeKit.dll.config",
+        "lib/netstandard2.1/MimeKit.pdb",
+        "lib/netstandard2.1/MimeKit.xml",
+        "mimekit.4.7.1.nupkg.sha512",
+        "mimekit.nuspec"
+      ]
+    },
+    "NLog/6.0.6": {
+      "sha512": "eUd/LDIwPtufj5OxtzFYiwuoKpzaS87iqO9P9D05avLCk4jIoOlqMwRH0o/43LmzM+CmgVAdDrCOq/rOK0sDKw==",
+      "type": "package",
+      "path": "nlog/6.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/net46/NLog.dll",
+        "lib/net46/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "lib/netstandard2.1/NLog.dll",
+        "lib/netstandard2.1/NLog.xml",
+        "nlog.6.0.6.nupkg.sha512",
+        "nlog.nuspec"
+      ]
+    },
+    "NLog.Extensions.Logging/6.1.0": {
+      "sha512": "yWIluPmI4ISazv+1eEoRGnPbSVkxMN11ULblCxMvNsb8hGrw4LtuBebPOSjHK9D9yK/xSCHzmN46cELbgwiVsQ==",
+      "type": "package",
+      "path": "nlog.extensions.logging/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "README.md",
+        "lib/net10.0/NLog.Extensions.Logging.dll",
+        "lib/net10.0/NLog.Extensions.Logging.xml",
+        "lib/net462/NLog.Extensions.Logging.dll",
+        "lib/net462/NLog.Extensions.Logging.xml",
+        "lib/net6.0/NLog.Extensions.Logging.dll",
+        "lib/net6.0/NLog.Extensions.Logging.xml",
+        "lib/net8.0/NLog.Extensions.Logging.dll",
+        "lib/net8.0/NLog.Extensions.Logging.xml",
+        "lib/netstandard2.0/NLog.Extensions.Logging.dll",
+        "lib/netstandard2.0/NLog.Extensions.Logging.xml",
+        "lib/netstandard2.1/NLog.Extensions.Logging.dll",
+        "lib/netstandard2.1/NLog.Extensions.Logging.xml",
+        "nlog.extensions.logging.6.1.0.nupkg.sha512",
+        "nlog.extensions.logging.nuspec"
+      ]
+    },
+    "NLog.MailKit/6.0.5": {
+      "sha512": "SMWDBIVKBR6uA5KdxWPPUWbg4lKQ+KeuAWaTvyg7FWTCH0LHvSMGQ4hVtXGYQMRxclUQOi5wlATJDoBW/xtECA==",
+      "type": "package",
+      "path": "nlog.mailkit/6.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "README.md",
+        "lib/net462/NLog.MailKit.dll",
+        "lib/net462/NLog.MailKit.xml",
+        "lib/netstandard2.0/NLog.MailKit.dll",
+        "lib/netstandard2.0/NLog.MailKit.xml",
+        "lib/netstandard2.1/NLog.MailKit.dll",
+        "lib/netstandard2.1/NLog.MailKit.xml",
+        "nlog.mailkit.6.0.5.nupkg.sha512",
+        "nlog.mailkit.nuspec"
+      ]
+    },
+    "NLog.Web.AspNetCore/6.1.0": {
+      "sha512": "AYBO0oObnzc5KhrLR7J5GVGSd+fXMG1blFi5jVjmzN7antr5IBlVLcMO1BMJKgQZdByeyT7HLVvfbLd9CRYiEg==",
+      "type": "package",
+      "path": "nlog.web.aspnetcore/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "README.md",
+        "lib/net10.0/NLog.Web.AspNetCore.dll",
+        "lib/net10.0/NLog.Web.AspNetCore.xml",
+        "lib/net462/NLog.Web.AspNetCore.dll",
+        "lib/net462/NLog.Web.AspNetCore.xml",
+        "lib/net6.0/NLog.Web.AspNetCore.dll",
+        "lib/net6.0/NLog.Web.AspNetCore.xml",
+        "lib/net8.0/NLog.Web.AspNetCore.dll",
+        "lib/net8.0/NLog.Web.AspNetCore.xml",
+        "lib/netstandard2.0/NLog.Web.AspNetCore.dll",
+        "lib/netstandard2.0/NLog.Web.AspNetCore.xml",
+        "nlog.web.aspnetcore.6.1.0.nupkg.sha512",
+        "nlog.web.aspnetcore.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/9.0.6": {
       "sha512": "q/UfEAgrk6qQyjHXgsW9ILw0YZLfmPtWUY4wYijliX6supozC+TkzU0G6FTnn/dPYxnChjM8g8lHjWHF6VKy+A==",
       "type": "package",
@@ -2932,6 +3280,43 @@
         "version.txt"
       ]
     },
+    "System.Security.Cryptography.Pkcs/8.0.0": {
+      "sha512": "ULmp3xoOwNYjOYp4JZ2NK/6NdTgiN1GQXzVVN1njQ7LOZ0d0B9vyMnhyqbIi9Qw4JXj1JgCsitkTShboHRx7Eg==",
+      "type": "package",
+      "path": "system.security.cryptography.pkcs/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+        "lib/net462/System.Security.Cryptography.Pkcs.dll",
+        "lib/net462/System.Security.Cryptography.Pkcs.xml",
+        "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "system.security.cryptography.pkcs.8.0.0.nupkg.sha512",
+        "system.security.cryptography.pkcs.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Security.Cryptography.ProtectedData/6.0.0": {
       "sha512": "rp1gMNEZpvx9vP0JW0oHLxlf8oSiQgtno77Y4PLUBjSiDYoD77Y8uXHr1Ea5XG4/pIKhqAdxZ8v8OTUtqo9PeQ==",
       "type": "package",
@@ -3334,6 +3719,11 @@
         "zxcvbn-core.nuspec"
       ]
     },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "path": "../DTOs/DTOs.csproj",
+      "msbuildProject": "../DTOs/DTOs.csproj"
+    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
@@ -3353,6 +3743,8 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Microsoft.AspNetCore.OpenApi >= 9.0.11",
+      "NLog.MailKit >= 6.0.5",
+      "NLog.Web.AspNetCore >= 6.1.0",
       "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 9.0.6"
     ]
@@ -3415,6 +3807,14 @@
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[9.0.11, )"
+          },
+          "NLog.MailKit": {
+            "target": "Package",
+            "version": "[6.0.5, )"
+          },
+          "NLog.Web.AspNetCore": {
+            "target": "Package",
+            "version": "[6.1.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

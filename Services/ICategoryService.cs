@@ -1,5 +1,5 @@
 ﻿using Entities;
-using Entities.DTO;
+using DTOs;
 
 namespace Services
 {

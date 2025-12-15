@@ -4,18 +4,19 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Entities
-{
-    public partial class Order
-    {
-        public int OrderId { get; set; }
+namespace Entities;
 
-        public DateOnly OrderDate { get; set; }
-        [Required]
-        public int OrderSum { get; set; }
-        [Required]
-        public int UserId { get; set; }
-        public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-        public virtual User User { get; set; }
-    }
+public partial class Order
+{
+    public int Id { get; set; }
+    [Required]
+    public DateOnly Date { get; set; }
+    [Required]
+    public int Sum { get; set; }
+    [Required]
+    public int UserId { get; set; }
+
+    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
+    public virtual User User { get; set; }
 }

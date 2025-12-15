@@ -4,15 +4,29 @@ titleName.textContent = `ברוכה הבאה ${firstName} מייד נצלול פ
 
 const extrctDataFromInput = () => {
     const id = Number(JSON.parse(sessionStorage.getItem("currentUser")).id)
-    const userName = document.querySelector("#userName").value
+    const email = document.querySelector("#userName").value
     const firstName = document.querySelector("#firstName").value
     const lastName = document.querySelector("#lastName").value
     const password = document.querySelector("#password").value
-    return { id,userName, firstName, lastName, password }
+    if (email.indexOf("@") < 1 && email) {
+        alert("השם חייב להכיל @ באמצע")
+        return ""
+    }
+    if (password.length < 4 && password) {
+        alert("אורך הסיסמא קצר מידי")
+        return ""
+    }
+    if (!email || !firstName || !lastName || !password) {
+        alert("לפחות אחד מהנתונים חסרים")
+        return ""
+    }    
+    return { id, email, firstName, lastName, password }
 }
 
 async function upDate() {
     const currenrtUser = extrctDataFromInput()
+    if (currenrtUser == "")
+        return
     try {
         const response = await fetch(
             `https://localhost:44362/api/Users/${currenrtUser.id}`,

@@ -1,5 +1,5 @@
 ﻿using Entities;
-using Entities.DTO;
+using DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Repositories;
 using Services;
@@ -16,9 +16,11 @@ namespace WebApiShop.Controllers
     {
         private readonly IUserService _userService;
         private readonly IUserPasswordService _userPasswordService;
+        private readonly ILogger<UsersController> _logger;
         
-        public UsersController(IUserService userService, IUserPasswordService userPasswordService)
+        public UsersController(IUserService userService, IUserPasswordService userPasswordService,ILogger<UsersController> logger)
         {
+            _logger = logger;
             _userService = userService;
             _userPasswordService = userPasswordService;
         }
@@ -49,7 +51,7 @@ namespace WebApiShop.Controllers
             if(passwordScore < 2)
                 return BadRequest("Password is not strong enough");
             UserDTO user = await _userService.AddUser(newUser);
-            return CreatedAtAction(nameof(Get), new { Id = user.UserId }, user);
+            return CreatedAtAction(nameof(Get), new { Id = user.Id }, user);
         }
 
         // POST api/<UsersController>
@@ -59,6 +61,7 @@ namespace WebApiShop.Controllers
             UserLoginDTO user = await _userService.LogIn(existingUser);
             if(user == null)
                 return NotFound(existingUser);
+            _logger.LogInformation($"login {user.Email} , {user.Password} !");
             return Ok(user);
         }
         // PUT api/<UsersController>/5

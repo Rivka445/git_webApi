@@ -10,3 +10,7 @@ D:\webAPI\WebApiShop\Entities\obj\Debug\net9.0\Entities.dll
 D:\webAPI\WebApiShop\Entities\obj\Debug\net9.0\refint\Entities.dll
 D:\webAPI\WebApiShop\Entities\obj\Debug\net9.0\Entities.pdb
 D:\webAPI\WebApiShop\Entities\obj\Debug\net9.0\ref\Entities.dll
+D:\webAPI\WebApiShop\Entities\bin\Debug\net9.0\DTOs.dll
+D:\webAPI\WebApiShop\Entities\bin\Debug\net9.0\DTOs.pdb
+D:\webAPI\WebApiShop\Entities\obj\Debug\net9.0\Entities.csproj.AssemblyReference.cache
+D:\webAPI\WebApiShop\Entities\obj\Debug\net9.0\Entities.csproj.Up2Date

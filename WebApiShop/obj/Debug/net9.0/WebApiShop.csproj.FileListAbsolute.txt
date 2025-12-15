@@ -76,7 +76,6 @@ D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjimswa.dswa.cache.json
 D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\scopedcss\bundle\WebApiShop.styles.css
-D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\1aa4p0wbdf-378rf7u0kc.gz
 D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json
 D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.build.json.cache
 D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\staticwebassets.development.json
@@ -96,6 +95,17 @@ D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\WebApiShop.MvcApplicationPartsAssemblyInfo.cs
-D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\co1eup8ul9-ceob9vt2tk.gz
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\AutoMapper.dll
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\DTOs.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\DTOs.pdb
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\1aa4p0wbdf-p52pxjjiem.gz
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\co1eup8ul9-vj9y879s51.gz
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\nlog.config
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\MailKit.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\MimeKit.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\NLog.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\NLog.Extensions.Logging.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\NLog.MailKit.dll
+D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\NLog.Web.AspNetCore.dll

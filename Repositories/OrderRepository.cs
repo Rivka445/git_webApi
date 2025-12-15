@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities;
 namespace Repositories
 {
     public class OrderRepository : IOrderRepository
@@ -15,7 +16,7 @@ namespace Repositories
         }
         public async Task<Order> GetById(int id)
         {
-            return await _webApiShopContext.Orders.FindAsync(id);
+            return await _webApiShopContext.Orders.Include(o => o.OrderItems).ThenInclude(oi => oi.Product).FirstOrDefaultAsync(o=>o.Id==id);
         }
         public async Task<Order> addOrder(Order order)
         {

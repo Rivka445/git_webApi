@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Entities;
-using Entities.DTO;
+using DTOs;
 using Repositories;
 namespace Services
 {

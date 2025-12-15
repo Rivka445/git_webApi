@@ -9,6 +9,8 @@
       "WebApiShop/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "9.0.11",
+          "NLog.MailKit": "6.0.5",
+          "NLog.Web.AspNetCore": "6.1.0",
           "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "9.0.6"
         },
@@ -71,6 +73,26 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.11.4.0",
             "fileVersion": "1.1100.424.31005"
+          }
+        }
+      },
+      "BouncyCastle.Cryptography/2.4.0": {
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.4.0.33771"
+          }
+        }
+      },
+      "MailKit/4.7.1.1": {
+        "dependencies": {
+          "MimeKit": "4.7.1",
+          "System.Formats.Asn1": "9.0.11"
+        },
+        "runtime": {
+          "lib/net8.0/MailKit.dll": {
+            "assemblyVersion": "4.7.0.0",
+            "fileVersion": "4.7.1.1"
           }
         }
       },
@@ -438,6 +460,63 @@
           }
         }
       },
+      "MimeKit/4.7.1": {
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.4.0",
+          "System.Formats.Asn1": "9.0.11",
+          "System.Security.Cryptography.Pkcs": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/MimeKit.dll": {
+            "assemblyVersion": "4.7.0.0",
+            "fileVersion": "4.7.1.0"
+          }
+        }
+      },
+      "NLog/6.0.6": {
+        "runtime": {
+          "lib/netstandard2.1/NLog.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.6.4706"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/6.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.11",
+          "Microsoft.Extensions.Logging": "9.0.11",
+          "NLog": "6.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.1.0.770"
+          }
+        }
+      },
+      "NLog.MailKit/6.0.5": {
+        "dependencies": {
+          "MailKit": "4.7.1.1",
+          "NLog": "6.0.6"
+        },
+        "runtime": {
+          "lib/netstandard2.1/NLog.MailKit.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.5.9893"
+          }
+        }
+      },
+      "NLog.Web.AspNetCore/6.1.0": {
+        "dependencies": {
+          "NLog.Extensions.Logging": "6.1.0"
+        },
+        "runtime": {
+          "lib/net8.0/NLog.Web.AspNetCore.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.1.0.1363"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/9.0.6": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "9.0.0",
@@ -596,6 +675,11 @@
           "System.Formats.Asn1": "9.0.11"
         }
       },
+      "System.Security.Cryptography.Pkcs/8.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "9.0.11"
+        }
+      },
       "System.Security.Cryptography.ProtectedData/6.0.0": {
         "runtime": {
           "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
@@ -678,7 +762,18 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "runtime": {
+          "DTOs.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Entities/1.0.0": {
+        "dependencies": {
+          "DTOs": "1.0.0"
+        },
         "runtime": {
           "Entities.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -747,6 +842,20 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
+    },
+    "BouncyCastle.Cryptography/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SwXsAV3sMvAU/Nn31pbjhWurYSjJ+/giI/0n6tCrYoupEK34iIHCuk3STAd9fx8yudM85KkLSVdn951vTng/vQ==",
+      "path": "bouncycastle.cryptography/2.4.0",
+      "hashPath": "bouncycastle.cryptography.2.4.0.nupkg.sha512"
+    },
+    "MailKit/4.7.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y3okmIxu8g/ZcoJiE2i+dCeKgnNyddsXmcJslZnCPGVPP0aRyeVINHV1h97V+OVMdqjQI6O12J2p8Duwq5UEqQ==",
+      "path": "mailkit/4.7.1.1",
+      "hashPath": "mailkit.4.7.1.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/9.0.11": {
       "type": "package",
@@ -979,6 +1088,41 @@
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
     },
+    "MimeKit/4.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qoj4aVvhX14A1FNvaJ33hzOP4VZI2j+Mr38I9wSGcjMq4BYDtWLJG89aJ9nRW2cNfH6Czjwyp7+Mh++xv3AZvg==",
+      "path": "mimekit/4.7.1",
+      "hashPath": "mimekit.4.7.1.nupkg.sha512"
+    },
+    "NLog/6.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eUd/LDIwPtufj5OxtzFYiwuoKpzaS87iqO9P9D05avLCk4jIoOlqMwRH0o/43LmzM+CmgVAdDrCOq/rOK0sDKw==",
+      "path": "nlog/6.0.6",
+      "hashPath": "nlog.6.0.6.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yWIluPmI4ISazv+1eEoRGnPbSVkxMN11ULblCxMvNsb8hGrw4LtuBebPOSjHK9D9yK/xSCHzmN46cELbgwiVsQ==",
+      "path": "nlog.extensions.logging/6.1.0",
+      "hashPath": "nlog.extensions.logging.6.1.0.nupkg.sha512"
+    },
+    "NLog.MailKit/6.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SMWDBIVKBR6uA5KdxWPPUWbg4lKQ+KeuAWaTvyg7FWTCH0LHvSMGQ4hVtXGYQMRxclUQOi5wlATJDoBW/xtECA==",
+      "path": "nlog.mailkit/6.0.5",
+      "hashPath": "nlog.mailkit.6.0.5.nupkg.sha512"
+    },
+    "NLog.Web.AspNetCore/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AYBO0oObnzc5KhrLR7J5GVGSd+fXMG1blFi5jVjmzN7antr5IBlVLcMO1BMJKgQZdByeyT7HLVvfbLd9CRYiEg==",
+      "path": "nlog.web.aspnetcore/6.1.0",
+      "hashPath": "nlog.web.aspnetcore.6.1.0.nupkg.sha512"
+    },
     "Swashbuckle.AspNetCore/9.0.6": {
       "type": "package",
       "serviceable": true,
@@ -1105,6 +1249,13 @@
       "path": "system.security.cryptography.cng/5.0.0",
       "hashPath": "system.security.cryptography.cng.5.0.0.nupkg.sha512"
     },
+    "System.Security.Cryptography.Pkcs/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ULmp3xoOwNYjOYp4JZ2NK/6NdTgiN1GQXzVVN1njQ7LOZ0d0B9vyMnhyqbIi9Qw4JXj1JgCsitkTShboHRx7Eg==",
+      "path": "system.security.cryptography.pkcs/8.0.0",
+      "hashPath": "system.security.cryptography.pkcs.8.0.0.nupkg.sha512"
+    },
     "System.Security.Cryptography.ProtectedData/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1174,6 +1325,11 @@
       "sha512": "sha512-3CKGKJe4SnFrks38EuF4iq1DT6IqsyNu/zMQp9GOpaipb7qdZndjjTXQa1/dkNh/OoxD0/aTcIBrRrbD4ALeGQ==",
       "path": "zxcvbn-core/7.0.92",
       "hashPath": "zxcvbn-core.7.0.92.nupkg.sha512"
+    },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Entities/1.0.0": {
       "type": "project",

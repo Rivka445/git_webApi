@@ -620,7 +620,18 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "runtime": {
+          "DTOs.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Entities/1.0.0": {
+        "dependencies": {
+          "DTOs": "1.0.0"
+        },
         "runtime": {
           "Entities.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -1054,6 +1065,11 @@
       "sha512": "sha512-3CKGKJe4SnFrks38EuF4iq1DT6IqsyNu/zMQp9GOpaipb7qdZndjjTXQa1/dkNh/OoxD0/aTcIBrRrbD4ALeGQ==",
       "path": "zxcvbn-core/7.0.92",
       "hashPath": "zxcvbn-core.7.0.92.nupkg.sha512"
+    },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Entities/1.0.0": {
       "type": "project",

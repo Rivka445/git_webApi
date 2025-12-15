@@ -4,24 +4,23 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Entities
+namespace Entities;
+
+public partial class Product
 {
-    public partial class Product
-    {
-        public int ProductId { get; set; }
-        [Required]
-        public string ProductName { get; set; }
+    public int Id { get; set; }
+    [Required]
+    public string Name { get; set; }
 
-        public int CategoryId { get; set; }
+    public int CategoryId { get; set; }
 
-        public string Description { get; set; }
-        [Required]
-        public double Price { get; set; }
+    public string Description { get; set; }
+    [Required]
+    public double Price { get; set; }
 
-        public string ImgUrl { get; set; }
+    public string ImgUrl { get; set; }
 
-        public virtual Category Category { get; set; }
+    public virtual Category Category { get; set; }
 
-        public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-    }
+    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }

@@ -3,7 +3,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Repositories;
 using Services;
 using WebApiShop;
+using Microsoft.Extensions.Configuration;
+using NLog.Web;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseNLog();
 
 // Add services to the container.
 builder.Services.AddScoped<IUserRipository, UserRipository>();
@@ -21,8 +26,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
-builder.Services.AddDbContext<WebApiShopContext>(options => options.UseSqlServer
-("Data Source=DESKTOP-1VUANBN; Initial Catalog=WebApiShop;Integrated Security=True;Trust Server Certificate=True;Pooling=False"));
+builder.Services.AddDbContext<WebApiShopContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Home")));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -31,6 +35,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi(); 
 
 var app = builder.Build();
+
 
 if (app.Environment.IsDevelopment())
 {

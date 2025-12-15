@@ -27,7 +27,7 @@ namespace Repositories
         }
         public async Task<User> LogIn(User user)
         {
-            User currentUser = await _webApiShopContext.Users.FirstOrDefaultAsync(u=> u.UserName == user.UserName && u.Password == user.Password);
+            User currentUser = await _webApiShopContext.Users.FirstOrDefaultAsync(u=> u.Email == user.Email && u.Password == user.Password);
             if (currentUser !=null )
                 return currentUser;
              return null;

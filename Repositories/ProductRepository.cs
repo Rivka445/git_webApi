@@ -18,11 +18,11 @@ namespace Repositories
         public async Task<List<Product>> GetProducts(string? description, int? minPrice, int? maxPrice,
             int?[] categoriesId, int? position , int? skip)
         {
-            return await _webApiShopContext.Products.ToListAsync();
+            return await _webApiShopContext.Products.Include(p => p.Category).ToListAsync();
         }
         public async Task<Product> GetById(int id)
         {
-            return await _webApiShopContext.Products.FindAsync(id);
+            return await _webApiShopContext.Products.Include(p => p.Category).FirstOrDefaultAsync(o=>o.Id==id);
         }
     }
 }
