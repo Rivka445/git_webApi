@@ -10,7 +10,7 @@ public partial class WebApiShopContext : DbContext
 {
     public WebApiShopContext(DbContextOptions<WebApiShopContext> options)
         : base(options)
-    {
+    { 
     }
 
     public virtual DbSet<Category> Categories { get; set; }

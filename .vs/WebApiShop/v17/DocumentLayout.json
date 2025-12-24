@@ -3,12 +3,39 @@
   "WorkspaceRootPath": "D:\\webAPI\\WebApiShop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|d:\\webapi\\webapishop\\tests\\categoryrepositoryintegratientests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\categoryrepositoryintegratientests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|d:\\webapi\\webapishop\\tests\\userrepositoryintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\userrepositoryintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|d:\\webapi\\webapishop\\tests\\orderrepositoryintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\orderrepositoryintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|d:\\webapi\\webapishop\\tests\\categoryrepositoryunittesting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\categoryrepositoryunittesting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|d:\\webapi\\webapishop\\tests\\productrepositoryintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\productrepositoryintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|D:\\webAPI\\WebApiShop\\prompt.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:prompt.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\WebApiShop.csproj|d:\\webapi\\webapishop\\webapishop\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\WebApiShop.csproj|solutionrelative:webapishop\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\WebApiShop.csproj|d:\\webapi\\webapishop\\webapishop\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\WebApiShop.csproj|solutionrelative:webapishop\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Downloads\\DataBaseFixture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|d:\\webapi\\webapishop\\repositories\\webapishopcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\webapishopcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\WebApiShop.csproj|d:\\webapi\\webapishop\\webapishop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,37 +49,118 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "nlog.config",
-              "DocumentMoniker": "D:\\webAPI\\WebApiShop\\WebApiShop\\nlog.config",
-              "RelativeDocumentMoniker": "WebApiShop\\nlog.config",
-              "ToolTip": "D:\\webAPI\\WebApiShop\\WebApiShop\\nlog.config",
-              "RelativeToolTip": "WebApiShop\\nlog.config",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-12-15T16:48:58.669Z",
-              "EditorCaption": ""
+              "DocumentIndex": 5,
+              "Title": "prompt.txt",
+              "DocumentMoniker": "D:\\webAPI\\WebApiShop\\prompt.txt",
+              "RelativeDocumentMoniker": "prompt.txt",
+              "ToolTip": "D:\\webAPI\\WebApiShop\\prompt.txt",
+              "RelativeToolTip": "prompt.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-12-24T20:12:58.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductRepositoryIntegrationTests.cs",
+              "DocumentMoniker": "D:\\webAPI\\WebApiShop\\Tests\\ProductRepositoryIntegrationTests.cs",
+              "RelativeDocumentMoniker": "Tests\\ProductRepositoryIntegrationTests.cs",
+              "ToolTip": "D:\\webAPI\\WebApiShop\\Tests\\ProductRepositoryIntegrationTests.cs",
+              "RelativeToolTip": "Tests\\ProductRepositoryIntegrationTests.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAD4v0EAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T20:05:50.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryRepositoryUnitTesting.cs",
+              "DocumentMoniker": "D:\\webAPI\\WebApiShop\\Tests\\CategoryRepositoryUnitTesting.cs",
+              "RelativeDocumentMoniker": "Tests\\CategoryRepositoryUnitTesting.cs",
+              "ToolTip": "D:\\webAPI\\WebApiShop\\Tests\\CategoryRepositoryUnitTesting.cs",
+              "RelativeToolTip": "Tests\\CategoryRepositoryUnitTesting.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T20:01:13.612Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "OrderRepositoryIntegrationTests.cs",
+              "DocumentMoniker": "D:\\webAPI\\WebApiShop\\Tests\\OrderRepositoryIntegrationTests.cs",
+              "RelativeDocumentMoniker": "Tests\\OrderRepositoryIntegrationTests.cs",
+              "ToolTip": "D:\\webAPI\\WebApiShop\\Tests\\OrderRepositoryIntegrationTests.cs",
+              "RelativeToolTip": "Tests\\OrderRepositoryIntegrationTests.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAgwBAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T19:37:44.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRepositoryIntegrationTests.cs",
+              "DocumentMoniker": "D:\\webAPI\\WebApiShop\\Tests\\UserRepositoryIntegrationTests.cs",
+              "RelativeDocumentMoniker": "Tests\\UserRepositoryIntegrationTests.cs",
+              "ToolTip": "D:\\webAPI\\WebApiShop\\Tests\\UserRepositoryIntegrationTests.cs",
+              "RelativeToolTip": "Tests\\UserRepositoryIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T19:28:16.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryRepositoryIntegratienTests.cs",
+              "DocumentMoniker": "D:\\webAPI\\WebApiShop\\Tests\\CategoryRepositoryIntegratienTests.cs",
+              "RelativeDocumentMoniker": "Tests\\CategoryRepositoryIntegratienTests.cs",
+              "ToolTip": "D:\\webAPI\\WebApiShop\\Tests\\CategoryRepositoryIntegratienTests.cs",
+              "RelativeToolTip": "Tests\\CategoryRepositoryIntegratienTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T18:29:36.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WebApiShopContext.cs",
+              "DocumentMoniker": "D:\\webAPI\\WebApiShop\\Repositories\\WebApiShopContext.cs",
+              "RelativeDocumentMoniker": "Repositories\\WebApiShopContext.cs",
+              "ToolTip": "D:\\webAPI\\WebApiShop\\Repositories\\WebApiShopContext.cs",
+              "RelativeToolTip": "Repositories\\WebApiShopContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T18:01:09.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataBaseFixture.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Downloads\\DataBaseFixture.cs",
+              "ToolTip": "C:\\Users\\user1\\Downloads\\DataBaseFixture.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvwsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T17:28:55.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\webAPI\\WebApiShop\\WebApiShop\\Program.cs",
               "RelativeDocumentMoniker": "WebApiShop\\Program.cs",
               "ToolTip": "D:\\webAPI\\WebApiShop\\WebApiShop\\Program.cs",
               "RelativeToolTip": "WebApiShop\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T16:26:06.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-15T16:26:06.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\webAPI\\WebApiShop\\WebApiShop\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "WebApiShop\\Controllers\\UsersController.cs",
@@ -60,8 +168,7 @@
               "RelativeToolTip": "WebApiShop\\Controllers\\UsersController.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAIwDwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T16:25:31.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-15T16:25:31.051Z"
             }
           ]
         }

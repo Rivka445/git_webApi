@@ -8,7 +8,6 @@ namespace Entities;
 
 public partial class Category
 {
-    [Required]
     public int Id { get; set; }
     [Required]
     public string Name { get; set; }

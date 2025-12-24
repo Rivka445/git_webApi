@@ -1,0 +1,19 @@
+
+
+תכתוב לי Unit Tasting עבור הקלאס המצורף כוללHappy /Unhappy path:
+
+תכתוב לי IntegratienTests עבור הקלאס המצרף Happy/ Unhappy path עבור הקובץ הבא:
+מצורפים הקבצים הנוספים:
+
+תכתוב לי IntegratienTests עבור הקלאס המצרף Happy/ Unhappy path עבור הקובץ
+
+כדי לבצע טסטים של ORDERS יש להוסיף לדטה בייס מוצרים וכן לקוחות
+
+מצורף ENTITT של PRODUCT וכן מצורפים הקבצים:
+ו USER,
+
+מצורף גם הקובץ CATEGORY כדי שיהיה ניתן להוסיף הזמנה שבתוכה מוצרים ששייכים לקטגוריות...
+
+צור לי UNTEGRATION TESTS (HAPPY/UNHAPPY PATH(עבור הקובץ הבא :
+
+צור לי TEST INTEGRATION לקובץ הבא מצורף ENTITY של PROFUCT ו CATEGORY
