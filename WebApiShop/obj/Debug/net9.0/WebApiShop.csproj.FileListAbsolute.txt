@@ -100,7 +100,6 @@ D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\DTOs.dll
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\DTOs.pdb
 D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\1aa4p0wbdf-p52pxjjiem.gz
-D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\co1eup8ul9-vj9y879s51.gz
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\nlog.config
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\MailKit.dll
@@ -109,3 +108,4 @@ D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\NLog.dll
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\NLog.Extensions.Logging.dll
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\NLog.MailKit.dll
 D:\webAPI\WebApiShop\WebApiShop\bin\Debug\net9.0\NLog.Web.AspNetCore.dll
+D:\webAPI\WebApiShop\WebApiShop\obj\Debug\net9.0\compressed\co1eup8ul9-qyr8ov8u95.gz

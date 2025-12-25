@@ -17,3 +17,7 @@
 צור לי UNTEGRATION TESTS (HAPPY/UNHAPPY PATH(עבור הקובץ הבא :
 
 צור לי TEST INTEGRATION לקובץ הבא מצורף ENTITY של PROFUCT ו CATEGORY
+
+תכתוב לי יוניט טסטים-UNIT TESTING כולל HAPPY/UNHAPPY עבור הקובץ המצרף וכן מצורף הENTITY
+
+תכין ללי על פי הקבצים המצורפי unit tests להזמנות שים לב לקשר לפרטי ההזמנה ולקשרים הנוספים תכין טסטים מסוג happy path & unhppy path

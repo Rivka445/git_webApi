@@ -45,7 +45,7 @@ namespace WebApiShop.Controllers
 
         // POST api/<UsersController>
         [HttpPost]
-        public async Task<ActionResult<UserDTO>> AddUser([FromBody] User newUser)
+        public async Task<ActionResult<UserDTO>> AddUser([FromBody] UserRegisterDTO newUser)
         {
             int passwordScore = _userPasswordService.CheckPassword(newUser.Password);
             if(passwordScore < 2)
@@ -56,9 +56,9 @@ namespace WebApiShop.Controllers
 
         // POST api/<UsersController>
         [HttpPost("login")]
-        public async Task<ActionResult<UserLoginDTO>> LogIn([FromBody] User existingUser)
+        public async Task<ActionResult<UserDTO>> LogIn([FromBody] UserLoginDTO existingUser)
         {
-            UserLoginDTO user = await _userService.LogIn(existingUser);
+            UserDTO user = await _userService.LogIn(existingUser);
             if(user == null)
                 return NotFound(existingUser);
             _logger.LogInformation($"login {user.Email} , {user.Password} !");
@@ -66,7 +66,7 @@ namespace WebApiShop.Controllers
         }
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] User updateUser)
+        public async Task<IActionResult> Put(int id, [FromBody] UserDTO updateUser)
         {
             int passwordScore = _userPasswordService.CheckPassword(updateUser.Password);
             if (passwordScore < 2)

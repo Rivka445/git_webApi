@@ -10,8 +10,9 @@ public partial class WebApiShopContext : DbContext
 {
     public WebApiShopContext(DbContextOptions<WebApiShopContext> options)
         : base(options)
-    { 
+    {
     }
+    public WebApiShopContext() { }
 
     public virtual DbSet<Category> Categories { get; set; }
 
@@ -130,7 +131,7 @@ public partial class WebApiShopContext : DbContext
         });
 
         OnModelCreatingPartial(modelBuilder);
-    }
 
+    }
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

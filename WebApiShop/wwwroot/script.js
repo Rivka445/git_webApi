@@ -4,7 +4,6 @@ const extrctDataFromInputUser = () => {
     const firstName = document.querySelector("#firstName").value
     const lastName = document.querySelector("#lastName").value
     const password = document.querySelector("#password").value
-    const id = 0
     if (email.indexOf("@") < 1 && userName) {
         alert("השם חייב להכיל @ באמצע")
         return ""
@@ -17,14 +16,13 @@ const extrctDataFromInputUser = () => {
         alert("לפחות אחד מהנתונים חסרים")
         return ""
     }    
-    return { id, email, firstName, lastName, password }
+    return { email, firstName, lastName, password }
 }
 
 const extrctDataFromInputLogIn = () => {
     const email = document.querySelector("#username").value
     const password = document.querySelector("#pasword").value
-    const id = 1,firstName= "aaa", lastName ="aaa"
-    return { id, email, firstName , lastName , password }
+    return { email, password }
 }
 
 async function registIn() {

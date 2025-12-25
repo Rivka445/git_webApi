@@ -18,15 +18,14 @@ namespace Tests
         {
             // Arrange
             var mockContext = new Mock<WebApiShopContext>();
-            var categoryRepository = new CategoryRepository(mockContext.Object);
             var categories = new List<Category>
             {
                 new Category {  Name = "Electronics" },
                 new Category {  Name = "Books" }
             };
-
             mockContext.Setup(ctx => ctx.Categories).ReturnsDbSet(categories);
-
+            var categoryRepository = new CategoryRepository(mockContext.Object);
+   
             // Act
             var result = await categoryRepository.GetCategories();
 

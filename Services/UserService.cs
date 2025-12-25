@@ -26,21 +26,24 @@ namespace Services
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
             return userDTO;
         }
-        public async Task<UserDTO> AddUser(User newUser)
+        public async Task<UserDTO> AddUser(UserRegisterDTO newUser)
         {
-            User user = await _userRepository.AddUser(newUser);
+            User userRegister= _mapper.Map<UserRegisterDTO, User>(newUser);
+            User user = await _userRepository.AddUser(userRegister);
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
             return userDTO;
         }
-        public async Task<UserLoginDTO> LogIn(User existUser)
+        public async Task<UserDTO> LogIn(UserLoginDTO existUser)
         {
-            User user = await _userRepository.LogIn(existUser);
-            UserLoginDTO userLoginDTO = _mapper.Map<User, UserLoginDTO>(user);
-            return userLoginDTO;
+            User loginUser= _mapper.Map<UserLoginDTO,User>(existUser);
+            User user = await _userRepository.LogIn(loginUser);
+            UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
+            return userDTO;
         }
-        public async Task UpdateUser(int id, User updateUser)
+        public async Task UpdateUser(int id, UserDTO updateUser)
         {
-            await _userRepository.UpdateUser(id, updateUser);
+            User user = _mapper.Map<UserDTO,User>(updateUser);
+            await _userRepository.UpdateUser(id, user);
         }
     }
 }

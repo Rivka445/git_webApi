@@ -344,7 +344,7 @@
     "Parameters": [
       {
         "Name": "newUser",
-        "Type": "Entities.User",
+        "Type": "DTOs.UserRegisterDTO",
         "IsRequired": true
       }
     ],
@@ -375,7 +375,7 @@
       },
       {
         "Name": "updateUser",
-        "Type": "Entities.User",
+        "Type": "DTOs.UserDTO",
         "IsRequired": true
       }
     ],
@@ -439,13 +439,13 @@
     "Parameters": [
       {
         "Name": "existingUser",
-        "Type": "Entities.User",
+        "Type": "DTOs.UserLoginDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DTOs.UserLoginDTO",
+        "Type": "DTOs.UserDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

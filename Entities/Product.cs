@@ -17,7 +17,7 @@ public partial class Product
     public string Description { get; set; }
     [Required]
     public double Price { get; set; }
-
+    [Required]
     public string ImgUrl { get; set; }
 
     public virtual Category Category { get; set; }

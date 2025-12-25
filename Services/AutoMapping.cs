@@ -14,12 +14,15 @@ namespace Services
         public AutoMapping() 
         {
             CreateMap<User,UserDTO>();
-            CreateMap<User,UserLoginDTO>();
+            CreateMap<UserDTO, User>();
+            CreateMap<UserLoginDTO,User>();
+            CreateMap<UserRegisterDTO, User>();
             CreateMap<Category, CategoryDTO>();
             CreateMap<OrderItem, OrderItemDTO>();
+            CreateMap<OrderItemDTO, OrderItem>();
             CreateMap<Order, OrderDTO>();
+            CreateMap<OrderPostDTO, Order>();
             CreateMap<Product, ProductDTO>();
-                                             
         }
     }
 }
