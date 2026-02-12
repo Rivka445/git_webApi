@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\tests\\testrepository\\unittest\\orderrepositryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\orderrepositryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\tests\\testrepository\\unittest\\modelrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\modelrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\tests\\testrepository\\unittest\\dressrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\dressrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\tests\\testrepository\\unittest\\categoryrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\categoryrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\dressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\dressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\tests\\testrepository\\unittest\\userrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\userrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\modelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\modelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\eventdressrentalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\eventdressrentalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\tests\\testservice\\categoryserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testservice\\categoryserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T13:00:48.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserRepositoryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\UserRepositoryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\UserRepositoryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\UserRepositoryUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\UserRepositoryUnitTests.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:33:50.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DressRepositoryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAiwIAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:12:54.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAUwBAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:34:49.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryRepositoryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:04:02.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ModelRepositoryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAKMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:15:33.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderRepositryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs*",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:29:02.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:33:01.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAmwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:28:23.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\OrderService.cs",
+              "RelativeToolTip": "Services\\OrderService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwDYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:31:14.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DressRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\DressRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\DressRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\DressRepository.cs",
+              "RelativeToolTip": "Repositories\\DressRepository.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAmwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:10:55.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ModelRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\ModelRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ModelRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\ModelRepository.cs",
+              "RelativeToolTip": "Repositories\\ModelRepository.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAqwDoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:24:15.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EventDressRentalContext.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\EventDressRentalContext.cs",
+              "RelativeDocumentMoniker": "Repositories\\EventDressRentalContext.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\EventDressRentalContext.cs",
+              "RelativeToolTip": "Repositories\\EventDressRentalContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:14:25.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CategoryServiceUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestService\\CategoryServiceUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestService\\CategoryServiceUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Tests\\TestService\\CategoryServiceUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestService\\CategoryServiceUnitTests.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T12:08:25.614Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

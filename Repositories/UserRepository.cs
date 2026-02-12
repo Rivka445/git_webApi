@@ -15,7 +15,7 @@ namespace Repositories
         }
         public async Task<User?> GetUserById(int id)
         {
-            return await _eventDressRentalContext.Users.FindAsync(id);
+            return await _eventDressRentalContext.Users.FirstOrDefaultAsync( u  => u.Id == id);
         }
         public async Task<List<User>> GetUsers()
         {

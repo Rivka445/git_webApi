@@ -1,170 +1,264 @@
-﻿//using Entities;
-//using Microsoft.EntityFrameworkCore;
-//using Moq;
-//using Moq.EntityFrameworkCore;
-//using Repositories;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using System.Collections.Generic;
-//using System.Threading.Tasks;
-//using Xunit;
+﻿using Entities;
+using Moq;
+using Repositories;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Moq.EntityFrameworkCore;
+using Xunit;
 
+namespace Tests
+{
+    public class UserRepositoryUnitTests
+    {
+        private Mock<EventDressRentalContext> GetMockContext()
+        {
+            var options = new DbContextOptionsBuilder<EventDressRentalContext>().Options;
+            return new Mock<EventDressRentalContext>(options);
+        }
 
-//namespace Tests
-//{
-//    public class UserRepositoryUnitTests
-//    {
+        #region GetUserById
+        [Fact]
+        public async Task GetUserById_ReturnsUser_WhenExists()
+        {
+            // Arrange
+            var mockContext = GetMockContext();
 
-//        [Fact]
-//        public async Task AddUser()
-//        {
-//            // Arrange
-//            var mockContext = new Mock<WebApiShopContext>();
-//            var newUser = new User
-//            {
-//                Email = "newuser@example.com",
-//                FirstName = "New",
-//                LastName = "User",
-//                Password = "securepassword"
-//            };
-//            var users= new List<User>() { newUser };
-//            mockContext.Setup(m => m.Users).ReturnsDbSet(users);
-//            var userRepository = new UserRipository(mockContext.Object);
+            var user = new User { Id = 1, FirstName = "Test" };
+            var users = new List<User> { user };
 
-//            // Act
-//            var result = await userRepository.AddUser(newUser);
+            mockContext.Setup(x => x.Users.FindAsync(It.IsAny<object[]>()))
+                       .ReturnsAsync((object[] ids) =>
+                       {
+                           var id = (int)ids[0];
+                           return users.FirstOrDefault(u => u.Id == id);
+                       });
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(newUser.Email, result.Email);
-//        }
+            mockContext.Setup(x => x.Users).ReturnsDbSet(users);
 
-//        [Fact]
-//        public async Task GetUserById_HappyPath()
-//        {
-//            // Arrange
-//            var mockContext = new Mock<WebApiShopContext>();
-//            var userRepository = new UserRipository(mockContext.Object);
-//            var user = new User
-//            {
-//                Id = 2,
-//                Email = "existinguser@example.com",
-//                FirstName = "Existing",
-//                LastName = "User",
-//                Password = "securepassword"
-//            };
+            var repository = new UserRepository(mockContext.Object);
 
-//            mockContext.Setup(m => m.Users.FindAsync(user.Id)).ReturnsAsync(user);
+            // Act
+            var result = await repository.GetUserById(1);
 
-//            // Act
-//            var result = await userRepository.GetUserById(2);
+            // Assert
+            Assert.NotNull(result); 
+            Assert.Equal(1, result!.Id);
+        }
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(user.Id, result.Id);
-//            Assert.Equal(user.Email, result.Email);
-//        }
+        [Fact]
+        public async Task GetUserById_ReturnsNull_WhenNotExists()
+        {
+            var mockContext = GetMockContext();
 
-//        [Fact]
-//        public async Task LogIn()
-//        {
-//            // Arrange
-//            var mockContext = new Mock<WebApiShopContext>();
-//            var user = new User
-//            {
-//                Email = "loginuser@example.com",
-//                FirstName = "Login",
-//                LastName = "User",
-//                Password = "securepassword"
-//            };
-//            var users = new List<User>() { user };
-//            mockContext.Setup(m => m.Users).ReturnsDbSet(users);
-//            var userRepository = new UserRipository(mockContext.Object);
+            mockContext.Setup(x => x.Users)
+                .ReturnsDbSet(new List<User>());
 
-//            var loginUser = new User { Email = "loginuser@example.com", Password = "securepassword" };
+            var repository = new UserRepository(mockContext.Object);
 
-//            // Act
-//            var result = await userRepository.LogIn(loginUser);
+            var result = await repository.GetUserById(99);
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(user.Email, result.Email);
-//        }
+            Assert.Null(result);
+        }
 
-//        [Fact]
-//        public async Task LogIn_InvalidCredentials()
-//        {
-//            // Arrange
-//            var mockContext = new Mock<WebApiShopContext>();
-//            var user = new User
-//            {
-//                Email = "loginuser@example.com",
-//                FirstName = "Login",
-//                LastName = "User",
-//                Password = "securepassword"
-//            };
-//            var users = new List<User>() { user };
-//            mockContext.Setup(m => m.Users).ReturnsDbSet(users);
-//            var userRepository = new UserRipository(mockContext.Object);
+        #endregion
 
-//            var loginUser = new User { Email = "wrong@example.com", Password = "wrongpassword" };
+        #region GetUsers
 
-//            // Act
-//            var result = await userRepository.LogIn(loginUser);
+        [Fact]
+        public async Task GetUsers_ReturnsAllUsers()
+        {
+            var mockContext = GetMockContext();
 
-//            // Assert
-//            Assert.Null(result);
-//        }
+            var users = new List<User>
+            {
+                new User { Id = 1, FirstName = "User1" },
+                new User { Id = 2, FirstName = "User2" }
+            };
 
+            mockContext.Setup(x => x.Users).ReturnsDbSet(users);
 
-//        [Fact]
-//        public async Task GetUsers()
-//        {
-//            // Arrange
-//            var mockContext = new Mock<WebApiShopContext>();
-//            var users = new List<User>
-//            {
-//            new User { Email = "user1@example.com", FirstName = "User1", LastName = "Test", Password = "password123" },
-//            new User {  Email = "user2@example.com", FirstName = "User2", LastName = "Test", Password = "password123" }
-//            };
+            var repository = new UserRepository(mockContext.Object);
 
-//            mockContext.Setup(m => m.Users).ReturnsDbSet(users);
-//            var userRepository = new UserRipository(mockContext.Object);
+            var result = await repository.GetUsers();
 
-//            // Act
-//            var result = await userRepository.GetUsers();
+            Assert.Equal(2, result.Count);
+            Assert.Contains(result, u => u.FirstName == "User1");
+        }
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(2, result.Count);
-//        }
+        [Fact]
+        public async Task GetUsers_ReturnsEmptyList_WhenNoUsers()
+        {
+            var mockContext = GetMockContext();
 
-//        [Fact]
-//        public async Task GetUserById_NotFound()
-//        {
-//            // Arrange
-//            var mockContext = new Mock<WebApiShopContext>();
-//            var userRepository = new UserRipository(mockContext.Object);
+            mockContext.Setup(x => x.Users)
+                .ReturnsDbSet(new List<User>());
 
-//            // No user with this ID exists
-//            var users = new List<User>
-//            {
-//            new User { Email = "user1@example.com", FirstName = "User1", LastName = "Test", Password = "password123" },
-//            new User {  Email = "user2@example.com", FirstName = "User2", LastName = "Test", Password = "password123" }
-//            };
+            var repository = new UserRepository(mockContext.Object);
 
-//            mockContext.Setup(m => m.Users).ReturnsDbSet(users);
+            var result = await repository.GetUsers();
 
-//            // Act
-//            var result = await userRepository.GetUserById(999); // Assuming 999 does not exist
+            Assert.Empty(result);
+        }
 
-//            // Assert
-//            Assert.Null(result);
-//        }
-//    }
+        #endregion
 
-//}
+        #region LogIn
 
+        [Fact]
+        public async Task LogIn_ReturnsUser_WhenCredentialsAreCorrect()
+        {
+            var mockContext = GetMockContext();
+
+            var users = new List<User>
+            {
+                new User { Id = 1, FirstName = "Israel", LastName = "Israeli", Password = "123" },
+                new User { Id = 2, FirstName = "Sara", LastName = "Levi", Password = "456" }
+            };
+
+            mockContext.Setup(x => x.Users).ReturnsDbSet(users);
+
+            var repository = new UserRepository(mockContext.Object);
+
+            var loginUser = new User
+            {
+                FirstName = "Israel",
+                LastName = "Israeli",
+                Password = "123"
+            };
+
+            var result = await repository.LogIn(loginUser);
+
+            Assert.NotNull(result);
+            Assert.Equal(1, result!.Id);
+        }
+
+        [Fact]
+        public async Task LogIn_ReturnsNull_WhenPasswordIncorrect()
+        {
+            var mockContext = GetMockContext();
+
+            var users = new List<User>
+            {
+                new User { Id = 1, FirstName = "Israel", LastName = "Israeli", Password = "123" }
+            };
+
+            mockContext.Setup(x => x.Users).ReturnsDbSet(users);
+
+            var repository = new UserRepository(mockContext.Object);
+
+            var loginUser = new User
+            {
+                FirstName = "Israel",
+                LastName = "Israeli",
+                Password = "wrong"
+            };
+
+            var result = await repository.LogIn(loginUser);
+
+            Assert.Null(result);
+        }
+
+        [Fact]
+        public async Task LogIn_ReturnsNull_WhenLastNameIncorrect()
+        {
+            var mockContext = GetMockContext();
+
+            var users = new List<User>
+            {
+                new User { Id = 1, FirstName = "Israel", LastName = "Israeli", Password = "123" }
+            };
+
+            mockContext.Setup(x => x.Users).ReturnsDbSet(users);
+
+            var repository = new UserRepository(mockContext.Object);
+
+            var loginUser = new User
+            {
+                FirstName = "Israel",
+                LastName = "Wrong",
+                Password = "123"
+            };
+
+            var result = await repository.LogIn(loginUser);
+
+            Assert.Null(result);
+        }
+
+        [Fact]
+        public async Task LogIn_ReturnsNull_WhenUserNotExists()
+        {
+            var mockContext = GetMockContext();
+
+            mockContext.Setup(x => x.Users)
+                .ReturnsDbSet(new List<User>());
+
+            var repository = new UserRepository(mockContext.Object);
+
+            var loginUser = new User
+            {
+                FirstName = "No",
+                LastName = "User",
+                Password = "123"
+            };
+
+            var result = await repository.LogIn(loginUser);
+
+            Assert.Null(result);
+        }
+
+        #endregion
+
+        #region AddUser
+
+        [Fact]
+        public async Task AddUser_CallsSaveChangesOnce()
+        {
+            var mockContext = GetMockContext();
+
+            mockContext.Setup(x => x.Users)
+                .ReturnsDbSet(new List<User>());
+
+            var repository = new UserRepository(mockContext.Object);
+
+            var newUser = new User
+            {
+                FirstName = "New",
+                LastName = "User",
+                Password = "789"
+            };
+
+            var result = await repository.AddUser(newUser);
+
+            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<System.Threading.CancellationToken>()), Times.Once);
+            Assert.Equal("New", result.FirstName);
+        }
+
+        #endregion
+
+        #region UpdateUser
+
+        [Fact]
+        public async Task UpdateUser_CallsUpdateAndSave()
+        {
+            var mockContext = GetMockContext();
+
+            mockContext.Setup(x => x.Users)
+                .ReturnsDbSet(new List<User>());
+
+            var repository = new UserRepository(mockContext.Object);
+
+            var user = new User { Id = 1, FirstName = "OldName" };
+
+            user.FirstName = "NewName";
+
+            await repository.UpdateUser(user);
+
+            mockContext.Verify(x => x.Users.Update(user), Times.Once);
+            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<System.Threading.CancellationToken>()), Times.Once);
+        }
+
+        #endregion
+    }
+}

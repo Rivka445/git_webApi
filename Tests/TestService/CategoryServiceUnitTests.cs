@@ -64,7 +64,7 @@ namespace Tests
             mockRepo.Setup(r => r.AddCategory(It.IsAny<Category>()))
                     .ReturnsAsync((Category c) =>
                     {
-                        c.Id = 1; // סימולציה של DB
+                        c.Id = 1; 
                         return c;
                     });
 

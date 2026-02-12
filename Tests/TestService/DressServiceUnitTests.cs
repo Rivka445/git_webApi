@@ -129,7 +129,7 @@ namespace Services.Tests
             _dressRepoMock.Setup(r => r.AddDress(It.IsAny<Dress>()))
                           .ReturnsAsync((Dress d) =>
                           {
-                              d.Id = 10; // סימולציה של DB
+                              d.Id = 10; 
                               return d;
                           });
 

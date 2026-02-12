@@ -1,4 +1,0 @@
-C:\Users\user1\Desktop\ריקי\שנה ב'\PROJECT\git_webApi\WebApiShop\wwwroot\page2.js
-C:\Users\user1\Desktop\ריקי\שנה ב'\PROJECT\git_webApi\WebApiShop\wwwroot\script.js
-C:\Users\user1\Desktop\ריקי\שנה ב'\PROJECT\git_webApi\WebApiShop\wwwroot\home.html
-C:\Users\user1\Desktop\ריקי\שנה ב'\PROJECT\git_webApi\WebApiShop\wwwroot\page2.html
