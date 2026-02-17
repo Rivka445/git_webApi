@@ -22,7 +22,7 @@ namespace Repositories
         public async Task<Order?> GetOrderById(int id)
         {
             return await _eventDressRentalContext.Orders
-                            .Include(o => o.OrderItems).ThenInclude(o => o.Dress)
+                            .Include(o => o.OrderItems).ThenInclude(o => o.Dress).ThenInclude(o => o.Model)
                             .Include(o => o.User)
                             .Include(o => o.Status)
                             .FirstOrDefaultAsync(o => o.Id == id);
@@ -30,7 +30,7 @@ namespace Repositories
         public async Task<List<Order>> GetAllOrders()
         {
             return await _eventDressRentalContext.Orders
-                            .Include(o => o.OrderItems).ThenInclude(oi => oi.Dress)
+                            .Include(o => o.OrderItems).ThenInclude(oi => oi.Dress).ThenInclude(o => o.Model)
                             .Include(o => o.User)
                             .Include(o => o.Status)
                             .OrderBy(o => o.OrderDate)
@@ -39,7 +39,7 @@ namespace Repositories
         public async Task<List<Order>> GetOrderByUserId(int id)
         {
             return await _eventDressRentalContext.Orders
-                            .Include(o => o.OrderItems).ThenInclude(oi => oi.Dress)
+                            .Include(o => o.OrderItems).ThenInclude(oi => oi.Dress).ThenInclude(o => o.Model)
                             .Include(o => o.User)
                             .Include(o => o.Status)
                             .Where(o => o.UserId == id)
@@ -49,8 +49,9 @@ namespace Repositories
         public async Task<List<Order>> GetOrdersByDate(DateOnly date)
         {
             return await _eventDressRentalContext.Orders
-                       .Include(o => o.OrderItems).ThenInclude(oi => oi.Dress)
+                       .Include(o => o.OrderItems).ThenInclude(oi => oi.Dress).ThenInclude(o => o.Model)
                        .Include(o => o.User)
+                       .Include(o => o.Status)
                        .Where(o => o.EventDate <= date && o.StatusId == 1)
                        .OrderBy(o => o.OrderDate)
                        .ToListAsync();
@@ -68,8 +69,11 @@ namespace Repositories
         }
         public async Task UpdateStatusOrder(Order order)
         {
-            _eventDressRentalContext.Orders.Update(order);
-            await _eventDressRentalContext.SaveChangesAsync();
+            await _eventDressRentalContext.Orders
+            .Where(d => d.Id == order.Id)
+            .ExecuteUpdateAsync(s => s
+            .SetProperty(d => d.StatusId, order.StatusId)
+            );
         }
     }
 }

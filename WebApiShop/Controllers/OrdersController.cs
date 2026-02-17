@@ -82,7 +82,7 @@ namespace EventDressRental.Controllers
 
         // PUT api/<OrdersController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateOrder(int id, [FromBody] OrderDTO updateOrder)
+        public async Task<IActionResult> UpdateOrder(int id, [FromBody] NewOrderDTO updateOrder)
         {
             if(!await _orderService.IsExistsOrderById(id))
                 return NotFound();
@@ -95,7 +95,7 @@ namespace EventDressRental.Controllers
                 return BadRequest("cant match dates");
 
             await _orderService.UpdateOrder(updateOrder, id);
-            return Ok(updateOrder);
+            return Ok();
         }
         // PUT api/<OrdersController>/status/5
         [HttpPut("status/{statusId}")]
@@ -103,10 +103,12 @@ namespace EventDressRental.Controllers
         {
             if (!_orderService.checkStatus(statusId))
                 return BadRequest("not status match");
+
             if (!await _orderService.IsExistsOrderById(orderDto.Id))
                 return NotFound();
+
             await _orderService.UpdateStatusOrder(orderDto, statusId);
-            return Ok(orderDto);
+            return Ok();
         }
 
     }

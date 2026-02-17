@@ -12,14 +12,12 @@ namespace DTOs
         [Required]
         int Id,
         [Required]
-        int ModelName,
+        string ModelName,
         [Required]
         string Size,
         [Required]
         int Price,
         string Note,
-        [Required]
-        bool IsActive,
         [Required]
         string ModelImgUrl
     );

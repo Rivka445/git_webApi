@@ -46,7 +46,7 @@ namespace EventDressRental.Controllers
         [HttpPost]
         public async Task<ActionResult<ModelDTO>> AddModel([FromBody] NewModelDTO newModel)
         {
-            if (!await _modelService.checkCategories(newModel.Categories))
+            if (!await _modelService.checkCategories(newModel.CategoriesId))
                 return BadRequest("the caterios not match");
             if (!_modelService.checkPrice(newModel.BasePrice))
                 return BadRequest("the price is not valid");
@@ -57,9 +57,9 @@ namespace EventDressRental.Controllers
 
         // PUT api/<ModelsController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateModel(int id, [FromBody] ModelDTO updateModel)
+        public async Task<IActionResult> UpdateModel(int id, [FromBody] NewModelDTO updateModel)
         {
-            if (!await _modelService.checkCategories(updateModel.Categories))
+            if (!await _modelService.checkCategories(updateModel.CategoriesId))
                 return BadRequest("the caterios not match");
             if (!_modelService.checkPrice(updateModel.BasePrice))
                 return BadRequest("Price must be more than 0.");
@@ -67,16 +67,16 @@ namespace EventDressRental.Controllers
                 return NotFound(id);
 
             await _modelService.UpdateModel(id, updateModel);
-            return Ok(updateModel); 
+            return Ok(); 
         }
 
         // DELETE api/<ModelsController>/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id, [FromBody] ModelDTO model)
+        public async Task<IActionResult> Delete(int id)
         {
             if (!await _modelService.IsExistsModelById(id))
                 return NotFound(id);
-            await _modelService.DeleteModel(id, model);
+            await _modelService.DeleteModel(id);
             return Ok();
         }
     }

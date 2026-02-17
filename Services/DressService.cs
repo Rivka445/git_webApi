@@ -33,7 +33,7 @@ namespace Services
         {
             return date > DateOnly.FromDateTime(DateTime.Now);
         }
-        public bool checkDressByDate(int id,DateOnly date)
+        public bool checkDressByDate(int id, DateOnly date)
         {
             return date > DateOnly.FromDateTime(DateTime.Now);
         }
@@ -70,16 +70,14 @@ namespace Services
             DressDTO dressDTO = _mapper.Map<Dress, DressDTO>(dress);
             return dressDTO;
         }
-        public async Task UpdateDress(int id, DressDTO updateDress)
+        public async Task UpdateDress(int id, NewDressDTO updateDress)
         {
-            Dress update = _mapper.Map<DressDTO, Dress>(updateDress);
+            Dress update = _mapper.Map<NewDressDTO, Dress>(updateDress);
             await _dressRepository.UpdateDress(update);
         }
-        public async Task DeleteDress(int id, DressDTO deleteDress)
+        public async Task DeleteDress(int id)
         {
-            Dress dress = _mapper.Map<DressDTO, Dress>(deleteDress);
-            dress.IsActive = false;
-            await _dressRepository.DeleteDress(dress);
+            await _dressRepository.DeleteDress(id);
         }
 
     }

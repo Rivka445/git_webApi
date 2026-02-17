@@ -18,20 +18,6 @@ namespace Repositories
         public async Task<bool> IsExistsDressById(int id)
         {
             return await _eventDressRentalContext.Dresses.AnyAsync(d => d.Id == id);
-        } 
-
-        public async Task<Dress?> GetDressById(int id)
-        {
-            return await _eventDressRentalContext.Dresses
-                .FirstOrDefaultAsync(d => d.Id == id && d.IsActive == true);
-        }
-        public async Task<List<string>> GetSizesByModelId(int modelId)
-        {
-            return await _eventDressRentalContext.Dresses
-                .Where(d => d.IsActive == true && d.ModelId == modelId)
-                .Select(d => d.Size)
-                .Distinct()
-                .ToListAsync();
         }
         public async Task<bool> IsDressAvailable(int id, DateOnly date)
         {
@@ -44,6 +30,20 @@ namespace Repositories
                     oi.Order.EventDate <= date.AddDays(7)))
                 .AnyAsync();
             return isDressAvailable;
+        }
+        public async Task<Dress?> GetDressById(int id)
+        {
+            return await _eventDressRentalContext.Dresses
+                .Include(d => d.Model)
+                .FirstOrDefaultAsync(d => d.Id == id && d.IsActive == true);
+        }
+        public async Task<List<string>> GetSizesByModelId(int modelId)
+        {
+            return await _eventDressRentalContext.Dresses
+                .Where(d => d.IsActive == true && d.ModelId == modelId)
+                .Select(d => d.Size)
+                .Distinct()
+                .ToListAsync();
         }
         public async Task<int> GetPriceById(int id)
         {
@@ -72,20 +72,15 @@ namespace Repositories
         } 
         public async Task UpdateDress(Dress dress)
         {
-            await _eventDressRentalContext.Dresses
-                .Where(d => d.Id == dress.Id)
-                .ExecuteUpdateAsync(s => s
-                    .SetProperty(d => d.Price, dress.Price)
-                    .SetProperty(d => d.Size, dress.Size)
-                    .SetProperty(d => d.Note, dress.Note)
-                );
+             _eventDressRentalContext.Dresses.Update(dress);
+            await _eventDressRentalContext.SaveChangesAsync();
         }
-        public async Task DeleteDress(Dress dress)
+        public async Task DeleteDress(int id)
         {
             await _eventDressRentalContext.Dresses
-                .Where(d => d.Id == dress.Id)
+                .Where(d => d.Id == id)
                 .ExecuteUpdateAsync(s => s
-                    .SetProperty(d => d.IsActive, dress.IsActive)
+                    .SetProperty(d => d.IsActive, false)
                 );
         }
     }

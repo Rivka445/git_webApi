@@ -20,6 +20,6 @@ namespace DTOs
         [Required]
         string Color,
         [Required]
-        List<NewCategoryDTO> Categories 
+        List<int> CategoriesId
     );
 }

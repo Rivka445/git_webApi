@@ -22,6 +22,8 @@ namespace Repositories
         public async Task<Model?> GetModelById(int id)
         {
             return await _eventDressRentalContext.Models
+                .Include(m => m.Categories)
+                .Include(m => m.Dresses)
                 .FirstOrDefaultAsync(m => m.Id == id && m.IsActive == true);
         }
         public async Task<(List<Model> Items, int TotalCount)> GetModels(string? description, int? minPrice, int? maxPrice,
@@ -45,7 +47,6 @@ namespace Repositories
         }
         public async Task<Model> AddModel(Model model)
         {
-            model.IsActive = true;
             await _eventDressRentalContext.Models.AddAsync(model);
             foreach (var category in model.Categories)
             {
@@ -56,30 +57,29 @@ namespace Repositories
         }
         public async Task UpdateModel(Model model)
         {
-            var existing = await _eventDressRentalContext.Models
-             .Include(m => m.Categories)
-             .FirstOrDefaultAsync(m => m.Id == model.Id);
-            existing.BasePrice = model.BasePrice;
-            existing.Name = model.Name;
-            existing.Description = model.Description;
-            existing.ImgUrl = model.ImgUrl;
-            existing.Color = model.Color;
-            existing.Categories.Clear();
+            var existingModel = await _eventDressRentalContext.Models
+                .Include(m => m.Categories)
+                .FirstOrDefaultAsync(m => m.Id == model.Id);
+            existingModel.Name = model.Name;
+            existingModel.Description = model.Description;
+            existingModel.ImgUrl = model.ImgUrl;
+            existingModel.BasePrice = model.BasePrice;
+            existingModel.Color = model.Color;
+            existingModel.IsActive = model.IsActive; existingModel.Categories.Clear();
             foreach (var category in model.Categories)
             {
-                var attachedCategory = await _eventDressRentalContext.Categories.FindAsync(category.Id);
-                if (attachedCategory != null)
-                    existing.Categories.Add(attachedCategory);
+                var existingCategory = await _eventDressRentalContext.Categories
+                    .FindAsync(category.Id);
+                existingModel.Categories.Add(existingCategory);
             }
             await _eventDressRentalContext.SaveChangesAsync();
         }
-        public async Task DeleteModel(Model model)
+        public async Task DeleteModel(int id)
         {
-        
             await _eventDressRentalContext.Models
-            .Where(d => d.Id == model.Id)
+            .Where(d => d.Id == id)
             .ExecuteUpdateAsync(s => s
-            .SetProperty(d => d.IsActive, model.IsActive)
+            .SetProperty(d => d.IsActive, false)
             );
         }
     }

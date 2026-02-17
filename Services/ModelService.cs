@@ -27,13 +27,18 @@ namespace Services
         {
             return await _modelRepository.IsExistsModelById(id);
         }
-        public async Task<bool> checkCategories(List<NewCategoryDTO> categories)
+        public async Task<bool> checkCategories(List<int> categories)
         {
-            foreach (var category in categories)
-            {
-                if(!await _categoryService.IsExistsCategoryById(category.Id))
+            for (int i = 0; i < categories.Count(); i++) {
+                if (!await _categoryService.IsExistsCategoryById(categories[i]))
                     return false;
             }
+
+            //foreach (var category in categories)
+            //{
+            //    if(!await _categoryService.IsExistsCategoryById(category.Id))
+            //        return false;
+            //}
             return true;
         }
         public bool checkPrice(int price)
@@ -74,25 +79,27 @@ namespace Services
         public async Task<ModelDTO> AddModel(NewModelDTO newModel)
         {
             Model addedModel = _mapper.Map<NewModelDTO, Model>(newModel);
+            addedModel.IsActive = true;
             Model model = await _modelRepository.AddModel(addedModel);
             ModelDTO modelDTO = _mapper.Map<Model, ModelDTO>(model);
             return modelDTO;
         }
-        public async Task UpdateModel(int id, ModelDTO updateModel)
+        public async Task UpdateModel(int id, NewModelDTO updateModel)
         {
-            Model update = _mapper.Map<ModelDTO, Model>(updateModel);
+            Model update = _mapper.Map<NewModelDTO, Model>(updateModel);
+            update.Id = id;
+            update.IsActive = true;
             await _modelRepository.UpdateModel(update);
         }
-        public async Task DeleteModel(int id, ModelDTO deleteModel)
+        public async Task DeleteModel(int id)
         {
-            Model model = _mapper.Map<ModelDTO, Model>(deleteModel);
-            model.IsActive = false;
+            Model model = await _modelRepository.GetModelById(id);
             foreach (var dress in model.Dresses)
             {
                 DressDTO dressDTO = _mapper.Map<Dress, DressDTO>(dress);
-                await _dressService.DeleteDress(dress.Id, dressDTO);
+                await _dressService.DeleteDress(dress.Id);
             }
-            await _modelRepository.DeleteModel(model);
+            await _modelRepository.DeleteModel(id);
         }
     }
 }

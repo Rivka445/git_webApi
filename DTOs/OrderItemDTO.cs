@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 
 namespace DTOs
 {
-    public record OrderItemDTO
-    (
+    public class OrderItemDTO
+    {
+        public OrderItemDTO() { }
+
         [Required]
-        int DressId,
+        public int DressId { get; set; }
+
         [Required]
-        int DressPrice
-    );
+        public int DressPrice { get; set; }
+
+        [Required]
+        public string ModelName { get; set; }
+    }
+    
 }

@@ -30,17 +30,17 @@ namespace EventDressRental.Controllers
 
         // GET api/<CategoriesController>/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<NewCategoryDTO>> GetCategoryById(int id)
+        public async Task<ActionResult<CategoryDTO>> GetCategoryById(int id)
         {
-            NewCategoryDTO categoryDTO = await _categoryService.GetCategoryId(id);
+            CategoryDTO categoryDTO = await _categoryService.GetCategoryId(id);
             return categoryDTO != null ? Ok(categoryDTO) : NotFound();
         }
 
         // POST api/<CategoriesController>
         [HttpPost]
-        public async Task<ActionResult<NewCategoryDTO>> AddCategory([FromBody] CategoryDTO newCategory)
+        public async Task<ActionResult<CategoryDTO>> AddCategory([FromBody] NewCategoryDTO newCategory)
         {
-            NewCategoryDTO category = await _categoryService.AddCategory(newCategory);
+            CategoryDTO category = await _categoryService.AddCategory(newCategory);
             return CreatedAtAction(nameof(GetCategoryById), new { Id = category.Id }, category);
         }
 

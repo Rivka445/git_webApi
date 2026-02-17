@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace DTOs
 {
-    public record OrderDTO
+    public class OrderDTO
     {
         [Required]
         public int Id { get; init; }

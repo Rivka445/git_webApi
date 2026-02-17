@@ -7,7 +7,7 @@ namespace Services
     {
         Task<bool> IsExistsCategoryById(int id);
         Task<List<CategoryDTO>> GetCategories();
-        Task<NewCategoryDTO> GetCategoryId(int id);
-        Task<NewCategoryDTO> AddCategory(CategoryDTO newCategory);
+        Task<CategoryDTO> GetCategoryId(int id);
+        Task<CategoryDTO> AddCategory(NewCategoryDTO newCategory);
     }
 }

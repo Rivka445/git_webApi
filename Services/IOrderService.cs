@@ -17,7 +17,7 @@ namespace Services
         Task<OrderDTO> GetOrderById(int id);
         Task<List<OrderDTO>> GetOrderByUserId(int userId);
         Task<List<OrderDTO>> GetOrdersByDate(DateOnly date);
-        Task UpdateOrder(OrderDTO orderDto, int id);
+        Task UpdateOrder(NewOrderDTO orderDto, int id);
         Task UpdateStatusOrder(OrderDTO orderDto, int statusId);
     }
 }

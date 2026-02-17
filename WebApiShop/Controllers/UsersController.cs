@@ -73,7 +73,7 @@ namespace EventDressRental.Controllers
             if (passwordScore < 2)
                 return BadRequest("Password is not strong enough");
             await _userService.UpdateUser(id, updateUser);
-            return Ok(updateUser);
+            return Ok();
         }
     }
 }

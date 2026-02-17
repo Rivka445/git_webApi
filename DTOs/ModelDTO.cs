@@ -24,6 +24,6 @@ namespace DTOs
         [Required]
         bool IsActive,
         [Required]
-        List<NewCategoryDTO> Categories
+        List<CategoryDTO> Categories
     );
 }

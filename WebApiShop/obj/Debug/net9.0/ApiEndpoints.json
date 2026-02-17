@@ -29,13 +29,13 @@
     "Parameters": [
       {
         "Name": "newCategory",
-        "Type": "DTOs.CategoryDTO",
+        "Type": "DTOs.NewCategoryDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DTOs.NewCategoryDTO",
+        "Type": "DTOs.CategoryDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DTOs.NewCategoryDTO",
+        "Type": "DTOs.CategoryDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -138,7 +138,7 @@
       },
       {
         "Name": "updateDress",
-        "Type": "DTOs.DressDTO",
+        "Type": "DTOs.NewDressDTO",
         "IsRequired": true
       }
     ],
@@ -155,11 +155,6 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dress",
-        "Type": "DTOs.DressDTO",
         "IsRequired": true
       }
     ],
@@ -350,7 +345,7 @@
       },
       {
         "Name": "updateModel",
-        "Type": "DTOs.ModelDTO",
+        "Type": "DTOs.NewModelDTO",
         "IsRequired": true
       }
     ],
@@ -367,11 +362,6 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "model",
-        "Type": "DTOs.ModelDTO",
         "IsRequired": true
       }
     ],
@@ -464,7 +454,7 @@
       },
       {
         "Name": "updateOrder",
-        "Type": "DTOs.OrderDTO",
+        "Type": "DTOs.NewOrderDTO",
         "IsRequired": true
       }
     ],

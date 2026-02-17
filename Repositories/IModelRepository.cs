@@ -1,5 +1,4 @@
-﻿
-using Entities;
+﻿using Entities;
 
 namespace Repositories
 {
@@ -13,6 +12,6 @@ namespace Repositories
             string? color, int position = 1, int skip = 8);
         Task<Model> AddModel(Model model);
         Task UpdateModel(Model model);
-        Task DeleteModel(Model model);
+        Task DeleteModel(int id);
     }
 }
