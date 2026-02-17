@@ -8,10 +8,13 @@ namespace Repositories
     public class UserRepository : IUserRepository
     {
         private readonly EventDressRentalContext _eventDressRentalContext;
-
         public UserRepository(EventDressRentalContext eventDressRentalContext)
         {
             _eventDressRentalContext = eventDressRentalContext;
+        }
+        public async Task<bool> IsExistsUserById(int id)
+        {
+            return await _eventDressRentalContext.Users.AnyAsync(u => u.Id == id);
         }
         public async Task<User?> GetUserById(int id)
         {

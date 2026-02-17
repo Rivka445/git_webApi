@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "WebApiShop.Controllers.CategoriesController",
+    "ContainingType": "EventDressRental.Controllers.CategoriesController",
     "Method": "Get",
     "RelativePath": "api/Categories",
     "HttpMethod": "GET",
@@ -20,8 +20,34 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.CategoriesController",
-    "Method": "Get",
+    "ContainingType": "EventDressRental.Controllers.CategoriesController",
+    "Method": "AddCategory",
+    "RelativePath": "api/Categories",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newCategory",
+        "Type": "DTOs.CategoryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DTOs.NewCategoryDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.CategoriesController",
+    "Method": "GetCategoryById",
     "RelativePath": "api/Categories/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -35,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "DTOs.NewCategoryDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -46,42 +72,22 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.OrdersController",
-    "Method": "Get",
-    "RelativePath": "api/Orders",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApiShop.Controllers.OrdersController",
-    "Method": "Post",
-    "RelativePath": "api/Orders",
+    "ContainingType": "EventDressRental.Controllers.DressesController",
+    "Method": "AddDress",
+    "RelativePath": "api/Dresses",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "order",
-        "Type": "DTOs.OrderPostDTO",
+        "Name": "newDress",
+        "Type": "DTOs.NewDressDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DTOs.OrderDTO",
+        "Type": "DTOs.DressDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -92,9 +98,9 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.OrdersController",
-    "Method": "GetId",
-    "RelativePath": "api/Orders/{id}",
+    "ContainingType": "EventDressRental.Controllers.DressesController",
+    "Method": "GetDressById",
+    "RelativePath": "api/Dresses/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -107,7 +113,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DTOs.OrderDTO",
+        "Type": "DTOs.DressDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -118,9 +124,9 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.OrdersController",
-    "Method": "Put",
-    "RelativePath": "api/Orders/{id}",
+    "ContainingType": "EventDressRental.Controllers.DressesController",
+    "Method": "UpdateDress",
+    "RelativePath": "api/Dresses/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -131,23 +137,17 @@
         "IsRequired": true
       },
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "updateDress",
+        "Type": "DTOs.DressDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiShop.Controllers.OrdersController",
+    "ContainingType": "EventDressRental.Controllers.DressesController",
     "Method": "Delete",
-    "RelativePath": "api/Orders/{id}",
+    "RelativePath": "api/Dresses/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -156,20 +156,81 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "dress",
+        "Type": "DTOs.DressDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.DressesController",
+    "Method": "GetCountByModelIdAndSizeForDate",
+    "RelativePath": "api/Dresses/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "modelId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.ProductsController",
+    "ContainingType": "EventDressRental.Controllers.DressesController",
+    "Method": "GetSizesByModelId",
+    "RelativePath": "api/Dresses/sizes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "modelId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.ModelsController",
     "Method": "Get",
-    "RelativePath": "api/Products",
+    "RelativePath": "api/Models",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -195,6 +256,11 @@
         "IsRequired": false
       },
       {
+        "Name": "color",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "position",
         "Type": "System.Int32",
         "IsRequired": false
@@ -207,7 +273,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Services.FinalProducts, Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Services.FinalModels, Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -218,31 +284,35 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.ProductsController",
-    "Method": "Post",
-    "RelativePath": "api/Products",
+    "ContainingType": "EventDressRental.Controllers.ModelsController",
+    "Method": "AddModel",
+    "RelativePath": "api/Models",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "newModel",
+        "Type": "DTOs.NewModelDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "DTOs.ModelDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.ProductsController",
-    "Method": "GetById",
-    "RelativePath": "api/Products/{id}",
+    "ContainingType": "EventDressRental.Controllers.ModelsController",
+    "Method": "GetModelById",
+    "RelativePath": "api/Models/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -255,7 +325,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DTOs.ProductDTO",
+        "Type": "DTOs.ModelDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -266,9 +336,9 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.ProductsController",
-    "Method": "Put",
-    "RelativePath": "api/Products/{id}",
+    "ContainingType": "EventDressRental.Controllers.ModelsController",
+    "Method": "UpdateModel",
+    "RelativePath": "api/Models/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -279,24 +349,85 @@
         "IsRequired": true
       },
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "updateModel",
+        "Type": "DTOs.ModelDTO",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.ModelsController",
+    "Method": "Delete",
+    "RelativePath": "api/Models/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "DTOs.ModelDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.OrdersController",
+    "Method": "Get",
+    "RelativePath": "api/Orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.Collections.Generic.List\u00601[[DTOs.OrderDTO, DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.ProductsController",
-    "Method": "Delete",
-    "RelativePath": "api/Products/{id}",
-    "HttpMethod": "DELETE",
+    "ContainingType": "EventDressRental.Controllers.OrdersController",
+    "Method": "AddOrder",
+    "RelativePath": "api/Orders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newOrder",
+        "Type": "DTOs.NewOrderDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DTOs.OrderDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.OrdersController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/Orders/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -308,14 +439,112 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "DTOs.OrderDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.UsersController",
+    "ContainingType": "EventDressRental.Controllers.OrdersController",
+    "Method": "UpdateOrder",
+    "RelativePath": "api/Orders/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateOrder",
+        "Type": "DTOs.OrderDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.OrdersController",
+    "Method": "UpdateStatusOrder",
+    "RelativePath": "api/Orders/status/{statusId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderDto",
+        "Type": "DTOs.OrderDTO",
+        "IsRequired": true
+      },
+      {
+        "Name": "statusId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.OrdersController",
+    "Method": "GetUnpackedOrdersUntilDate",
+    "RelativePath": "api/Orders/unpacked",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[DTOs.OrderDTO, DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.OrdersController",
+    "Method": "GetOrderByUserId",
+    "RelativePath": "api/Orders/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[DTOs.OrderDTO, DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.UsersController",
     "Method": "Get",
     "RelativePath": "api/Users",
     "HttpMethod": "GET",
@@ -335,7 +564,7 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.UsersController",
+    "ContainingType": "EventDressRental.Controllers.UsersController",
     "Method": "AddUser",
     "RelativePath": "api/Users",
     "HttpMethod": "POST",
@@ -361,52 +590,9 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.UsersController",
-    "Method": "Put",
+    "ContainingType": "EventDressRental.Controllers.UsersController",
+    "Method": "GetUserId",
     "RelativePath": "api/Users/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "updateUser",
-        "Type": "DTOs.UserDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApiShop.Controllers.UsersController",
-    "Method": "Delete",
-    "RelativePath": "api/Users/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApiShop.Controllers.UsersController",
-    "Method": "GetId",
-    "RelativePath": "api/Users/{Id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -430,7 +616,28 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.UsersController",
+    "ContainingType": "EventDressRental.Controllers.UsersController",
+    "Method": "Put",
+    "RelativePath": "api/Users/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateUser",
+        "Type": "DTOs.UserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.UsersController",
     "Method": "LogIn",
     "RelativePath": "api/Users/login",
     "HttpMethod": "POST",
@@ -456,27 +663,7 @@
     ]
   },
   {
-    "ContainingType": "WebApiShop.Controllers.UsersPasswordController",
-    "Method": "Get",
-    "RelativePath": "api/UsersPassword",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApiShop.Controllers.UsersPasswordController",
+    "ContainingType": "EventDressRental.Controllers.UsersPasswordController",
     "Method": "CheckPassword",
     "RelativePath": "api/UsersPassword",
     "HttpMethod": "POST",
@@ -492,37 +679,6 @@
     "ReturnTypes": [
       {
         "Type": "System.Int32",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApiShop.Controllers.UsersPasswordController",
-    "Method": "Get",
-    "RelativePath": "api/UsersPassword/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "password",
-        "Type": "Entities.UserPassword",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",

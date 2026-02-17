@@ -14,20 +14,91 @@ namespace Services
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IUserService _userService;
+        private readonly IDressService _dressService;
         private readonly IMapper _mapper;
 
-        public OrderService(IOrderRepository orderRepository, IMapper mapper, IUserService userService )
+        public OrderService(IOrderRepository orderRepository, IMapper mapper, IUserService userService, IDressService dressService)
         {
             _userService = userService;
             _mapper = mapper;
             _orderRepository = orderRepository;
             _userService = userService;
+            _dressService = dressService;
+        }
+        public async Task<bool> IsExistsOrderById(int id)
+        {
+            return await _orderRepository.IsExistsOrderById(id);
+        }
+        public async Task<bool> checkOrderItems(NewOrderDTO newOrder)
+        {
+            Order postOrder = _mapper.Map<NewOrderDTO, Order>(newOrder);
+            foreach (var item in postOrder.OrderItems)
+            {
+                if (await _dressService.GetDressById(item.DressId) == null)
+                {
+                    return false;
+                }
+                bool isValid = await _dressService.IsDressAvailable(item.DressId, postOrder.EventDate);
+                if (!isValid)
+                      return false;
+            }
+            return true;   
+        }
+        public async Task<bool> checkOrderItems(OrderDTO newOrder)
+        {
+            Order postOrder = _mapper.Map<OrderDTO, Order>(newOrder);
+            foreach (var item in postOrder.OrderItems)
+            {
+                if (await _dressService.GetDressById(item.DressId) == null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public bool checkStatus(int status)
+        {
+            return (status >= 1 && status <= 4);
+        }
+        public bool checkDate(DateOnly date)
+        {
+            return date > DateOnly.FromDateTime(DateTime.Now);
+        }
+        public bool checkDate(DateOnly orderDate, DateOnly eventDate)
+        {
+            return orderDate >= DateOnly.FromDateTime(DateTime.Now) && eventDate >= DateOnly.FromDateTime(DateTime.Now);
+        }
+        public async Task<bool> checkPrice(NewOrderDTO order)
+        {
+            Order postOrder = _mapper.Map<NewOrderDTO, Order>(order);
+            int sum = 0;
+            foreach (var item in postOrder.OrderItems)
+            {
+                int dressSum  = await _dressService.GetPriceById(item.DressId);
+                sum += dressSum;
+            }
+            if (sum != postOrder.FinalPrice)
+                return false;
+            return true;
+        }
+        public async Task <bool> checkPrice(OrderDTO order)
+        {
+            Order postOrder = _mapper.Map<OrderDTO, Order>(order);
+            int sum = 0;
+            foreach (var item in postOrder.OrderItems)
+            {
+                int dressSum = await _dressService.GetPriceById(item.DressId);
+                sum += dressSum;
+            }
+            if (sum != postOrder.FinalPrice)
+                return false;
+            return true;
         }
         public async Task<OrderDTO> GetOrderById(int id)
         {
             Order? order = await _orderRepository.GetOrderById(id);
             if (order == null)
-                throw new KeyNotFoundException($"Order with ID {id} not found.");
+                return null;
             OrderDTO orderDTO = _mapper.Map<Order, OrderDTO>(order);
             return orderDTO;
         }
@@ -39,64 +110,32 @@ namespace Services
         }
         public async Task<List<OrderDTO>> GetOrderByUserId(int userId)
         {
-            if(await _userService.GetUserById(userId) == null)
-                throw new KeyNotFoundException($"User with ID {userId} not found.");
-
             var orders = await _orderRepository.GetOrderByUserId(userId);
-
-            if (orders == null || orders.Count == 0)
-                throw new InvalidOperationException("No orders found for this user.");
-
             List<OrderDTO> ordersDTO = _mapper.Map<List<Order>, List<OrderDTO>>(orders);
             return ordersDTO;
         }
         public async Task<List<OrderDTO>> GetOrdersByDate(DateOnly date)
         {
-            if (date < DateOnly.FromDateTime(DateTime.Now))
-                throw new ArgumentException("Date cannot be in the past.");
-
             List<Order> orders = await _orderRepository.GetOrdersByDate(date);
             List<OrderDTO> ordersDTO = _mapper.Map<List<Order>, List<OrderDTO>>(orders);
             return ordersDTO;
         }
         public async Task<OrderDTO> AddOrder(NewOrderDTO newOrder)
         {
-            if (newOrder == null)
-                throw new ArgumentNullException(nameof(newOrder));
-
             Order postOrder = _mapper.Map<NewOrderDTO, Order>(newOrder);
-            int sum = 0;
-            foreach (var item in postOrder.OrderItems)
-            {
-                sum += item.Dress.Price;
-            }
-            if (sum != postOrder.FinalPrice)
-                throw new InvalidOperationException("Final price does not match the sum of items.");
-
-            if (postOrder.OrderDate < DateOnly.FromDateTime(DateTime.Now) || postOrder.EventDate < DateOnly.FromDateTime(DateTime.Now))
-                throw new ArgumentException("Order date or event date cannot be in the past.");
-
+            postOrder.StatusId = 1;
             Order order = await _orderRepository.AddOrder(postOrder);
             OrderDTO orderDTO = _mapper.Map<Order, OrderDTO>(order);
             return orderDTO;
         }
-        public async Task UpdateOrder(Order order, int id)
+        public async Task UpdateOrder(OrderDTO orderDto, int id)
         {
-            if (order == null)
-                throw new ArgumentNullException(nameof(order));
-
-            if (await _orderRepository.GetOrderById(id) == null)
-                throw new KeyNotFoundException($"Order with ID {id} not found.");
-
+            Order order = _mapper.Map<OrderDTO, Order>(orderDto);
             await _orderRepository.UpdateOrder(order);
         }
-        public async Task UpdateStatusOrder(Order order, int statusId)
+        public async Task UpdateStatusOrder(OrderDTO orderDto, int statusId)
         {
-            if (order == null)
-                throw new ArgumentNullException(nameof(order));
-            if (statusId < 1 || statusId > 4)
-                throw new ArgumentOutOfRangeException(nameof(statusId), "Status ID must be between 1 and 4.");
-
+            Order order = _mapper.Map<OrderDTO, Order>(orderDto);
             order.StatusId = statusId;
             await _orderRepository.UpdateStatusOrder(order);
         }

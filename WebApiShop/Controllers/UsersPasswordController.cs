@@ -19,20 +19,7 @@ namespace EventDressRental.Controllers
         {
             _userPasswordService = userPasswordService;
         }
-        // GET: api/<UsersPasswordController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<UsersPasswordController>/5
-        [HttpGet("{id}")]
-        public string Get(UserPassword password)
-        {
-            return "value";                                        
-        }
-        
         // POST api/<UsersPasswordController>
         [HttpPost]
         public ActionResult<int> CheckPassword([FromBody] UserPassword password)

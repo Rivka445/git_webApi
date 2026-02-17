@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DTOs;
 using Entities;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,80 +15,68 @@ namespace Services
     public class DressService : IDressService
     {
         private readonly IDressRepository _dressRepository;
-        private readonly IModelService _modelService;
         private readonly IMapper _mapper;
-        public DressService(IDressRepository dressRepository, IMapper mapper, IModelService modelService)
+        public DressService(IDressRepository dressRepository, IMapper mapper)
         {
             _mapper = mapper;
             _dressRepository = dressRepository;
-            _modelService = modelService;
+        }
+        public async Task<bool> IsExistsDressById(int id)
+        {
+            return await _dressRepository.IsExistsDressById(id);
+        }
+        public bool checkPrice(int price)
+        {
+            return price > 0;
+        }
+        public bool checkDate(DateOnly date)
+        {
+            return date > DateOnly.FromDateTime(DateTime.Now);
+        }
+        public bool checkDressByDate(int id,DateOnly date)
+        {
+            return date > DateOnly.FromDateTime(DateTime.Now);
+        }
+        public async Task<int> GetPriceById(int id)
+        {
+            return await _dressRepository.GetPriceById(id);
         }
         public async Task<DressDTO> GetDressById(int id)
         {
             Dress? dress = await _dressRepository.GetDressById(id);
-
             if (dress == null)
-                throw new Exception($"dress with ID {id} not found.");
-
+                return null;
             DressDTO dressDTO = _mapper.Map<Dress, DressDTO>(dress);
             return dressDTO;
         }
         public async Task<List<string>> GetSizesByModelId(int modelId)
         {
-            if (_modelService.GetModelById(modelId) == null)
-                throw new ArgumentException($"Model with ID {modelId} not found.");
-
             return await _dressRepository.GetSizesByModelId(modelId);
         }
+        public async Task<bool> IsDressAvailable(int id, DateOnly date)
+        {
+            return await _dressRepository.IsDressAvailable(id, date);
+        }
+
         public async Task<int> GetCountByModelIdAndSizeForDate(int modelId, string size, DateOnly date)
         {
-            if (await _modelService.GetModelById(modelId) == null)
-                throw new ArgumentException($"Model with ID {modelId} not found.");
-
-            if (date < DateOnly.FromDateTime(DateTime.Now))
-                throw new ArgumentException("The date cannot be in the past.");
-
             return await _dressRepository.GetCountByModelIdAndSizeForDate(modelId, size, date);
         }
         public async Task<DressDTO> AddDress(NewDressDTO newDress)
         {
-            if (newDress == null)
-                throw new ArgumentNullException(nameof(newDress), "NewDressDTO cannot be null.");
-
-            if (await _modelService.GetModelById(newDress.ModelId) == null)
-                throw new ArgumentException($"Model with ID {newDress.ModelId} not found.");
-
-            if (newDress.Price <= 0)
-                throw new ArgumentException("Price must be greater than 0.");
-
             Dress addedDress = _mapper.Map<NewDressDTO, Dress>(newDress);
+            addedDress.IsActive = true;
             Dress dress = await _dressRepository.AddDress(addedDress);
             DressDTO dressDTO = _mapper.Map<Dress, DressDTO>(dress);
             return dressDTO;
         }
         public async Task UpdateDress(int id, DressDTO updateDress)
         {
-            if (updateDress == null)
-                throw new ArgumentNullException(nameof(updateDress));
-
-            if (await _dressRepository.GetDressById(id) == null)
-                throw new KeyNotFoundException($"Dress with ID {id} not found.");
-
-            if (updateDress.Price <= 0)
-                throw new ArgumentException("Price must be greater than 0.");
-
             Dress update = _mapper.Map<DressDTO, Dress>(updateDress);
-
             await _dressRepository.UpdateDress(update);
         }
         public async Task DeleteDress(int id, DressDTO deleteDress)
         {
-            if (!deleteDress.IsActive)
-                throw new InvalidOperationException("Dress is already inactive.");
-
-            if (await _dressRepository.GetDressById(id) == null)
-                throw new KeyNotFoundException($"Dress with ID {id} not found.");
-
             Dress dress = _mapper.Map<DressDTO, Dress>(deleteDress);
             dress.IsActive = false;
             await _dressRepository.DeleteDress(dress);

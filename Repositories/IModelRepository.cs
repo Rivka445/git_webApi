@@ -5,6 +5,7 @@ namespace Repositories
 {
     public interface IModelRepository
     {
+        Task<bool> IsExistsModelById(int id);
         Task<Model?> GetModelById(int id);
         Task<(List<Model> Items, int TotalCount)> GetModels(
             string? description, int? minPrice, 

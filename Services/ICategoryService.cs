@@ -5,7 +5,9 @@ namespace Services
 {
     public interface ICategoryService
     {
+        Task<bool> IsExistsCategoryById(int id);
         Task<List<CategoryDTO>> GetCategories();
-        Task<CategoryDTO> AddCategory(CategoryDTO newCategory);
+        Task<NewCategoryDTO> GetCategoryId(int id);
+        Task<NewCategoryDTO> AddCategory(CategoryDTO newCategory);
     }
 }

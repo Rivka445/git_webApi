@@ -15,9 +15,18 @@ namespace Repositories
         {
             _eventDressRentalContext = eventDressRentalContext;
         }
+        public async Task<bool> IsExistsCategoryById(int id)
+        {
+            return await _eventDressRentalContext.Categories.AnyAsync(c => c.Id == id);
+        }
         public async Task<List<Category>> GetCategories()
         {
             return await _eventDressRentalContext.Categories.ToListAsync();
+        }
+        public async Task<Category?> GetCategoryById(int id)
+        {
+            return await _eventDressRentalContext.Categories
+                .FindAsync(id);
         }
         public async Task<Category> AddCategory(Category category)
         {

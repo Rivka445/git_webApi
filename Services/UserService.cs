@@ -9,11 +9,19 @@ namespace Services
         private readonly IUserRepository _userRepository;
         private readonly IUserPasswordService _userPasswordService;
         private readonly IMapper _mapper;
-        public UserService(IUserRepository userRepository,IMapper mapper,IUserPasswordService userPasswordService)
+        public UserService(IUserRepository userRepository, IMapper mapper, IUserPasswordService userPasswordService)
         {
             _userRepository = userRepository;
             _userPasswordService = userPasswordService;
             _mapper = mapper;
+        }
+        public async Task<bool> IsExistsUserById(int id)
+        {
+            return await _userRepository.IsExistsUserById(id);
+        }
+        public bool CheckUser(int id)
+        {
+            return true;
         }
         public async Task<List<UserDTO>> GetUsers()
         {
@@ -25,18 +33,12 @@ namespace Services
         {
             User? user= await _userRepository.GetUserById(id);
             if (user == null)
-                throw new KeyNotFoundException($"User with ID {id} not found.");
-
+                return null;
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
             return userDTO;
         }
         public async Task<UserDTO> AddUser(UserRegisterDTO newUser)
         {
-            if (newUser == null)
-                throw new ArgumentNullException(nameof(newUser));
-            if (_userPasswordService.CheckPassword(newUser.Password) <= 2)
-                throw new ArgumentException("Password is too weak.");
-
             User userRegister = _mapper.Map<UserRegisterDTO, User>(newUser);
             User user = await _userRepository.AddUser(userRegister);
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
@@ -44,24 +46,15 @@ namespace Services
         }
         public async Task<UserDTO> LogIn(UserLoginDTO existUser)
         {
-            if (existUser == null)
-                throw new ArgumentNullException(nameof(existUser));
-
-            User loginUser= _mapper.Map<UserLoginDTO,User>(existUser);
+            User loginUser = _mapper.Map<UserLoginDTO,User>(existUser);
             User? user = await _userRepository.LogIn(loginUser);
             if (user == null)
-                throw new UnauthorizedAccessException("Invalid username or password.");
-
+                return null;
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
             return userDTO;
         }
         public async Task UpdateUser(int id, UserDTO updateUser)
         {
-            if (updateUser == null)
-                throw new ArgumentNullException(nameof(updateUser));
-            if (_userPasswordService.CheckPassword(updateUser.Password) <= 2)
-                throw new ArgumentException("Password is too weak.");
-
             User user = _mapper.Map<UserDTO,User>(updateUser);
             await _userRepository.UpdateUser(user);
         }

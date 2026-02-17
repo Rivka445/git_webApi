@@ -14,31 +14,49 @@ namespace Services
     {
         private readonly IModelRepository _modelRepository;
         private readonly IDressService _dressService;
+        private readonly ICategoryService _categoryService;
         private readonly IMapper _mapper;
-        public ModelService(IModelRepository modelRepository, IMapper mapper, IDressService dressService)
+        public ModelService(IModelRepository modelRepository, IMapper mapper, IDressService dressService, ICategoryService categoryService)
         {
             _mapper = mapper;
             _dressService = dressService;
             _modelRepository = modelRepository;
+            _categoryService = categoryService;
+        }
+        public async Task<bool> IsExistsModelById(int id)
+        {
+            return await _modelRepository.IsExistsModelById(id);
+        }
+        public async Task<bool> checkCategories(List<NewCategoryDTO> categories)
+        {
+            foreach (var category in categories)
+            {
+                if(!await _categoryService.IsExistsCategoryById(category.Id))
+                    return false;
+            }
+            return true;
+        }
+        public bool checkPrice(int price)
+        {
+            return price > 0;
+        }
+        public bool ValidateQueryParameters(int position, int skip, int? minPrice, int? maxPrice)
+        {
+            if(minPrice.HasValue && maxPrice.HasValue)
+                return position >= 0 && skip >= 0 && minPrice < maxPrice;
+            return position >= 0 && skip >= 0;
         }
         public async Task<ModelDTO> GetModelById(int id)
         {
             Model? model = await _modelRepository.GetModelById(id);
             if (model == null)
-                throw new KeyNotFoundException($"Model with ID {id} not found.");
+                return null;
             ModelDTO modelDTO = _mapper.Map<Model, ModelDTO>(model);
             return modelDTO;
         }
         public async Task<FinalModels> GetModelds(string? description, int? minPrice, int? maxPrice,
             int[] categoriesId, string? color, int position = 1, int skip = 8)
         {
-            if (position <= 0)
-                throw new ArgumentException("Position must be greater than 0.");
-            if (skip <= 0)
-                throw new ArgumentException("Skip must be greater than 0.");
-            if (minPrice.HasValue && maxPrice.HasValue && minPrice > maxPrice)
-                throw new ArgumentException("minPrice cannot be greater than maxPrice.");
-
             (List<Model> Items, int TotalCount) products = await _modelRepository
                         .GetModels(description, minPrice, maxPrice, categoriesId, color, position, skip);
             List<ModelDTO> productsDTO = _mapper.Map<List<Model>, List<ModelDTO>>(products.Items);
@@ -55,11 +73,6 @@ namespace Services
         }
         public async Task<ModelDTO> AddModel(NewModelDTO newModel)
         {
-            if (newModel == null)
-                throw new ArgumentNullException(nameof(newModel));
-            if (newModel.BasePrice <= 0)
-                throw new ArgumentException("BasePrice must be greater than 0.");
-
             Model addedModel = _mapper.Map<NewModelDTO, Model>(newModel);
             Model model = await _modelRepository.AddModel(addedModel);
             ModelDTO modelDTO = _mapper.Map<Model, ModelDTO>(model);
@@ -67,24 +80,11 @@ namespace Services
         }
         public async Task UpdateModel(int id, ModelDTO updateModel)
         {
-            if (updateModel == null)
-                throw new ArgumentNullException(nameof(updateModel));
-
-            if (updateModel.BasePrice <= 0)
-                throw new ArgumentException("BasePrice must be greater than 0.");
-            if (await _modelRepository.GetModelById(id) == null)
-                throw new KeyNotFoundException($"Model with ID {id} not found.");
-
             Model update = _mapper.Map<ModelDTO, Model>(updateModel);
             await _modelRepository.UpdateModel(update);
         }
         public async Task DeleteModel(int id, ModelDTO deleteModel)
         {
-            if (deleteModel == null)
-                throw new ArgumentNullException(nameof(deleteModel));
-            if (await _modelRepository.GetModelById(id) == null)
-                throw new KeyNotFoundException($"Model with ID {id} not found.");
-
             Model model = _mapper.Map<ModelDTO, Model>(deleteModel);
             model.IsActive = false;
             foreach (var dress in model.Dresses)

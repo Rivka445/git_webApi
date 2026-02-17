@@ -19,20 +19,33 @@ namespace Services
             _mapper = mapper;
             _categoryRepository = categoryRepository;
         }
+
+        public async Task<bool> IsExistsCategoryById(int id)
+        {
+            return await _categoryRepository.IsExistsCategoryById(id);  
+        }
         public async Task<List<CategoryDTO>> GetCategories()
         {
             List<Category> categories = await _categoryRepository.GetCategories();
             List<CategoryDTO> categoriesDTO = _mapper.Map<List<Category>, List<CategoryDTO>>(categories);
             return categoriesDTO;    
         }
-        public async Task<CategoryDTO> AddCategory(CategoryDTO newCategory)
+        public async Task<NewCategoryDTO> GetCategoryId(int id)
         {
-            if (newCategory == null)
-                throw new ArgumentNullException(nameof(newCategory));
-            Category category = _mapper.Map<CategoryDTO ,Category>(newCategory);
-            Category addedCategory = await _categoryRepository.AddCategory(category);
-            CategoryDTO categoryDTO = _mapper.Map<Category, CategoryDTO>(addedCategory);
+            Category? category = await _categoryRepository.GetCategoryById(id);
+            if (category == null)
+                return null;
+            NewCategoryDTO categoryDTO = _mapper.Map<Category, NewCategoryDTO>(category);
             return categoryDTO;
         }
+        public async Task<NewCategoryDTO> AddCategory(CategoryDTO newCategory)
+        {
+  
+            Category category = _mapper.Map<CategoryDTO ,Category>(newCategory);
+            Category addedCategory = await _categoryRepository.AddCategory(category);
+            NewCategoryDTO categoryDTO = _mapper.Map<Category, NewCategoryDTO>(addedCategory);
+            return categoryDTO;
+        }
+       
     }
 }
