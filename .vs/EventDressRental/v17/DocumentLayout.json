@@ -1,138 +1,130 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\",
+  "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\webapishop\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\integrationtest\\dressrepositoryintegratientests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\integrationtest\\dressrepositoryintegratientests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\dtos\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|solutionrelative:dtos\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\idressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\idressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\dressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\dressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\dressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\idressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\idressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\integrationtest\\categoryrepositoryintegratientests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\integrationtest\\categoryrepositoryintegratientests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\dressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\dressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\webapishop\\controllers\\dressescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\controllers\\dressescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\unittest\\orderrepositryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\orderrepositryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\webapishop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\unittest\\modelrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\modelrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\webapishop\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\modelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\modelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\eventdressrentalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\eventdressrentalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\unittest\\dressrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\dressrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\unittest\\categoryrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\unittest\\categoryrepositoryunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testservice\\userserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testservice\\userserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|solutionrelative:entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\api\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|solutionrelative:dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testservice\\orderserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testservice\\orderserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\authenticateduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\authenticateduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|c:\\users\\user1\\desktop\\api\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|solutionrelative:dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|c:\\users\\user1\\desktop\\api\\dtos\\neworderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|solutionrelative:dtos\\neworderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\webapishop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|c:\\users\\user1\\desktop\\api\\dtos\\neworderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|solutionrelative:dtos\\neworderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\webapishop\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|c:\\users\\user1\\desktop\\api\\dtos\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|solutionrelative:dtos\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\automapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testservice\\modelserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testservice\\modelserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\api\\services\\dressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\dressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\api\\services\\modelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\modelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\api\\webapishop\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\api\\services\\imodelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\imodelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\api\\services\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\api\\webapishop\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\imodelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\imodelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\api\\webapishop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\api\\services\\automapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\automapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\finalmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\finalmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\idressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\idressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\webapishop\\controllers\\modelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\controllers\\modelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\webapishop\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\services\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\entities\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|solutionrelative:entities\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\entities\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|solutionrelative:entities\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|solutionrelative:entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|solutionrelative:entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\entities\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|solutionrelative:entities\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\entities\\dress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|solutionrelative:entities\\dress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5375257-80D4-4607-AAEF-BF6914606ACF}|Entities\\Entities.csproj|solutionrelative:entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\Models\\EventDressRentalContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\Models\\EventDressRentalContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\project\\event_dress_rental\\repositories\\modelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\modelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\api\\webapishop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -142,114 +134,334 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Repositories\\UserRepository.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAIA6wCcAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 26,
+              "Title": "IModelRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IModelRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IModelRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IModelRepository.cs",
+              "RelativeToolTip": "Repositories\\IModelRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T23:15:35.993Z",
+              "WhenOpened": "2026-02-25T17:29:06.143Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DressRepositoryIntegratienTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAowG0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T19:35:09.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserRegisterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\DTOs\\UserRegisterDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\UserRegisterDTO.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\DTOs\\UserRegisterDTO.cs",
-              "RelativeToolTip": "DTOs\\UserRegisterDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CategoryRepositoryIntegratienTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\CategoryRepositoryIntegratienTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\IntegrationTest\\CategoryRepositoryIntegratienTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\CategoryRepositoryIntegratienTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\IntegrationTest\\CategoryRepositoryIntegratienTests.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwHkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T23:14:26.415Z",
+              "WhenOpened": "2026-02-25T19:29:18.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T19:28:35.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderRepositryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAASwIIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T19:24:41.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ModelRepositoryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwDEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T19:17:54.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DressRepositoryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAuwHwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T19:15:28.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CategoryRepositoryUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T19:15:26.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserServiceUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\UserServiceUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestService\\UserServiceUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\UserServiceUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestService\\UserServiceUnitTests.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAAALgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T19:05:38.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OrderDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\DTOs\\OrderDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\OrderDTO.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\DTOs\\OrderDTO.cs",
+              "RelativeToolTip": "DTOs\\OrderDTO.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA6wCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T18:58:38.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "NewOrderItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\DTOs\\NewOrderItemDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\NewOrderItemDTO.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\DTOs\\NewOrderItemDTO.cs",
+              "RelativeToolTip": "DTOs\\NewOrderItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T18:59:04.997Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\IUserService.cs",
-              "RelativeDocumentMoniker": "Services\\IUserService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\IUserService.cs",
-              "RelativeToolTip": "Services\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Title": "NewOrderDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\DTOs\\NewOrderDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\NewOrderDTO.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\DTOs\\NewOrderDTO.cs",
+              "RelativeToolTip": "DTOs\\NewOrderDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T14:19:39.815Z"
+              "WhenOpened": "2026-02-25T18:25:42.678Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AuthenticatedUser.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\AuthenticatedUser.cs",
-              "RelativeDocumentMoniker": "Services\\AuthenticatedUser.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\AuthenticatedUser.cs",
-              "RelativeToolTip": "Services\\AuthenticatedUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "OrderItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\DTOs\\OrderItemDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\OrderItemDTO.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\DTOs\\OrderItemDTO.cs",
+              "RelativeToolTip": "DTOs\\OrderItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T14:12:48.289Z"
+              "WhenOpened": "2026-02-25T18:19:05.657Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAewCwAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "OrderServiceUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\OrderServiceUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestService\\OrderServiceUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\OrderServiceUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestService\\OrderServiceUnitTests.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAuwLIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T14:08:48.154Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AutoMapping.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\AutoMapping.cs",
-              "RelativeDocumentMoniker": "Services\\AutoMapping.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\AutoMapping.cs",
-              "RelativeToolTip": "Services\\AutoMapping.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwA8AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T14:08:00.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "WebApiShop\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "WebApiShop\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBsAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T13:27:09.22Z",
+              "WhenOpened": "2026-02-25T18:15:44.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "WebApiShop\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\appsettings.Development.json",
-              "RelativeToolTip": "WebApiShop\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-24T13:20:07.576Z"
+              "Title": "ModelServiceUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\ModelServiceUnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestService\\ModelServiceUnitTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\ModelServiceUnitTests.cs",
+              "RelativeToolTip": "Tests\\TestService\\ModelServiceUnitTests.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T18:15:04.515Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IOrderRepository.cs",
+              "RelativeToolTip": "Repositories\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T18:14:27.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IModelService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\IModelService.cs",
+              "RelativeDocumentMoniker": "Services\\IModelService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Services\\IModelService.cs",
+              "RelativeToolTip": "Services\\IModelService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T18:10:09.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ModelRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\ModelRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ModelRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Repositories\\ModelRepository.cs",
+              "RelativeToolTip": "Repositories\\ModelRepository.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T18:07:50.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Services\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Services\\IOrderService.cs",
+              "RelativeToolTip": "Services\\IOrderService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA/wBMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T18:02:23.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Services\\OrderService.cs",
+              "RelativeToolTip": "Services\\OrderService.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAawGQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T17:51:06.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAQwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T17:54:40.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ModelService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\ModelService.cs",
+              "RelativeDocumentMoniker": "Services\\ModelService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Services\\ModelService.cs",
+              "RelativeToolTip": "Services\\ModelService.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAqwF8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T17:26:15.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAmwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T14:08:48.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AutoMapping.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\AutoMapping.cs",
+              "RelativeDocumentMoniker": "Services\\AutoMapping.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Services\\AutoMapping.cs",
+              "RelativeToolTip": "Services\\AutoMapping.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwC8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T14:08:00.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "WebApiShop\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "WebApiShop\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowEIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T13:27:09.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\appsettings.json",
               "RelativeDocumentMoniker": "WebApiShop\\appsettings.json",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\appsettings.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\appsettings.json",
               "RelativeToolTip": "WebApiShop\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -257,299 +469,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ITokenService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\ITokenService.cs",
-              "RelativeDocumentMoniker": "Services\\ITokenService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\ITokenService.cs",
-              "RelativeToolTip": "Services\\ITokenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T13:19:20.108Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "Services\\TokenService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\TokenService.cs",
-              "RelativeToolTip": "Services\\TokenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T13:17:38.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\DTOs\\UserDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\UserDTO.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\DTOs\\UserDTO.cs",
-              "RelativeToolTip": "DTOs\\UserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:46:26.346Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Status.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Status.cs",
-              "RelativeDocumentMoniker": "Entities\\Status.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Status.cs",
-              "RelativeToolTip": "Entities\\Status.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:45:15.242Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Entities\\User.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\User.cs",
-              "RelativeToolTip": "Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:44:59.235Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "Rating.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Rating.cs",
-              "RelativeDocumentMoniker": "Entities\\Rating.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Rating.cs",
-              "RelativeToolTip": "Entities\\Rating.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "WebApiShop\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "WebApiShop\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAswFYAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:44:53.709Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\OrderItem.cs",
-              "RelativeDocumentMoniker": "Entities\\OrderItem.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\OrderItem.cs",
-              "RelativeToolTip": "Entities\\OrderItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:44:46.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "Entities\\Order.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Order.cs",
-              "RelativeToolTip": "Entities\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:44:38.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Model.cs",
-              "RelativeDocumentMoniker": "Entities\\Model.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Model.cs",
-              "RelativeToolTip": "Entities\\Model.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:44:29.681Z"
+              "WhenOpened": "2026-02-23T11:15:55.375Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
-              "Title": "Dress.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Dress.cs",
-              "RelativeDocumentMoniker": "Entities\\Dress.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Dress.cs",
-              "RelativeToolTip": "Entities\\Dress.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:44:18.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Category.cs",
-              "RelativeDocumentMoniker": "Entities\\Category.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Entities\\Category.cs",
-              "RelativeToolTip": "Entities\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:44:06.336Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EventDressRentalContext.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\EventDressRentalContext.cs",
-              "RelativeDocumentMoniker": "Repositories\\EventDressRentalContext.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\EventDressRentalContext.cs",
-              "RelativeToolTip": "Repositories\\EventDressRentalContext.cs",
-              "ViewState": "AgIAANMAAAAAAAAAAAAAAEgAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:43:33.222Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "EventDressRentalContext.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\Models\\EventDressRentalContext.cs",
-              "RelativeDocumentMoniker": "Repositories\\Models\\EventDressRentalContext.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\Models\\EventDressRentalContext.cs",
-              "RelativeToolTip": "Repositories\\Models\\EventDressRentalContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T12:41:41.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "OrdersController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\OrdersController.cs",
-              "RelativeDocumentMoniker": "WebApiShop\\Controllers\\OrdersController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\OrdersController.cs",
-              "RelativeToolTip": "WebApiShop\\Controllers\\OrdersController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwB0AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T11:15:55.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IDressService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\IDressService.cs",
-              "RelativeDocumentMoniker": "Services\\IDressService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\IDressService.cs",
-              "RelativeToolTip": "Services\\IDressService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T09:49:43.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "IDressRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\IDressRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IDressRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IDressRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\IDressRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IDressRepository.cs",
               "RelativeToolTip": "Repositories\\IDressRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T09:48:09.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T09:48:09.51Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "DressRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\DressRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\DressRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\DressRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\DressRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Repositories\\DressRepository.cs",
               "RelativeToolTip": "Repositories\\DressRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAmwFkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-23T09:45:36.539Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "DressService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\DressService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\DressService.cs",
               "RelativeDocumentMoniker": "Services\\DressService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\DressService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Services\\DressService.cs",
               "RelativeToolTip": "Services\\DressService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAwGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T20:30:33.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-22T20:30:33.572Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DressesController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\DressesController.cs",
-              "RelativeDocumentMoniker": "WebApiShop\\Controllers\\DressesController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\DressesController.cs",
-              "RelativeToolTip": "WebApiShop\\Controllers\\DressesController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAA/wG0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T18:34:32.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "WebApiShop\\Controllers\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "WebApiShop\\Controllers\\CategoriesController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAuwCgAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T13:56:03.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "ModelRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\ModelRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\ModelRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Repositories\\ModelRepository.cs",
-              "RelativeToolTip": "Repositories\\ModelRepository.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAlwCgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T13:43:39.514Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "FinalModels.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\FinalModels.cs",
-              "RelativeDocumentMoniker": "Services\\FinalModels.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\Services\\FinalModels.cs",
-              "RelativeToolTip": "Services\\FinalModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T13:13:03.596Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 27,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Program.cs",
               "RelativeDocumentMoniker": "WebApiShop\\Program.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Program.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Program.cs",
               "RelativeToolTip": "WebApiShop\\Program.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T21:01:51.25Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ModelsController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\ModelsController.cs",
-              "RelativeDocumentMoniker": "WebApiShop\\Controllers\\ModelsController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E8\u05D9\u05E7\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\PROJECT\\Event_dress_rental\\WebApiShop\\Controllers\\ModelsController.cs",
-              "RelativeToolTip": "WebApiShop\\Controllers\\ModelsController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAkwEwAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T19:39:36.55Z"
+              "WhenOpened": "2026-02-19T21:01:51.25Z"
             }
           ]
         }

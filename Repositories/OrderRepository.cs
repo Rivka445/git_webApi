@@ -56,16 +56,14 @@ namespace Repositories
                        .OrderBy(o => o.OrderDate)
                        .ToListAsync();
         }
-        public async Task<Order> AddOrder(Order order)
+        public async Task<Order?> AddOrder(Order order)
         {
             await _eventDressRentalContext.Orders.AddAsync(order);
             await _eventDressRentalContext.SaveChangesAsync();
-            return order;
-        }
-        public async Task UpdateOrder(Order order)
-        {
-            _eventDressRentalContext.Orders.Update(order);
-            await _eventDressRentalContext.SaveChangesAsync();
+            return await _eventDressRentalContext.Orders
+                .Include(o=>o.Status)
+                .Include(o => o.User)
+                .FirstOrDefaultAsync(o=>o.Id==order.Id);
         }
         public async Task UpdateStatusOrder(Order order)
         {

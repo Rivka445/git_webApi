@@ -1,150 +1,118 @@
-﻿//using Entities;
-//using Repositories;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Xunit;
+﻿using Entities;
+using Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Xunit;
+using Tests;
+using Microsoft.EntityFrameworkCore;
 
-//namespace Tests
-//{
-//    [Collection("Database Collection")]
-//    public class ProductRepositoryIntegrationTests : IClassFixture<DatabaseFixture>, IAsyncLifetime
-//    {
-//        private readonly WebApiShopContext _dbContext;
-//        private readonly ModelRepository _productRepository;
+namespace TestProject
+{
+	[Collection("Database Collection")]
+	public class ModelRepositoryIntegrationTests : IAsyncLifetime
+	{
+		private readonly EventDressRentalContext _dbContext;
+		private readonly ModelRepository _modelRepository;
 
-//        public ProductRepositoryIntegrationTests(DatabaseFixture databaseFixture)
-//        {
-//            _dbContext = databaseFixture.Context;
-//            _productRepository = new ProductRepository(_dbContext);
-//        }
-//        public async Task InitializeAsync()
-//        {
-//            await ClearDatabase();
-//        }
-//        public async Task DisposeAsync()
-//        {
-//            await ClearDatabase();
-//        }
-//        private async Task ClearDatabase()
-//        {
-//            _dbContext.ChangeTracker.Clear();
-//            // סדר המחיקה קריטי למניעת שגיאות Foreign Key
-//            if (_dbContext.OrderItems.Any()) _dbContext.OrderItems.RemoveRange(_dbContext.OrderItems);
-//            if (_dbContext.Orders.Any()) _dbContext.Orders.RemoveRange(_dbContext.Orders);
-//            if (_dbContext.Products.Any()) _dbContext.Products.RemoveRange(_dbContext.Products);
-//            if (_dbContext.Categories.Any()) _dbContext.Categories.RemoveRange(_dbContext.Categories);
-//            if (_dbContext.Users.Any()) _dbContext.Users.RemoveRange(_dbContext.Users);
-//            _dbContext.SaveChanges();
-//        }
-//        [Fact]
-//        public async Task GetById()
-//        {
-//            // Arrange
-//            var category = new Category
-//            {
-//                Name = "Books"
-//            };
-//            await _dbContext.Categories.AddAsync(category);
-//            await _dbContext.SaveChangesAsync();
+		public ModelRepositoryIntegrationTests(DatabaseFixture fixture)
+		{
+			_dbContext = fixture.Context;
+			_modelRepository = new ModelRepository(_dbContext);
+		}
 
-//            var product = new Product
-//            {
-//                Name = "Product 3",
-//                CategoryId = category.Id,
-//                Description = "Description for Product 3",
-//                Price = 20.0,
-//                ImgUrl = "a.png"
-//            };
+		public async Task InitializeAsync()
+		{
+			await ClearDatabaseAsync();
+		}
 
-          
-//            await _dbContext.Products.AddAsync(product);
-//            await _dbContext.SaveChangesAsync();
+		public async Task DisposeAsync()
+		{
+			await ClearDatabaseAsync();
+		}
 
-//            // Act
-//            var result = await _productRepository.GetById(category.Id);
+		private async Task ClearDatabaseAsync()
+		{
+			_dbContext.ChangeTracker.Clear();
+			_dbContext.OrderItems.RemoveRange(_dbContext.OrderItems);
+			_dbContext.Orders.RemoveRange(_dbContext.Orders);
+			_dbContext.Dresses.RemoveRange(_dbContext.Dresses);
+			await _dbContext.Database.ExecuteSqlRawAsync("DELETE FROM [Models_Categories]");
+			_dbContext.Models.RemoveRange(_dbContext.Models);
+			_dbContext.Categories.RemoveRange(_dbContext.Categories);
+			_dbContext.Statuses.RemoveRange(_dbContext.Statuses);
+			_dbContext.Users.RemoveRange(_dbContext.Users);
+			await _dbContext.SaveChangesAsync();
+		}
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(product.Name, result.Name);
-//        }
+		[Fact]
+		public async Task AddModel_SavesWithCategories()
+		{
+			var category = new Category { Name = "Evening" };
+			await _dbContext.Categories.AddAsync(category);
+			await _dbContext.SaveChangesAsync();
 
-//        [Fact]
-//        public async Task GetById_NotFound()
-//        {
-//            // Arrange
-//            // No product with this ID exists
+			var model = new Model
+			{
+				Name = "Model A",
+				Description = "Desc",
+				ImgUrl = "img.png",
+				BasePrice = 200,
+				Color = "Black",
+				IsActive = true,
+				Categories = new List<Category> { category }
+			};
 
-//            // Act
-//            var result = await _productRepository.GetById(999); // Assuming 999 does not exist
+			var result = await _modelRepository.AddModel(model);
 
-//            // Assert
-//            Assert.Null(result);
-//        }
+			Assert.NotNull(result);
+			var saved = await _dbContext.Models.FindAsync(result.Id);
+			Assert.NotNull(saved);
+			Assert.Equal("Model A", saved!.Name);
+		}
 
-//        [Fact]
-//        public async Task GetProducts()
-//        {
-//            // Arrange
-//            var category = new Category { Name = "Electronics" };
-//            await _dbContext.Categories.AddAsync(category);
-//            await _dbContext.SaveChangesAsync();
+		[Fact]
+		public async Task GetModelById_ReturnsModelWithCategories()
+		{
+			var category = new Category { Name = "Brides" };
+			var model = new Model
+			{
+				Name = "Model B",
+				Description = "Desc",
+				ImgUrl = "img.png",
+				BasePrice = 300,
+				Color = "White",
+				IsActive = true,
+				Categories = new List<Category> { category }
+			};
+			await _dbContext.Models.AddAsync(model);
+			await _dbContext.SaveChangesAsync();
 
-//            var product1 = new Product { Name = "Laptop", Description = "High performance laptop", Price = 1200, CategoryId =category.Id, ImgUrl="a.png" };
-//            var product2 = new Product { Name = "Smartphone", Description = "Latest model smartphone", Price = 800, CategoryId = category.Id, ImgUrl = "a.png" };
-//            var product3 = new Product { Name = "Headphones", Description = "Noise cancelling headphones", Price = 100, CategoryId = category.Id, ImgUrl = "a.png" };
+			var result = await _modelRepository.GetModelById(model.Id);
 
-//            await _dbContext.Products.AddRangeAsync(product1, product2, product3);
-//            await _dbContext.SaveChangesAsync();
+			Assert.NotNull(result);
+			Assert.Single(result!.Categories);
+			Assert.Equal("Brides", result.Categories.First().Name);
+		}
 
-//            // Act
-//            var (items, totalCount) = await _productRepository.GetProducts("smart", 50, 1000, new int[] { category.Id });
+		[Fact]
+		public async Task GetModels_ReturnsPagedAndTotal()
+		{
+			var category = new Category { Name = "Evening" };
+			var models = new List<Model>
+			{
+				new Model { Name = "Model C", Description = "Desc", ImgUrl = "img.png", BasePrice = 100, Color = "Red", IsActive = true, Categories = new List<Category> { category } },
+				new Model { Name = "Model D", Description = "Desc", ImgUrl = "img.png", BasePrice = 200, Color = "Blue", IsActive = true, Categories = new List<Category> { category } }
+			};
 
-//            // Assert
-//            Assert.NotNull(items);
-//            Assert.Single(items);
-//            Assert.Equal(1, totalCount);
-//            Assert.Equal("Smartphone", items.First().Name); // Verify the returned product is the smartphone
-//        }
+			await _dbContext.Models.AddRangeAsync(models);
+			await _dbContext.SaveChangesAsync();
 
-//        [Fact]
-//        public async Task GetProducts_NoProductsFound()
-//        {
-//            // Arrange
-//            var category = new Category { Name = "Electronics" };
-//            await _dbContext.Categories.AddAsync(category);
-//            await _dbContext.SaveChangesAsync();
+			var (items, totalCount) = await _modelRepository.GetModels(null, null, null, Array.Empty<int>(), Array.Empty<string>());
 
-//            // Act
-//            var (items, totalCount) = await _productRepository.GetProducts("NonExisting", 1000, 2000, new int[] { category.Id });
-
-//            // Assert
-//            Assert.NotNull(items);
-//            Assert.Empty(items); // Verify that no products are returned
-//            Assert.Equal(0, totalCount); // Verify that total count is 0
-//        }
-
-//        [Fact]
-//        public async Task GetProducts_EmptyCategoryIds()
-//        {
-//            // Arrange
-//            var category = new Category { Name = "Electronics" };
-//            await _dbContext.Categories.AddAsync(category);
-//            await _dbContext.SaveChangesAsync();
-
-//            var product = new Product { Name = "Tablet", Description = "Latest tablet", Price = 600, CategoryId = category.Id, ImgUrl= "a.png" };
-
-          
-//            await _dbContext.Products.AddAsync(product);
-//            await _dbContext.SaveChangesAsync();
-
-//            // Act
-//            var (items, totalCount) = await _productRepository.GetProducts(null, null, null, new int[] { });
-
-//            // Assert
-//            Assert.NotNull(items);
-//            Assert.Single(items); // Should return the single product since no filtering is done
-//            Assert.Equal(1, totalCount); // There is one product in the test setup
-//        }
-//    }
-//}
+			Assert.Equal(2, totalCount);
+			Assert.Equal(2, items.Count);
+		}
+	}
+}

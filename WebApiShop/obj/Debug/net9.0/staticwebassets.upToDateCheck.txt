@@ -1,8 +1,0 @@
-C:\Users\user1\Desktop\ריקי\שנה ב'\PROJECT\Event_dress_rental\WebApiShop\wwwroot\home.html
-C:\Users\user1\Desktop\ריקי\שנה ב'\PROJECT\Event_dress_rental\WebApiShop\wwwroot\page2.js
-C:\Users\user1\Desktop\ריקי\שנה ב'\PROJECT\Event_dress_rental\WebApiShop\wwwroot\script.js
-C:\Users\user1\Desktop\ריקי\שנה ב'\PROJECT\Event_dress_rental\WebApiShop\wwwroot\page2.html
-wwwroot\home.html
-wwwroot\page2.html
-wwwroot\page2.js
-wwwroot\script.js

@@ -19,7 +19,6 @@ namespace DTOs
         [Required]
         string Password,
         [Required]
-        string Role,
-        string Token
-  );
+        string Role
+   );
 }

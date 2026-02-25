@@ -1,169 +1,186 @@
-﻿//using Entities;
-//using Repositories;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//namespace Tests
-//{
-//    [Collection("Database Collection")]
-//    public class OrderRepositoryIntegrationTests: IClassFixture<DatabaseFixture>, IAsyncLifetime
-//    {
-//        private readonly WebApiShopContext _dbContext;
-//        private readonly OrderRepository _orderRepository;
-//        public OrderRepositoryIntegrationTests(DatabaseFixture databaseFixture)
-//        {
-//            _dbContext = databaseFixture.Context;
-//            _orderRepository = new OrderRepository(_dbContext);
-//        }
-//        public async Task InitializeAsync()
-//        {
-//            await ClearDatabase();
-//        }
-//        public async Task DisposeAsync()
-//        {
-//            await ClearDatabase();
-//        }
-//        private async Task ClearDatabase()
-//        {
-//            _dbContext.ChangeTracker.Clear();
-//            // סדר המחיקה קריטי למניעת שגיאות Foreign Key
-//            if (_dbContext.OrderItems.Any()) _dbContext.OrderItems.RemoveRange(_dbContext.OrderItems);
-//            if (_dbContext.Orders.Any()) _dbContext.Orders.RemoveRange(_dbContext.Orders);
-//            if (_dbContext.Products.Any()) _dbContext.Products.RemoveRange(_dbContext.Products);
-//            if (_dbContext.Categories.Any()) _dbContext.Categories.RemoveRange(_dbContext.Categories);
-//            if (_dbContext.Users.Any()) _dbContext.Users.RemoveRange(_dbContext.Users);
-//            _dbContext.SaveChanges();
-//        }
-//        [Fact]
-//        public async Task AddOrder()
-//        {
-//            // Arrange
-//            var category = new Category
-//            {
-//                Name = "Electronics"
-//            };
+﻿using Entities;
+using Repositories;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Tests;
+using Microsoft.EntityFrameworkCore;
 
-//            var user = new User
-//            {
-//                Email = "testuser@example.com",
-//                FirstName = "Test",
-//                LastName = "User",
-//                Password = "password123"
-//            };
+namespace TestProject
+{
+	[Collection("Database Collection")]
+	public class OrderRepositoryIntegrationTests : IAsyncLifetime
+	{
+		private readonly EventDressRentalContext _dbContext;
+		private readonly OrderRepository _orderRepository;
 
-//            await _dbContext.Categories.AddAsync(category);
-//            await _dbContext.Users.AddAsync(user);
-//            await _dbContext.SaveChangesAsync();
+		public OrderRepositoryIntegrationTests(DatabaseFixture fixture)
+		{
+			_dbContext = fixture.Context;
+			_orderRepository = new OrderRepository(_dbContext);
+		}
 
-//            var product1 = new Product
-//            {
-//                Name = "Product 1",
-//                CategoryId = category.Id,
-//                Description = "Description for Product 1",
-//                Price = 10.0,
-//                ImgUrl="a.png"
-//            };
+		public async Task InitializeAsync()
+		{
+			await ClearDatabaseAsync();
+		}
 
-//            var product2 = new Product
-//            {
-//                Name = "Product 2",
-//                CategoryId =category.Id,
-//                Description = "Description for Product 2",
-//                Price = 15.0,
-//                ImgUrl = "a.png"
-//            };
-//            await _dbContext.Products.AddAsync(product1);
-//            await _dbContext.Products.AddAsync(product2);
-//            await _dbContext.SaveChangesAsync();
+		public async Task DisposeAsync()
+		{
+			await ClearDatabaseAsync();
+		}
 
-//            var order = new Order
-//            {
-//                Date = DateOnly.FromDateTime(DateTime.UtcNow),
-//                Sum = 35, // 2 * 10 + 1 * 15
-//                UserId = user.Id,
-//                OrderItems = new List<OrderItem>
-//                {
-//                    new OrderItem { ProductId =product1.Id, Quantity = 2 },
-//                    new OrderItem { ProductId = product2.Id, Quantity = 1 }
-//                }
-//            };
+		private async Task ClearDatabaseAsync()
+		{
+			_dbContext.ChangeTracker.Clear();
+			_dbContext.OrderItems.RemoveRange(_dbContext.OrderItems);
+			_dbContext.Orders.RemoveRange(_dbContext.Orders);
+			_dbContext.Dresses.RemoveRange(_dbContext.Dresses);
+			await _dbContext.Database.ExecuteSqlRawAsync("DELETE FROM [Models_Categories]");
+			_dbContext.Models.RemoveRange(_dbContext.Models);
+			_dbContext.Categories.RemoveRange(_dbContext.Categories);
+			_dbContext.Statuses.RemoveRange(_dbContext.Statuses);
+			_dbContext.Users.RemoveRange(_dbContext.Users);
+			await _dbContext.SaveChangesAsync();
+		}
 
-//            // Act
-//            var result = await _orderRepository.addOrder(order);
+		[Fact]
+		public async Task AddOrder_ReturnsOrderWithUserAndStatus()
+		{
+			var user = new User
+			{
+				FirstName = "Test",
+				LastName = "User",
+				Email = "testuser@example.com",
+				Phone = "0500000000",
+				Password = "password123",
+				Role = "User"
+			};
+			var status = new Status { Name = "New" };
+			var category = new Category { Name = "Evening" };
+			var model = new Model
+			{
+				Name = "Model A",
+				Description = "Desc",
+				ImgUrl = "img.png",
+				BasePrice = 200,
+				Color = "Black",
+				IsActive = true,
+				Categories = new List<Category> { category }
+			};
+			var dress = new Dress
+			{
+				Model = model,
+				Size = "M",
+				Price = 220,
+				Note = "Note",
+				IsActive = true
+			};
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(order.Sum, result.Sum);
-//            Assert.Equal(2, result.OrderItems.Count); // Verify total items
-//        }
+			await _dbContext.Users.AddAsync(user);
+			await _dbContext.Statuses.AddAsync(status);
+			await _dbContext.Dresses.AddAsync(dress);
+			await _dbContext.SaveChangesAsync();
 
-//        [Fact]
-//        public async Task GetById_ReturnsOrder()
-//        {
-//            // Arrange
-//            var category = new Category
-//            {
-//                Name = "Books"
-//            };
+			var order = new Order
+			{
+				UserId = user.Id,
+				StatusId = status.Id,
+				OrderDate = DateOnly.FromDateTime(DateTime.UtcNow),
+				EventDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(10)),
+				FinalPrice = 220,
+				Note = "Order note",
+				OrderItems = new List<OrderItem>
+				{
+					new OrderItem { DressId = dress.Id }
+				}
+			};
 
-//            var user = new User
-//            {
-//                Email = "testuser2@example.com",
-//                FirstName = "Test2",
-//                LastName = "User2",
-//                Password = "password456"
-//            };
+			var result = await _orderRepository.AddOrder(order);
 
-//            var product = new Product
-//            {
-//                Name = "Product 3",
-//                CategoryId = 1,
-//                Description = "Description for Product 3",
-//                Price = 20.0,
-//                ImgUrl = "a.png"
-//            };
+			Assert.NotNull(result);
+			Assert.Equal(user.Id, result!.UserId);
+			Assert.Equal(status.Id, result.StatusId);
+			Assert.NotNull(result.User);
+			Assert.NotNull(result.Status);
+		}
 
-//            await _dbContext.Categories.AddAsync(category);
-//            await _dbContext.Users.AddAsync(user);
-//            await _dbContext.Products.AddAsync(product);
-//            await _dbContext.SaveChangesAsync();
+		[Fact]
+		public async Task GetOrdersByDate_ReturnsOnlyMatchingStatusAndDate()
+		{
+			var user = new User
+			{
+				FirstName = "Client",
+				LastName = "One",
+				Email = "client1@example.com",
+				Phone = "0500000001",
+				Password = "password123",
+				Role = "User"
+			};
+			await _dbContext.Users.AddAsync(user);
+			await _dbContext.SaveChangesAsync();
 
-//            var order = new Order
-//            {
-//                Date = DateOnly.FromDateTime(DateTime.UtcNow),
-//                Sum = 20, // 1 * 20
-//                UserId =1,
-//                OrderItems = new List<OrderItem>
-//                {
-//                    new OrderItem { ProductId = 1, Quantity = 1 }
-//                }
-//            };
+			await _dbContext.Database.ExecuteSqlRawAsync(
+				"SET IDENTITY_INSERT Statuses ON;" +
+				"INSERT INTO Statuses (id, name) VALUES (1, 'New');" +
+				"INSERT INTO Statuses (id, name) VALUES (2, 'Other');" +
+				"SET IDENTITY_INSERT Statuses OFF;");
 
-//            await _orderRepository.addOrder(order);
+			var targetDate = new DateOnly(2026, 2, 1);
+			var orders = new List<Order>
+			{
+				new Order { UserId = user.Id, StatusId = 1, OrderDate = targetDate, EventDate = targetDate.AddDays(-1), FinalPrice = 100, Note = "A" },
+				new Order { UserId = user.Id, StatusId = 1, OrderDate = targetDate, EventDate = targetDate.AddDays(2), FinalPrice = 120, Note = "B" },
+				new Order { UserId = user.Id, StatusId = 2, OrderDate = targetDate, EventDate = targetDate.AddDays(-1), FinalPrice = 130, Note = "C" }
+			};
 
-//            // Act
-//            var result = await _orderRepository.GetById(1);
+			await _dbContext.Orders.AddRangeAsync(orders);
+			await _dbContext.SaveChangesAsync();
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(order.Sum, result.Sum);
-//            Assert.Single(result.OrderItems);
-//        }
+			var result = await _orderRepository.GetOrdersByDate(targetDate);
 
-//        [Fact]
-//        public async Task GetById_ReturnsNull_UnhappyPath()
-//        {
-//            // Arrange
-//            // No order with this ID exists
+			Assert.Single(result);
+			Assert.Equal(orders[0].Id, result[0].Id);
+		}
 
-//            // Act
-//            var result = await _orderRepository.GetById(999); // Assuming 999 does not exist
+		[Fact]
+		public async Task UpdateStatusOrder_UpdatesStatusId()
+		{
+			var user = new User
+			{
+				FirstName = "Client",
+				LastName = "Two",
+				Email = "client2@example.com",
+				Phone = "0500000002",
+				Password = "password123",
+				Role = "User"
+			};
+			var statusNew = new Status { Name = "New" };
+			var statusDone = new Status { Name = "Done" };
+			await _dbContext.Users.AddAsync(user);
+			await _dbContext.Statuses.AddRangeAsync(statusNew, statusDone);
+			await _dbContext.SaveChangesAsync();
 
-//            // Assert
-//            Assert.Null(result);
-//        }
-//    }
-//}
+			var order = new Order
+			{
+				UserId = user.Id,
+				StatusId = statusNew.Id,
+				OrderDate = DateOnly.FromDateTime(DateTime.UtcNow),
+				EventDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(3)),
+				FinalPrice = 150,
+				Note = "Update status"
+			};
+			await _dbContext.Orders.AddAsync(order);
+			await _dbContext.SaveChangesAsync();
+
+			order.StatusId = statusDone.Id;
+			await _orderRepository.UpdateStatusOrder(order);
+
+			var updated = await _dbContext.Orders.FindAsync(order.Id);
+			Assert.NotNull(updated);
+			Assert.Equal(statusDone.Id, updated!.StatusId);
+		}
+	}
+}
 

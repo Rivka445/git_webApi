@@ -25,7 +25,6 @@ namespace EventDressRental.Controllers
             _userService = userService;
         }
         // GET: api/<OrdersController>
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<ActionResult<List<OrderDTO>>> Get()
         {
@@ -44,7 +43,6 @@ namespace EventDressRental.Controllers
         }
 
         // GET api/<OrdersController>/unpacked
-        [Authorize(Roles = "Admin")]
         [HttpGet("unpacked")]
         public async Task<ActionResult<List<OrderDTO>>> GetUnpackedOrdersUntilDate(DateOnly date) 
         {
@@ -76,33 +74,15 @@ namespace EventDressRental.Controllers
                 return BadRequest("is not valid order");
             if (!await _orderService.checkPrice(newOrder))
                 return BadRequest("not match price");
-            //if(!_orderService.checkDate(newOrder.OrderDate ,newOrder.EventDate))
-            //    return BadRequest("cant match dates");
+            if (!_orderService.checkDate(newOrder.OrderDate, newOrder.EventDate))
+                return BadRequest("cant match dates");
 
             OrderDTO orderr = await _orderService.AddOrder(newOrder);
             return CreatedAtAction(nameof(Get), new { Id = orderr.Id }, orderr);
         }
 
-        // PUT api/<OrdersController>/5
-        [Authorize(Roles = "Admin")]
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateOrder(int id, [FromBody] NewOrderDTO updateOrder)
-        {
-            if(!await _orderService.IsExistsOrderById(id))
-                return NotFound();
-            bool isValidOrder = await _orderService.checkOrderItems(updateOrder);
-            if (!isValidOrder)
-                return BadRequest("is not valid order");
-            if (!await _orderService.checkPrice(updateOrder))
-                return BadRequest("not match price");
-            if (!_orderService.checkDate(updateOrder.OrderDate, updateOrder.EventDate))
-                return BadRequest("cant match dates");
 
-            await _orderService.UpdateOrder(updateOrder, id);
-            return Ok();
-        }
         // PUT api/<OrdersController>/status/5
-        [Authorize(Roles = "Admin")]
         [HttpPut("status/{statusId}")]
         public async Task<IActionResult> UpdateStatusOrder([FromBody] OrderDTO orderDto, int statusId)
         {

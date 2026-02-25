@@ -67,7 +67,6 @@ namespace EventDressRental.Controllers
         }
 
         // POST api/<DressesController>
-        [Authorize(Roles = "Admin")] 
         [HttpPost]
         public async Task<ActionResult<DressDTO>> AddDress([FromBody] NewDressDTO newDress)
         {
@@ -76,12 +75,11 @@ namespace EventDressRental.Controllers
             if (!await _modelService.IsExistsModelById(newDress.ModelId))
                 return BadRequest("is not model id.");
 
-            DressDTO user = await _dressService.AddDress(newDress);
-            return CreatedAtAction(nameof(GetDressById), new { Id = user.Id }, user);
+            DressDTO dress = await _dressService.AddDress(newDress);
+            return CreatedAtAction(nameof(GetDressById), new { Id = dress.Id }, dress);
         }
 
         // PUT api/<DressesController>/5
-        [Authorize(Roles = "Admin")] 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateDress(int id, [FromBody] NewDressDTO updateDress)
         {
@@ -110,7 +108,6 @@ namespace EventDressRental.Controllers
         }
 
         // DELETE api/<DressesController>/5
-        [Authorize(Roles = "Admin")] 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

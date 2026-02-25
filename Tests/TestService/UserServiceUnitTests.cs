@@ -1,203 +1,202 @@
-﻿//using Moq;
-//using Xunit;
-//using Services;
-//using Repositories;
-//using Entities;
-//using DTOs;
-//using AutoMapper;
-//using System;
-//using System.Collections.Generic;
-//using System.Threading.Tasks;
+﻿using Moq;
+using Xunit;
+using Services;
+using Repositories;
+using Entities;
+using DTOs;
+using AutoMapper;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-//namespace Services.Tests
-//{
-//    public class UserServiceTests
-//    {
-//        private readonly Mock<IUserRepository> _userRepoMock;
-//        private readonly Mock<IUserPasswordService> _passwordServiceMock;
-//        private readonly Mock<IMapper> _mapperMock;
-//        private readonly UserService _userService;
+namespace Services.Tests
+{
+    public class UserServiceUnitTests
+    {
+        private readonly Mock<IUserRepository> _userRepoMock;
+        private readonly Mock<IUserPasswordService> _passwordServiceMock;
+        private readonly Mock<IMapper> _mapperMock;
+        private readonly UserService _userService;
 
-//        public UserServiceTests()
-//        {
-//            _userRepoMock = new Mock<IUserRepository>();
-//            _passwordServiceMock = new Mock<IUserPasswordService>();
-//            _mapperMock = new Mock<IMapper>();
+        public UserServiceUnitTests()
+        {
+            _userRepoMock = new Mock<IUserRepository>();
+            _passwordServiceMock = new Mock<IUserPasswordService>();
+            _mapperMock = new Mock<IMapper>();
 
-//            _userService = new UserService(
-//                _userRepoMock.Object,
-//                _mapperMock.Object,
-//                _passwordServiceMock.Object
-//            );
-//        }
+            _userService = new UserService(
+                _userRepoMock.Object,
+                _mapperMock.Object,
+                _passwordServiceMock.Object
+            );
+        }
 
-//        #region Get Users
+        #region User Existence & General
 
-//        [Fact]
-//        public async Task GetUsers_ReturnsListOfUserDTOs()
-//        {
-//            var users = new List<User> { new User { Id = 1, FirstName = "Test" } };
-//            var usersDto = new List<UserDTO> { new UserDTO(1, "Test", "User", "t@t.com", "050", "123456") };
+        [Fact]
+        public async Task IsExistsUserById_ExistingId_ReturnsTrue()
+        {
+            // Arrange
+            int userId = 1;
+            _userRepoMock.Setup(r => r.IsExistsUserById(userId)).ReturnsAsync(true);
 
-//            _userRepoMock.Setup(r => r.GetUsers()).ReturnsAsync(users);
-//            _mapperMock.Setup(m => m.Map<List<User>, List<UserDTO>>(users)).Returns(usersDto);
+            // Act
+            var result = await _userService.IsExistsUserById(userId);
 
-//            var result = await _userService.GetUsers();
+            // Assert
+            Assert.True(result);
+            _userRepoMock.Verify(r => r.IsExistsUserById(userId), Times.Once);
+        }
 
-//            Assert.Single(result);
-//            Assert.Equal("Test", result[0].FirstName);
-//        }
+        [Fact]
+        public void CheckUser_Always_ReturnsTrue()
+        {
+            // Act
+            var result = _userService.CheckUser(1);
 
-//        [Fact]
-//        public async Task GetUserById_ExistingId_ReturnsUserDTO()
-//        {
-//            int id = 1;
-//            var user = new User { Id = id, FirstName = "Test" };
-//            var userDto = new UserDTO(id, "Test", "User", "t@t.com", "050", "123456");
+            // Assert
+            Assert.True(result);
+        }
 
-//            _userRepoMock.Setup(r => r.GetUserById(id)).ReturnsAsync(user);
-//            _mapperMock.Setup(m => m.Map<User, UserDTO>(user)).Returns(userDto);
+        #endregion
 
-//            var result = await _userService.GetUserById(id);
+        #region Get Users
 
-//            Assert.NotNull(result);
-//            Assert.Equal(id, result.Id);
-//        }
+        [Fact]
+        public async Task GetUsers_ReturnsListOfUserDTOs()
+        {
+            // Arrange
+            var users = new List<User> { new User { Id = 1, FirstName = "Test" } };
+            var usersDto = new List<UserDTO> { new UserDTO(1, "Test", "User", "t@t.com", "050", "123456", "") };
 
-//        [Fact]
-//        public async Task GetUserById_NonExistingId_ThrowsKeyNotFoundException()
-//        {
-//            _userRepoMock.Setup(r => r.GetUserById(It.IsAny<int>())).ReturnsAsync((User)null);
+            _userRepoMock.Setup(r => r.GetUsers()).ReturnsAsync(users);
+            _mapperMock.Setup(m => m.Map<List<User>, List<UserDTO>>(users)).Returns(usersDto);
 
-//            await Assert.ThrowsAsync<KeyNotFoundException>(() => _userService.GetUserById(999));
-//        }
+            // Act
+            var result = await _userService.GetUsers();
 
-//        [Fact]
-//        public async Task GetUserById_InvalidId_ThrowsKeyNotFoundException() // שים לב לשם ולסוג
-//        {
-//            // Arrange
-//            _userRepoMock.Setup(r => r.GetUserById(It.IsAny<int>())).ReturnsAsync((User)null);
+            // Assert
+            Assert.NotNull(result);
+            Assert.Single(result);
+            Assert.Equal("Test", result[0].FirstName);
+        }
 
-//            // Act & Assert
-//            await Assert.ThrowsAsync<KeyNotFoundException>(() => _userService.GetUserById(0));
-//        }
+        [Fact]
+        public async Task GetUserById_ExistingId_ReturnsUserDTO()
+        {
+            // Arrange
+            int id = 1;
+            var user = new User { Id = id, FirstName = "Test" };
+            var userDto = new UserDTO(id, "Test", "User", "t@t.com", "050", "123456", "");
 
-//        #endregion
+            _userRepoMock.Setup(r => r.GetUserById(id)).ReturnsAsync(user);
+            _mapperMock.Setup(m => m.Map<User, UserDTO>(user)).Returns(userDto);
 
-//        #region Registration & Login
+            // Act
+            var result = await _userService.GetUserById(id);
 
-//        [Fact]
-//        public async Task AddUser_ValidUser_ReturnsUserDTO()
-//        {
-//            var registerDto = new UserRegisterDTO("First", "Last", "e@e.com", "050", "SecurePass123");
-//            var userEntity = new User { FirstName = "First", Password = "SecurePass123" };
-//            var savedUser = new User { Id = 1, FirstName = "First" };
-//            var expectedDto = new UserDTO(1, "First", "Last", "e@e.com", "050", "SecurePass123");
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(id, result.Id);
+        }
 
-//            _passwordServiceMock.Setup(p => p.CheckPassword(registerDto.Password)).Returns(4);
+        [Fact]
+        public async Task GetUserById_NonExistingId_ReturnsNull()
+        {
+            // Arrange
+            int id = 999;
+            _userRepoMock.Setup(r => r.GetUserById(id)).ReturnsAsync((User)null);
 
-//            _mapperMock.Setup(m => m.Map<UserRegisterDTO, User>(registerDto)).Returns(userEntity);
-//            _userRepoMock.Setup(r => r.AddUser(userEntity)).ReturnsAsync(savedUser);
-//            _mapperMock.Setup(m => m.Map<User, UserDTO>(savedUser)).Returns(expectedDto);
+            // Act
+            var result = await _userService.GetUserById(id);
 
-//            var result = await _userService.AddUser(registerDto);
+            // Assert
+            Assert.Null(result);
+        }
 
-//            Assert.Equal(1, result.Id);
-//            _userRepoMock.Verify(r => r.AddUser(It.IsAny<User>()), Times.Once);
-//        }
+        #endregion
 
-//        [Fact]
-//        public async Task AddUser_WeakPassword_ThrowsArgumentException()
-//        {
-//            var weakUser = new UserRegisterDTO("F", "L", "e@e.com", "050", "123");
-//            _passwordServiceMock.Setup(p => p.CheckPassword("123")).Returns(1);
+        #region Registration & Login
 
-//            var ex = await Assert.ThrowsAsync<ArgumentException>(() => _userService.AddUser(weakUser));
-//            Assert.Equal("Password is too weak.", ex.Message);
-//        }
+        [Fact]
+        public async Task AddUser_ValidUser_ReturnsUserDTO()
+        {
+            // Arrange
+            var registerDto = new UserRegisterDTO("First", "Last", "e@e.com", "050", "Pass123", "");
+            var userEntity = new User { FirstName = "First", Password = "Pass123" };
+            var savedUser = new User { Id = 1, FirstName = "First" };
+            var expectedDto = new UserDTO(1, "First", "Last", "e@e.com", "050", "Pass123", "");
 
-//        [Fact]
-//        public async Task AddUser_NullUser_ThrowsArgumentNullException()
-//        {
-//            await Assert.ThrowsAsync<ArgumentNullException>(() => _userService.AddUser(null));
-//        }
+            _mapperMock.Setup(m => m.Map<UserRegisterDTO, User>(registerDto)).Returns(userEntity);
+            _userRepoMock.Setup(r => r.AddUser(userEntity)).ReturnsAsync(savedUser);
+            _mapperMock.Setup(m => m.Map<User, UserDTO>(savedUser)).Returns(expectedDto);
 
-//        [Fact]
-//        public async Task LogIn_ValidCredentials_ReturnsUserDTO()
-//        {
-//            var loginDto = new UserLoginDTO("First", "Last", "Pass");
-//            var loginUser = new User { FirstName = "First", LastName = "Last", Password = "Pass" };
-//            var dbUser = new User { Id = 1, FirstName = "First" };
-//            var expectedDto = new UserDTO(1, "First", "Last", "e@e.com", "050", "Pass");
+            // Act
+            var result = await _userService.AddUser(registerDto);
 
-//            _mapperMock.Setup(m => m.Map<UserLoginDTO, User>(loginDto)).Returns(loginUser);
-//            _userRepoMock.Setup(r => r.LogIn(loginUser)).ReturnsAsync(dbUser);
-//            _mapperMock.Setup(m => m.Map<User, UserDTO>(dbUser)).Returns(expectedDto);
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(1, result.Id);
+            _userRepoMock.Verify(r => r.AddUser(It.IsAny<User>()), Times.Once);
+        }
 
-//            var result = await _userService.LogIn(loginDto);
+        [Fact]
+        public async Task LogIn_ValidCredentials_ReturnsUserDTO()
+        {
+            // Arrange
+            var loginDto = new UserLoginDTO("First", "Last", "Pass");
+            var loginUser = new User { FirstName = "First", LastName = "Last", Password = "Pass" };
+            var dbUser = new User { Id = 1, FirstName = "First" };
+            var expectedDto = new UserDTO(1, "First", "Last", "e@e.com", "050", "Pass", "");
 
-//            Assert.NotNull(result);
-//            Assert.Equal(1, result.Id);
-//        }
+            _mapperMock.Setup(m => m.Map<UserLoginDTO, User>(loginDto)).Returns(loginUser);
+            _userRepoMock.Setup(r => r.LogIn(loginUser)).ReturnsAsync(dbUser);
+            _mapperMock.Setup(m => m.Map<User, UserDTO>(dbUser)).Returns(expectedDto);
 
-//        [Fact]
-//        public async Task LogIn_InvalidCredentials_ThrowsUnauthorizedAccessException()
-//        {
-//            var loginDto = new UserLoginDTO("Wrong", "User", "Pass");
-//            _mapperMock.Setup(m => m.Map<UserLoginDTO, User>(loginDto)).Returns(new User());
-//            _userRepoMock.Setup(r => r.LogIn(It.IsAny<User>())).ReturnsAsync((User)null);
+            // Act
+            var result = await _userService.LogIn(loginDto);
 
-//            await Assert.ThrowsAsync<UnauthorizedAccessException>(() => _userService.LogIn(loginDto));
-//        }
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(1, result.Id);
+        }
 
-//        [Fact]
-//        public async Task LogIn_NullUser_ThrowsArgumentNullException()
-//        {
-//            await Assert.ThrowsAsync<ArgumentNullException>(() => _userService.LogIn(null));
-//        }
+        [Fact]
+        public async Task LogIn_InvalidCredentials_ReturnsNull()
+        {
+            // Arrange
+            var loginDto = new UserLoginDTO("Wrong", "User", "Pass");
+            _mapperMock.Setup(m => m.Map<UserLoginDTO, User>(loginDto)).Returns(new User());
+            _userRepoMock.Setup(r => r.LogIn(It.IsAny<User>())).ReturnsAsync((User)null);
 
-//        #endregion
+            // Act
+            var result = await _userService.LogIn(loginDto);
 
-//        #region Update User
+            // Assert
+            Assert.Null(result);
+        }
 
-//        [Fact]
-//        public async Task UpdateUser_ValidUpdate_CallsRepository()
-//        {
-//            int id = 1;
-//            var updateDto = new UserDTO(id, "Updated", "User", "e@e.com", "050", "StrongPass!");
-//            var userEntity = new User { Id = id, FirstName = "Updated" };
+        #endregion
 
-//            _passwordServiceMock.Setup(p => p.CheckPassword(updateDto.Password)).Returns(5);
-//            _mapperMock.Setup(m => m.Map<UserDTO, User>(updateDto)).Returns(userEntity);
+        #region Update User
 
-//            await _userService.UpdateUser(id, updateDto);
+        [Fact]
+        public async Task UpdateUser_ValidUpdate_CallsRepository()
+        {
+            // Arrange
+            int id = 1;
+            var updateDto = new UserRegisterDTO("Updated", "User", "e@e.com", "050", "Pass!", "");
+            var userEntity = new User { Id = id, FirstName = "Updated" };
 
-//            _userRepoMock.Verify(r => r.UpdateUser(userEntity), Times.Once);
-//        }
+            _mapperMock.Setup(m => m.Map<UserRegisterDTO, User>(updateDto)).Returns(userEntity);
 
-//        [Fact]
-//        public async Task UpdateUser_WeakPassword_ThrowsArgumentException()
-//        {
-//            int id = 1;
-//            var updateDto = new UserDTO(id, "Updated", "User", "e@e.com", "050", "123");
-//            _passwordServiceMock.Setup(p => p.CheckPassword("123")).Returns(1);
+            // Act
+            await _userService.UpdateUser(id, updateDto);
 
-//            await Assert.ThrowsAsync<ArgumentException>(() => _userService.UpdateUser(id, updateDto));
-//        }
+            // Assert
+            _userRepoMock.Verify(r => r.UpdateUser(userEntity), Times.Once);
+        }
 
-//        [Fact]
-//        public async Task UpdateUser_NullDto_ThrowsArgumentNullException()
-//        {
-//            await Assert.ThrowsAsync<ArgumentNullException>(() => _userService.UpdateUser(1, null));
-//        }
-
-//        [Fact]
-//        public async Task UpdateUser_InvalidId_ThrowsArgumentException()
-//        {
-//            var updateDto = new UserDTO(0, "Test", "User", "e@e.com", "050", "Pass");
-//            await Assert.ThrowsAsync<ArgumentException>(() => _userService.UpdateUser(0, updateDto));
-//        }
-
-//        #endregion
-//    }
-//}
+        #endregion
+    }
+}

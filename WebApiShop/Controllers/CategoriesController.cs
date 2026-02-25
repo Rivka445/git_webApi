@@ -38,7 +38,6 @@ namespace EventDressRental.Controllers
         }
 
         // POST api/<CategoriesController>
-        [Authorize(Roles = "Admin")] 
         [HttpPost]
         public async Task<ActionResult<CategoryDTO>> AddCategory([FromBody] NewCategoryDTO newCategory)
         {

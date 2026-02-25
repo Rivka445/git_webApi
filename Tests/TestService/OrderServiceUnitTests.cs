@@ -1,231 +1,259 @@
-﻿//using Moq;
-//using Xunit;
-//using Services;
-//using Repositories;
-//using Entities;
-//using DTOs;
-//using AutoMapper;
-//using System;
-//using System.Collections.Generic;
-//using System.Threading.Tasks;
+﻿using AutoMapper;
+using DTOs;
+using Entities;
+using Moq;
+using Repositories;
+using Services;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Microsoft.Extensions.Logging;
 
-//namespace Services.Tests
-//{
-//    public class OrderServiceTests
-//    {
-//        private readonly Mock<IOrderRepository> _orderRepoMock;
-//        private readonly Mock<IUserService> _userServiceMock;
-//        private readonly Mock<IMapper> _mapperMock;
-//        private readonly OrderService _orderService;
+namespace Services.Tests
+{
+    public class OrderServiceTests
+    {
+        private readonly Mock<IOrderRepository> _orderRepoMock;
+        private readonly Mock<IUserService> _userServiceMock;
+        private readonly Mock<IDressService> _dressServiceMock;
+        private readonly Mock<IMapper> _mapperMock;
 
-//        public OrderServiceTests()
-//        {
-//            _orderRepoMock = new Mock<IOrderRepository>();
-//            _userServiceMock = new Mock<IUserService>();
-//            _mapperMock = new Mock<IMapper>();
+        private readonly OrderService _orderService;
 
-//            _orderService = new OrderService(
-//                _orderRepoMock.Object,
-//                _mapperMock.Object,
-//                _userServiceMock.Object
-//            );
-//        }
+        public OrderServiceTests()
+        {
+            _orderRepoMock = new Mock<IOrderRepository>();
+            _userServiceMock = new Mock<IUserService>();
+            _dressServiceMock = new Mock<IDressService>();
+            _mapperMock = new Mock<IMapper>();
+            _orderService = new OrderService(
+                _orderRepoMock.Object,
+                _mapperMock.Object,
+                _userServiceMock.Object,
+                _dressServiceMock.Object,
+                _loggerMock.Object
+            );
+        }
 
-//        #region GetOrderById Tests
-//        [Fact]
-//        public async Task GetOrderById_ExistingId_ReturnsOrderDTO()
-//        {
-//            int orderId = 1;
-//            var order = new Order { Id = orderId, FinalPrice = 500 };
-//            var orderDto = new OrderDTO(orderId, DateOnly.FromDateTime(DateTime.Now),
-//                                        DateOnly.FromDateTime(DateTime.Now).AddDays(7), 500,
-//                                        1, "Note", "Status", "First", "Last", new List<DressDTO>());
+        #region checkStatus
 
-//            _orderRepoMock.Setup(r => r.GetOrderById(orderId)).ReturnsAsync(order);
-//            _mapperMock.Setup(m => m.Map<Order, OrderDTO>(order)).Returns(orderDto);
+        [Theory]
+        [InlineData(1, true)]
+        [InlineData(2, true)]
+        [InlineData(4, true)]
+        [InlineData(0, false)]
+        [InlineData(5, false)]
+        public void CheckStatus_ReturnsExpectedResult(int status, bool expected)
+        {
+            var result = _orderService.checkStatus(status);
+            Assert.Equal(expected, result);
+        }
 
-//            var result = await _orderService.GetOrderById(orderId);
+        #endregion
 
-//            Assert.NotNull(result);
-//            Assert.Equal(orderId, result.Id);
-//        }
+        #region checkDate
 
-//        [Fact]
-//        public async Task GetOrderById_InvalidId_ThrowsKeyNotFoundException()
-//        {
-//            // Arrange
-//            _orderRepoMock.Setup(r => r.GetOrderById(0)).ReturnsAsync((Order)null);
+        [Fact]
+        public void CheckDate_SingleDate_Past_ReturnsFalse()
+        {
+            var past = DateOnly.FromDateTime(DateTime.Now).AddDays(-1);
+            Assert.False(_orderService.checkDate(past));
+        }
 
-//            // Act & Assert
-//            await Assert.ThrowsAsync<KeyNotFoundException>(() => _orderService.GetOrderById(0));
-//        }
+        [Fact]
+        public void CheckDate_SingleDate_Future_ReturnsTrue()
+        {
+            var future = DateOnly.FromDateTime(DateTime.Now).AddDays(1);
+            Assert.True(_orderService.checkDate(future));
+        }
 
-//        [Fact]
-//        public async Task GetOrderById_NonExistingId_ThrowsKeyNotFoundException()
-//        {
-//            _orderRepoMock.Setup(r => r.GetOrderById(It.IsAny<int>())).ReturnsAsync((Order)null);
+        [Fact]
+        public void CheckDate_OrderAndEventDate_Valid_ReturnsTrue()
+        {
+            var today = DateOnly.FromDateTime(DateTime.Now);
+            var future = today.AddDays(2);
 
-//            await Assert.ThrowsAsync<KeyNotFoundException>(() => _orderService.GetOrderById(999));
-//        }
-//        #endregion
+            Assert.True(_orderService.checkDate(today, future));
+        }
 
-//        #region GetOrderByUserId Tests
-//        [Fact]
-//        public async Task GetOrderByUserId_UserNotFound_ThrowsKeyNotFoundException()
-//        {
-//            int userId = 1;
-//            _userServiceMock.Setup(s => s.GetUserById(userId)).ReturnsAsync((UserDTO)null);
+        #endregion
 
-//            await Assert.ThrowsAsync<KeyNotFoundException>(() => _orderService.GetOrderByUserId(userId));
-//        }
+        #region checkPrice (NewOrderDTO)
 
-//        [Fact]
-//        public async Task GetOrderByUserId_NoOrdersFound_ThrowsInvalidOperationException()
-//        {
-//            int userId = 1;
-//            _userServiceMock.Setup(s => s.GetUserById(userId)).ReturnsAsync(new UserDTO(userId, "F", "L", "e@e.com", "050", "Pass"));
-//            _orderRepoMock.Setup(r => r.GetOrderByUserId(userId)).ReturnsAsync(new List<Order>());
+        [Fact]
+        public async Task CheckPrice_NewOrderDTO_MatchingSum_ReturnsTrue()
+        {
+            var itemsDto = new List<NewOrderItemDTO>
+            {
+                new NewOrderItemDTO(1, 100),
+                new NewOrderItemDTO(2, 200)
+            };
 
-//            await Assert.ThrowsAsync<InvalidOperationException>(() => _orderService.GetOrderByUserId(userId));
-//        }
+            var dto = new NewOrderDTO(
+                DateOnly.FromDateTime(DateTime.Now),
+                DateOnly.FromDateTime(DateTime.Now).AddDays(1),
+                300,
+                1,
+                "note",
+                itemsDto
+            );
 
-//        [Fact]
-//        public async Task GetOrderByUserId_ValidUser_ReturnsOrders()
-//        {
-//            int userId = 1;
-//            var orders = new List<Order> { new Order { Id = 10, FinalPrice = 200 } };
-//            var ordersDto = new List<OrderDTO> { new OrderDTO(10, DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now).AddDays(1), 200, 1, "Note", "New", "F", "L", new List<DressDTO>()) };
+            var mappedOrder = new Order
+            {
+                FinalPrice = 300,
+                OrderItems = new List<OrderItem>
+                {
+                    new OrderItem { DressId = 1 },
+                    new OrderItem { DressId = 2 }
+                }
+            };
 
-//            _userServiceMock.Setup(s => s.GetUserById(userId)).ReturnsAsync(new UserDTO(userId, "F", "L", "e@e.com", "050", "Pass"));
-//            _orderRepoMock.Setup(r => r.GetOrderByUserId(userId)).ReturnsAsync(orders);
-//            _mapperMock.Setup(m => m.Map<List<Order>, List<OrderDTO>>(orders)).Returns(ordersDto);
+            _mapperMock.Setup(m => m.Map<NewOrderDTO, Order>(dto))
+                       .Returns(mappedOrder);
 
-//            var result = await _orderService.GetOrderByUserId(userId);
+            _dressServiceMock.Setup(d => d.GetPriceById(1)).ReturnsAsync(100);
+            _dressServiceMock.Setup(d => d.GetPriceById(2)).ReturnsAsync(200);
 
-//            Assert.Single(result);
-//            Assert.Equal(10, result[0].Id);
-//        }
-//        #endregion
+            var result = await _orderService.checkPrice(dto);
 
-//        #region GetOrdersByDate Tests
-//        [Fact]
-//        public async Task GetOrdersByDate_PastDate_ThrowsArgumentException()
-//        {
-//            var pastDate = DateOnly.FromDateTime(DateTime.Now).AddDays(-1);
+            Assert.True(result);
+        }
 
-//            await Assert.ThrowsAsync<ArgumentException>(() => _orderService.GetOrdersByDate(pastDate));
-//        }
+        [Fact]
+        public async Task CheckPrice_NewOrderDTO_NotMatchingSum_ReturnsFalse()
+        {
+            var itemsDto = new List<NewOrderItemDTO>
+            {
+                new NewOrderItemDTO(1, 100)
+            };
 
-//        [Fact]
-//        public async Task GetOrdersByDate_ValidDate_ReturnsOrders()
-//        {
-//            var date = DateOnly.FromDateTime(DateTime.Now).AddDays(1);
-//            var orders = new List<Order> { new Order { Id = 5, FinalPrice = 300 } };
-//            var ordersDto = new List<OrderDTO> { new OrderDTO(5, date, date.AddDays(1), 300, 1, "Note", "New", "F", "L", new List<DressDTO>()) };
+            var dto = new NewOrderDTO(
+                DateOnly.FromDateTime(DateTime.Now),
+                DateOnly.FromDateTime(DateTime.Now).AddDays(1),
+                500,
+                1,
+                "note",
+                itemsDto
+            );
 
-//            _orderRepoMock.Setup(r => r.GetOrdersByDate(date)).ReturnsAsync(orders);
-//            _mapperMock.Setup(m => m.Map<List<Order>, List<OrderDTO>>(orders)).Returns(ordersDto);
+            var mappedOrder = new Order
+            {
+                FinalPrice = 500,
+                OrderItems = new List<OrderItem>
+                {
+                    new OrderItem { DressId = 1 }
+                }
+            };
 
-//            var result = await _orderService.GetOrdersByDate(date);
+            _mapperMock.Setup(m => m.Map<NewOrderDTO, Order>(dto))
+                       .Returns(mappedOrder);
 
-//            Assert.Single(result);
-//            Assert.Equal(5, result[0].Id);
-//        }
-//        #endregion
+            _dressServiceMock.Setup(d => d.GetPriceById(1)).ReturnsAsync(100);
 
-//        #region AddOrder Tests
-//        [Fact]
-//        public async Task AddOrder_NullOrder_ThrowsArgumentNullException()
-//        {
-//            await Assert.ThrowsAsync<ArgumentNullException>(() => _orderService.AddOrder(null));
-//        }
+            var result = await _orderService.checkPrice(dto);
 
-//        [Fact]
-//        public async Task AddOrder_PriceMismatch_ThrowsInvalidOperationException()
-//        {
-//            var items = new List<OrderItemDTO> { new OrderItemDTO(1, 100) };
-//            var newOrderDto = new NewOrderDTO(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now).AddDays(2), 500, 1, "Note", items);
+            Assert.False(result);
+        }
 
-//            var postOrder = new Order
-//            {
-//                FinalPrice = 500,
-//                OrderItems = new List<OrderItem> { new OrderItem { Dress = new Dress { Price = 100 } } }
-//            };
+        #endregion
 
-//            _mapperMock.Setup(m => m.Map<NewOrderDTO, Order>(newOrderDto)).Returns(postOrder);
+        #region checkOrderItems (NewOrderDTO)
 
-//            await Assert.ThrowsAsync<InvalidOperationException>(() => _orderService.AddOrder(newOrderDto));
-//        }
 
-//        [Fact]
-//        public async Task AddOrder_InvalidDate_ThrowsArgumentException()
-//        {
-//            var pastDate = DateOnly.FromDateTime(DateTime.Now).AddDays(-1);
-//            var newOrderDto = new NewOrderDTO(pastDate, pastDate, 100, 1, "Note", new List<OrderItemDTO>());
+        [Fact]
+        public async Task CheckOrderItems_NewOrderDTO_DressNotExists_ReturnsFalse()
+        {
+            var dto = new NewOrderDTO(
+                DateOnly.FromDateTime(DateTime.Now),
+                DateOnly.FromDateTime(DateTime.Now).AddDays(2),
+                200,
+                1,
+                "note",
+                new List<NewOrderItemDTO>
+                {
+                    new NewOrderItemDTO(1,100)
+                });
 
-//            var postOrder = new Order
-//            {
-//                OrderDate = pastDate,
-//                EventDate = pastDate,
-//                FinalPrice = 100,
-//                OrderItems = new List<OrderItem> {
-//                                                 new OrderItem { Dress = new Dress { Price = 100 } }}
-//            };
-//            _mapperMock.Setup(m => m.Map<NewOrderDTO, Order>(newOrderDto)).Returns(postOrder);
+            var mappedOrder = new Order
+            {
+                EventDate = DateOnly.FromDateTime(DateTime.Now).AddDays(2),
+                OrderItems = new List<OrderItem>
+                {
+                    new OrderItem { DressId = 1 }
+                }
+            };
 
-//            await Assert.ThrowsAsync<ArgumentException>(() => _orderService.AddOrder(newOrderDto));
-//        }
+            _mapperMock.Setup(m => m.Map<NewOrderDTO, Order>(dto))
+                       .Returns(mappedOrder);
 
-//        [Fact]
-//        public async Task AddOrder_ValidOrder_ReturnsOrderDTO()
-//        {
-//            var today = DateOnly.FromDateTime(DateTime.Now);
-//            var itemsDto = new List<OrderItemDTO> { new OrderItemDTO(1, 200) };
-//            var newOrderDto = new NewOrderDTO(today, today.AddDays(1), 200, 1, "Note", itemsDto);
+            //_dressServiceMock.Setup(d => d.GetDressById(1))
+            //                 .ReturnsAsync((Dress?)null);
 
-//            var postOrder = new Order
-//            {
-//                OrderDate = today,
-//                EventDate = today.AddDays(1),
-//                FinalPrice = 200,
-//                OrderItems = new List<OrderItem> { new OrderItem { Dress = new Dress { Price = 200 } } }
-//            };
+            var result = await _orderService.checkOrderItems(dto);
 
-//            var savedOrder = new Order { Id = 10, FinalPrice = 200 };
-//            var expectedDto = new OrderDTO(10, today, today.AddDays(1), 200, 1, "Note", "New", "F", "L", new List<DressDTO>());
+            Assert.False(result);
+        }
 
-//            _mapperMock.Setup(m => m.Map<NewOrderDTO, Order>(newOrderDto)).Returns(postOrder);
-//            _orderRepoMock.Setup(r => r.AddOrder(postOrder)).ReturnsAsync(savedOrder);
-//            _mapperMock.Setup(m => m.Map<Order, OrderDTO>(savedOrder)).Returns(expectedDto);
+        #endregion
 
-//            var result = await _orderService.AddOrder(newOrderDto);
+        #region AddOrder
 
-//            Assert.NotNull(result);
-//            Assert.Equal(10, result.Id);
-//            _orderRepoMock.Verify(r => r.AddOrder(It.IsAny<Order>()), Times.Once);
-//        }
-//        #endregion
+        [Fact]
+        public async Task AddOrder_ValidOrder_SetsStatusTo1_AndReturnsDTO()
+        {
+            var dto = new NewOrderDTO(
+                DateOnly.FromDateTime(DateTime.Now),
+                DateOnly.FromDateTime(DateTime.Now).AddDays(1),
+                100,
+                1,
+                "note",
+                new List<NewOrderItemDTO>());
 
-//        #region UpdateStatusOrder Tests
-//        [Fact]
-//        public async Task UpdateStatusOrder_InvalidStatusId_ThrowsArgumentOutOfRangeException()
-//        {
-//            var order = new Order { Id = 1 };
+            var mappedOrder = new Order
+            {
+                FinalPrice = 100
+            };
 
-//            await Assert.ThrowsAsync<ArgumentOutOfRangeException>(() => _orderService.UpdateStatusOrder(order, 5));
-//        }
+            var savedOrder = new Order
+            {
+                Id = 10,
+                FinalPrice = 100,
+                StatusId = 1
+            };
 
-//        [Fact]
-//        public async Task UpdateStatusOrder_ValidStatus_UpdatesOrder()
-//        {
-//            var order = new Order { Id = 1, StatusId = 1 };
-//            int newStatus = 2;
+            var expectedDto = new OrderDTO
+            {
+                Id = 10,
+                OrderDate = dto.OrderDate,
+                EventDate = dto.EventDate,
+                FinalPrice = 100,
+                UserId = 1,
+                StatusId = 1,
+                StatusName = "New",
+                UserFirstName = "F",
+                UserLastName = "L",
+                OrderItems = new List<OrderItemDTO>()
+            };
 
-//            await _orderService.UpdateStatusOrder(order, newStatus);
+            _mapperMock.Setup(m => m.Map<NewOrderDTO, Order>(dto))
+                       .Returns(mappedOrder);
 
-//            Assert.Equal(newStatus, order.StatusId);
-//            _orderRepoMock.Verify(r => r.UpdateStatusOrder(order), Times.Once);
-//        }
-//        #endregion
-//    }
-//}
+            _orderRepoMock.Setup(r => r.AddOrder(mappedOrder))
+                          .ReturnsAsync(savedOrder);
+
+            _mapperMock.Setup(m => m.Map<Order, OrderDTO>(savedOrder))
+                       .Returns(expectedDto);
+
+            var result = await _orderService.AddOrder(dto);
+
+            Assert.NotNull(result);
+            Assert.Equal(1, mappedOrder.StatusId);
+            Assert.Equal(10, result.Id);
+
+            _orderRepoMock.Verify(r => r.AddOrder(It.IsAny<Order>()), Times.Once);
+        }
+
+        #endregion
+    }
+}

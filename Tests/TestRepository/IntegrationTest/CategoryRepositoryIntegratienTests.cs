@@ -1,73 +1,141 @@
-﻿//using Entities;
-//using Repositories;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using Entities;
+using Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Tests;
+using Xunit;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-//namespace Tests
-//{
-//    [Collection("Database Collection")]
-//    public class CategoryRepositoryIntegratienTests: IClassFixture<DatabaseFixture>, IAsyncLifetime
-//    {
-//        private readonly WebApiShopContext _dbContext;
-//        private readonly CategoryRepository _categoryRepository;
-//        public CategoryRepositoryIntegratienTests(DatabaseFixture databaseFixture)
-//        {
-//            _dbContext = databaseFixture.Context;
-//            _categoryRepository = new CategoryRepository(_dbContext);
-//        }
-//        public async Task InitializeAsync()
-//        {
-//            await ClearDatabase();
-//        }
-//        public async Task DisposeAsync()
-//        {
-//            await ClearDatabase();
-//        }
-//        private async Task ClearDatabase()
-//        {
-//            _dbContext.ChangeTracker.Clear();
-//            // סדר המחיקה קריטי למניעת שגיאות Foreign Key
-//            if (_dbContext.OrderItems.Any()) _dbContext.OrderItems.RemoveRange(_dbContext.OrderItems);
-//            if (_dbContext.Orders.Any()) _dbContext.Orders.RemoveRange(_dbContext.Orders);
-//            if (_dbContext.Products.Any()) _dbContext.Products.RemoveRange(_dbContext.Products);
-//            if (_dbContext.Categories.Any()) _dbContext.Categories.RemoveRange(_dbContext.Categories);
-//            if (_dbContext.Users.Any()) _dbContext.Users.RemoveRange(_dbContext.Users);
-//            _dbContext.SaveChanges();
-//        }
-//        [Fact]
-//        public async Task GetCategories_ReturnsAllCategories()
-//        {
-//            // Arrange
-//            var category1 = new Category {  Name = "Electronics" };
-//            var category2 = new Category {  Name = "Books" };
+namespace TestProject
+{
+    [Collection("Database Collection")]
+    public class CategoryRepositoryIntegrationTests : IAsyncLifetime
+    {
+        private readonly EventDressRentalContext _dbContext;
+        private readonly CategoryRepository _categoryRepository;
 
-//            _dbContext.Categories.Add(category1);
-//            _dbContext.Categories.Add(category2);
-//            await _dbContext.SaveChangesAsync();
+        public CategoryRepositoryIntegrationTests(DatabaseFixture fixture)
+        {
+            _dbContext = fixture.Context;
+            _categoryRepository = new CategoryRepository(_dbContext);
+        }
 
-//            // Act
-//            var result = await _categoryRepository.GetCategories();
+        public async Task InitializeAsync()
+        {
+            await ClearDatabaseAsync();
+        }
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(2, result.Count);
-//            Assert.Contains(result, c => c.Name == "Electronics");
-//            Assert.Contains(result, c => c.Name == "Books");
-//        }
+        public async Task DisposeAsync()
+        {
+            await ClearDatabaseAsync();
+        }
 
-//        [Fact]
-//        public async Task GetCategories_ReturnsEmptyList()
-//        {
-//            // Arrange
-//            // No categories are added to the database
-//            // Act
-//            var result = await _categoryRepository.GetCategories();
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Empty(result);
-//        }
-//    }
-//}
+        private async Task ClearDatabaseAsync()
+        {
+            _dbContext.ChangeTracker.Clear();
+            _dbContext.OrderItems.RemoveRange(_dbContext.OrderItems);
+            _dbContext.Orders.RemoveRange(_dbContext.Orders);
+            _dbContext.Dresses.RemoveRange(_dbContext.Dresses);
+            await _dbContext.Database.ExecuteSqlRawAsync("DELETE FROM [Models_Categories]");
+            _dbContext.Models.RemoveRange(_dbContext.Models);
+            _dbContext.Categories.RemoveRange(_dbContext.Categories);
+            _dbContext.Statuses.RemoveRange(_dbContext.Statuses);
+            _dbContext.Users.RemoveRange(_dbContext.Users);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        #region GetCategories Tests
+
+        [Fact]
+        public async Task GetCategories_ReturnsEmpty_WhenNoDataExists()
+        {
+            // Act
+            var result = await _categoryRepository.GetCategories();
+
+            // Assert
+            Assert.Empty(result);
+        }
+
+        [Fact]
+        public async Task GetCategories_WhenDataExists_ReturnsAllCategories()
+        {
+            // Arrange
+            var testCategories = new List<Category>
+            {
+                new Category { Name = "חסידי" },
+                new Category { Name = "ליטאי" }
+            };
+            await _dbContext.Categories.AddRangeAsync(testCategories);
+            await _dbContext.SaveChangesAsync();
+
+            // Act
+            var result = await _categoryRepository.GetCategories();
+
+            // Assert
+            Assert.Equal(2, result.Count);
+            Assert.Contains(result, c => c.Name == "חסידי");
+        }
+
+        #endregion
+
+        #region GetCategoryById & Existence Tests
+
+        [Fact]
+        public async Task GetCategoryById_ReturnsCorrectCategory_WhenExists()
+        {
+            // Arrange
+            var category = new Category { Name = "ערב" };
+            await _dbContext.Categories.AddAsync(category);
+            await _dbContext.SaveChangesAsync();
+
+            // Act
+            var result = await _categoryRepository.GetCategoryById(category.Id);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal("ערב", result!.Name);
+        }
+
+        [Fact]
+        public async Task IsExistsCategoryById_ReturnsTrue_WhenCategoryExists()
+        {
+            // Arrange
+            var category = new Category { Name = "ילדות" };
+            await _dbContext.Categories.AddAsync(category);
+            await _dbContext.SaveChangesAsync();
+
+            // Act
+            var exists = await _categoryRepository.IsExistsCategoryById(category.Id);
+            var notExists = await _categoryRepository.IsExistsCategoryById(999);
+
+            // Assert
+            Assert.True(exists);
+            Assert.False(notExists);
+        }
+
+        #endregion
+
+        #region AddCategory Tests
+
+        [Fact]
+        public async Task AddCategory_SavesCategoryToDatabase()
+        {
+            // Arrange
+            var newCategory = new Category { Name = "חדש מהניילון" };
+
+            // Act
+            var result = await _categoryRepository.AddCategory(newCategory);
+
+            // Assert
+            var categoryInDb = await _dbContext.Categories.FindAsync(result.Id);
+            Assert.NotNull(categoryInDb);
+            Assert.Equal("חדש מהניילון", categoryInDb!.Name);
+        }
+
+        #endregion
+    }
+}

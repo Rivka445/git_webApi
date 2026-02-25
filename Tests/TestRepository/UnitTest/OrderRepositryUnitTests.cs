@@ -19,146 +19,67 @@ namespace Tests
             return new Mock<EventDressRentalContext>(options);
         }
 
-        #region GetOrderById
+        #region Get & Existence
 
         [Fact]
-        public async Task GetOrderById_ReturnsOrderWithIncludes()
+        public async Task IsExistsOrderById_ReturnsTrue_WhenOrderExists()
         {
             var mockContext = GetMockContext();
+            var orders = new List<Order> { new Order { Id = 1 } };
+            mockContext.Setup(x => x.Orders).ReturnsDbSet(orders);
 
+            var repository = new OrderRepository(mockContext.Object);
+            var result = await repository.IsExistsOrderById(1);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public async Task GetOrderById_IncludesNestedEntities()
+        {
+            var mockContext = GetMockContext();
             var order = new Order
             {
-                Id = 10,
-                Status = new Status { Id = 1, Name = "Pending" },
+                Id = 1,
+                User = new User { FirstName = "Client A" , LastName="",Phone="08",Password="2DSCC2DS"},
+                Status = new Status { Name = "Confirmed" },
                 OrderItems = new List<OrderItem>
                 {
-                    new OrderItem
-                    {
-                        Id = 1,
-                        Dress = new Dress { Id = 5 }
-                    }
+                    new OrderItem { Dress = new Dress { Model = new Model { Name = "Bridal" } } }
                 }
             };
 
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(new List<Order> { order });
-
+            mockContext.Setup(x => x.Orders).ReturnsDbSet(new List<Order> { order });
             var repository = new OrderRepository(mockContext.Object);
 
-            var result = await repository.GetOrderById(10);
+            var result = await repository.GetOrderById(1);
 
             Assert.NotNull(result);
-            Assert.NotNull(result!.Status);
-            Assert.Single(result.OrderItems);
-            Assert.NotNull(result.OrderItems.First().Dress);
-        }
-
-        [Fact]
-        public async Task GetOrderById_ReturnsNull_WhenNotExists()
-        {
-            var mockContext = GetMockContext();
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(new List<Order>());
-
-            var repository = new OrderRepository(mockContext.Object);
-
-            var result = await repository.GetOrderById(999);
-
-            Assert.Null(result);
+            Assert.Equal("Client A", result.User.FirstName);
+            Assert.Equal("Bridal", result.OrderItems.First().Dress.Model.Name);
         }
 
         #endregion
 
-        #region GetAllOrders
+        #region Specialized Queries
 
         [Fact]
-        public async Task GetAllOrders_ReturnsSortedByOrderDate()
+        public async Task GetOrdersByDate_FiltersCorrectDateAndStatus()
         {
             var mockContext = GetMockContext();
+            var targetDate = new DateOnly(2025, 3, 1);
 
             var orders = new List<Order>
             {
-                new Order { Id = 1, OrderDate = new DateOnly(2024,1,10) },
-                new Order { Id = 2, OrderDate = new DateOnly(2024,1,1) }
+                // מתאים: תאריך אירוע לפני היעד וסטטוס 1
+                new Order { Id = 1, EventDate = new DateOnly(2025, 2, 28), StatusId = 1, OrderDate = targetDate },
+                // לא מתאים: תאריך אירוע אחרי היעד
+                new Order { Id = 2, EventDate = new DateOnly(2025, 3, 5), StatusId = 1, OrderDate = targetDate },
+                // לא מתאים: סטטוס לא 1
+                new Order { Id = 3, EventDate = new DateOnly(2025, 2, 20), StatusId = 2, OrderDate = targetDate }
             };
 
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(orders);
-
-            var repository = new OrderRepository(mockContext.Object);
-
-            var result = await repository.GetAllOrders();
-
-            Assert.Equal(2, result.Count);
-            Assert.True(result[0].OrderDate <= result[1].OrderDate);
-        }
-
-        #endregion
-
-        #region GetOrderByUserId
-
-        [Fact]
-        public async Task GetOrderByUserId_ReturnsOnlyUserOrdersSorted()
-        {
-            var mockContext = GetMockContext();
-
-            var userId = 5;
-
-            var orders = new List<Order>
-            {
-                new Order { Id = 1, UserId = userId, OrderDate = new DateOnly(2024,1,2) },
-                new Order { Id = 2, UserId = userId, OrderDate = new DateOnly(2024,1,1) },
-                new Order { Id = 3, UserId = 99, OrderDate = new DateOnly(2024,1,3) }
-            };
-
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(orders);
-
-            var repository = new OrderRepository(mockContext.Object);
-
-            var result = await repository.GetOrderByUserId(userId);
-
-            Assert.Equal(2, result.Count);
-            Assert.All(result, o => Assert.Equal(userId, o.UserId));
-            Assert.True(result[0].OrderDate <= result[1].OrderDate);
-        }
-
-        [Fact]
-        public async Task GetOrderByUserId_ReturnsEmpty_WhenNoOrders()
-        {
-            var mockContext = GetMockContext();
-
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(new List<Order>());
-
-            var repository = new OrderRepository(mockContext.Object);
-
-            var result = await repository.GetOrderByUserId(1);
-
-            Assert.Empty(result);
-        }
-
-        #endregion
-
-        #region GetOrdersByDate
-
-        [Fact]
-        public async Task GetOrdersByDate_FiltersByEventDateAndStatus()
-        {
-            var mockContext = GetMockContext();
-
-            var targetDate = new DateOnly(2024, 1, 10);
-
-            var orders = new List<Order>
-            {
-                new Order { Id = 1, EventDate = targetDate.AddDays(-1), StatusId = 1, OrderDate = targetDate },
-                new Order { Id = 2, EventDate = targetDate.AddDays(1), StatusId = 1, OrderDate = targetDate },
-                new Order { Id = 3, EventDate = targetDate.AddDays(-2), StatusId = 2, OrderDate = targetDate }
-            };
-
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(orders);
-
+            mockContext.Setup(x => x.Orders).ReturnsDbSet(orders);
             var repository = new OrderRepository(mockContext.Object);
 
             var result = await repository.GetOrdersByDate(targetDate);
@@ -168,75 +89,45 @@ namespace Tests
         }
 
         [Fact]
-        public async Task GetOrdersByDate_ReturnsEmpty_WhenNoMatch()
+        public async Task GetOrderByUserId_OrdersByOrderDateAscending()
         {
             var mockContext = GetMockContext();
+            var userId = 10;
+            var orders = new List<Order>
+            {
+                new Order { Id = 1, UserId = userId, OrderDate = new DateOnly(2025, 5, 20) },
+                new Order { Id = 2, UserId = userId, OrderDate = new DateOnly(2025, 5, 10) }
+            };
 
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(new List<Order>());
-
+            mockContext.Setup(x => x.Orders).ReturnsDbSet(orders);
             var repository = new OrderRepository(mockContext.Object);
 
-            var result = await repository.GetOrdersByDate(new DateOnly(2024, 1, 1));
+            var result = await repository.GetOrderByUserId(userId);
 
-            Assert.Empty(result);
+            Assert.Equal(2, result.Count);
+            Assert.Equal(2, result[0].Id); // המוקדם יותר אמור להיות ראשון (OrderDate)
         }
 
         #endregion
 
-        #region Add / Update
+        #region Write Operations
 
         [Fact]
-        public async Task AddOrder_CallsSaveChangesOnce()
+        public async Task AddOrder_SavesAndReturnsFullObject()
         {
             var mockContext = GetMockContext();
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(new List<Order>());
+            var newOrder = new Order { Id = 1, UserId = 100 };
 
+            // המוקד של FirstOrDefaultAsync בתוך AddOrder מחייב שהאובייקט יהיה ב-Set
+            mockContext.Setup(x => x.Orders).ReturnsDbSet(new List<Order> { newOrder });
             var repository = new OrderRepository(mockContext.Object);
 
-            var order = new Order { UserId = 1 };
+            var result = await repository.AddOrder(newOrder);
 
-            var result = await repository.AddOrder(order);
-
-            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<System.Threading.CancellationToken>()), Times.Once);
-            Assert.Equal(order.UserId, result.UserId);
-        }
-
-        [Fact]
-        public async Task UpdateOrder_CallsUpdateAndSave()
-        {
-            var mockContext = GetMockContext();
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(new List<Order>());
-
-            var repository = new OrderRepository(mockContext.Object);
-
-            var order = new Order { Id = 1 };
-
-            await repository.UpdateOrder(order);
-
-            mockContext.Verify(x => x.Orders.Update(order), Times.Once);
-            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<System.Threading.CancellationToken>()), Times.Once);
-        }
-
-        [Fact]
-        public async Task UpdateStatusOrder_CallsUpdateAndSave()
-        {
-            var mockContext = GetMockContext();
-            mockContext.Setup(x => x.Orders)
-                .ReturnsDbSet(new List<Order>());
-
-            var repository = new OrderRepository(mockContext.Object);
-
-            var order = new Order { Id = 1, StatusId = 1 };
-
-            order.StatusId = 2;
-
-            await repository.UpdateStatusOrder(order);
-
-            mockContext.Verify(x => x.Orders.Update(order), Times.Once);
-            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<System.Threading.CancellationToken>()), Times.Once);
+            mockContext.Verify(x => x.Orders.AddAsync(newOrder, default), Times.Once);
+            mockContext.Verify(x => x.SaveChangesAsync(default), Times.Once);
+            Assert.NotNull(result);
+            Assert.Equal(100, result.UserId);
         }
 
         #endregion

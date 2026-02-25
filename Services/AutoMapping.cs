@@ -44,8 +44,7 @@ namespace Services
                 .ForPath(d => d.Model.Name, o => o.MapFrom(s => s.ModelName));
             CreateMap<Dress, NewDressDTO>().ReverseMap();
             CreateMap<NewDressDTO, Dress>()
-                .ForMember(d => d.ModelId, o => o.MapFrom(s => s.ModelId))
-                .ForPath(d => d.Model.Id, o => o.MapFrom(s => s.ModelId));
+                .ForMember(d => d.ModelId, o => o.MapFrom(s => s.ModelId));
             CreateMap<Dress, NewDressDTO>().ReverseMap();
             CreateMap<Model, ModelDTO>().ReverseMap();
             CreateMap<Model, NewModelDTO>();

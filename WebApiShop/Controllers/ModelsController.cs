@@ -24,7 +24,7 @@ namespace EventDressRental.Controllers
         // GET: api/<ModelsController>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FinalModels>>> Get(string? description, int? minPrice, int? maxPrice,
-                    [FromQuery] int[] categoriesId, string? color, int position = 1, int skip = 8)
+                    [FromQuery] int[] categoriesId, string[] color, int position = 1, int skip = 8)
         {
             if (!_modelService.ValidateQueryParameters(position, skip, minPrice, maxPrice))
                 return BadRequest("is not valid parameters");
@@ -44,7 +44,6 @@ namespace EventDressRental.Controllers
         }
 
         // POST api/<ModelsController>
-        [Authorize(Roles = "Admin")] 
         [HttpPost]
         public async Task<ActionResult<ModelDTO>> AddModel([FromBody] NewModelDTO newModel)
         {
@@ -58,7 +57,6 @@ namespace EventDressRental.Controllers
         }
 
         // PUT api/<ModelsController>/5
-        [Authorize(Roles = "Admin")] 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateModel(int id, [FromBody] NewModelDTO updateModel)
         {
@@ -74,7 +72,6 @@ namespace EventDressRental.Controllers
         }
 
         // DELETE api/<ModelsController>/5
-        [Authorize(Roles = "Admin")] 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

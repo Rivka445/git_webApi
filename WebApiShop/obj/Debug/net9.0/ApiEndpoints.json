@@ -309,8 +309,8 @@
       },
       {
         "Name": "color",
-        "Type": "System.String",
-        "IsRequired": false
+        "Type": "System.String[]",
+        "IsRequired": true
       },
       {
         "Name": "position",
@@ -498,27 +498,6 @@
   },
   {
     "ContainingType": "EventDressRental.Controllers.OrdersController",
-    "Method": "UpdateOrder",
-    "RelativePath": "api/Orders/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "updateOrder",
-        "Type": "DTOs.NewOrderDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EventDressRental.Controllers.OrdersController",
     "Method": "UpdateStatusOrder",
     "RelativePath": "api/Orders/status/{statusId}",
     "HttpMethod": "PUT",
@@ -626,7 +605,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Services.AuthenticatedUser",
+        "Type": "DTOs.UserDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -677,7 +656,7 @@
       },
       {
         "Name": "updateUser",
-        "Type": "DTOs.UserDTO",
+        "Type": "DTOs.UserRegisterDTO",
         "IsRequired": true
       }
     ],
@@ -699,7 +678,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Services.AuthenticatedUser",
+        "Type": "DTOs.UserDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -1,216 +1,162 @@
-﻿//using Moq;
-//using Xunit;
-//using Services;
-//using Repositories;
-//using Entities;
-//using DTOs;
-//using AutoMapper;
-//using System;
-//using System.Collections.Generic;
-//using System.Threading.Tasks;
+﻿using AutoMapper;
+using DTOs;
+using Entities;
+using Moq;
+using Repositories;
+using Services;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
 
-//namespace Services.Tests
-//{
-//    public class DressServiceUnitTests
-//    {
-//        private readonly Mock<IDressRepository> _dressRepoMock;
-//        private readonly Mock<IModelService> _modelServiceMock;
-//        private readonly IMapper _mapper;
-//        private readonly DressService _dressService;
+namespace Services.Tests
+{
+    public class DressServiceTests
+    {
+        private readonly Mock<IDressRepository> _dressRepoMock;
+        private readonly IMapper _mapper;
+        private readonly DressService _dressService;
 
-//        public DressServiceUnitTests()
-//        {
-//            _dressRepoMock = new Mock<IDressRepository>();
-//            _modelServiceMock = new Mock<IModelService>();
+        public DressServiceTests()
+        {
+            _dressRepoMock = new Mock<IDressRepository>();
 
-//            var config = new MapperConfiguration(cfg =>
-//            {
-//                cfg.CreateMap<Dress, DressDTO>()
-//                   .ForMember(d => d.ModelImgUrl,
-//                       opt => opt.MapFrom(src => src.Model.ImgUrl));
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Dress, DressDTO>()
+                   .ForMember(d => d.ModelImgUrl, opt => opt.MapFrom(s => s.Model.ImgUrl));
+                cfg.CreateMap<NewDressDTO, Dress>();
+            });
 
-//                cfg.CreateMap<NewDressDTO, Dress>();
-//                cfg.CreateMap<DressDTO, Dress>();
-//            });
+            _mapper = config.CreateMapper();
+            _dressService = new DressService(_dressRepoMock.Object, _mapper);
+        }
 
-//            _mapper = config.CreateMapper();
+        #region Check Methods
 
-//            _dressService = new DressService(
-//                _dressRepoMock.Object,
-//                _mapper,
-//                _modelServiceMock.Object);
-//        }
+        [Fact]
+        public void CheckPrice_Positive_ReturnsTrue()
+        {
+            Assert.True(_dressService.checkPrice(100));
+        }
 
-//        #region Check Methods
+        [Fact]
+        public void CheckPrice_ZeroOrNegative_ReturnsFalse()
+        {
+            Assert.False(_dressService.checkPrice(0));
+            Assert.False(_dressService.checkPrice(-10));
+        }
 
-//        [Fact]
-//        public void CheckPrice_PositivePrice_ReturnsTrue()
-//        {
-//            Assert.True(_dressService.checkPrice(100));
-//        }
+        [Fact]
+        public void CheckDate_Future_ReturnsTrue()
+        {
+            var futureDate = DateOnly.FromDateTime(DateTime.Now.AddDays(1));
+            Assert.True(_dressService.checkDate(futureDate));
+        }
 
-//        [Fact]
-//        public void CheckPrice_ZeroOrNegative_ReturnsFalse()
-//        {
-//            Assert.False(_dressService.checkPrice(0));
-//            Assert.False(_dressService.checkPrice(-5));
-//        }
+        [Fact]
+        public void CheckDate_PastOrToday_ReturnsFalse()
+        {
+            var today = DateOnly.FromDateTime(DateTime.Now);
+            var past = DateOnly.FromDateTime(DateTime.Now.AddDays(-1));
+            Assert.False(_dressService.checkDate(today));
+            Assert.False(_dressService.checkDate(past));
+        }
 
-//        [Fact]
-//        public void CheckDate_FutureDate_ReturnsTrue()
-//        {
-//            var date = DateOnly.FromDateTime(DateTime.Now.AddDays(1));
-//            Assert.True(_dressService.checkDate(date));
-//        }
+        #endregion
 
-//        [Fact]
-//        public void CheckDate_PastOrToday_ReturnsFalse()
-//        {
-//            var today = DateOnly.FromDateTime(DateTime.Now);
-//            var past = DateOnly.FromDateTime(DateTime.Now.AddDays(-1));
+        #region GetDressById
 
-//            Assert.False(_dressService.checkDate(today));
-//            Assert.False(_dressService.checkDate(past));
-//        }
+        [Fact]
+        public async Task GetDressById_Existing_ReturnsDTO()
+        {
+            var dress = new Dress
+            {
+                Id = 1,
+                Size = "M",
+                Price = 120,
+                Model = new Model { ImgUrl = "img.jpg" }
+            };
 
-//        #endregion
+            _dressRepoMock.Setup(r => r.GetDressById(1)).ReturnsAsync(dress);
 
-//        #region GetDressById
+            var result = await _dressService.GetDressById(1);
 
-//        [Fact]
-//        public async Task GetDressById_DressExists_ReturnsDTO()
-//        {
-//            int id = 1;
+            Assert.NotNull(result);
+            Assert.Equal("M", result.Size);
+            Assert.Equal("img.jpg", result.ModelImgUrl);
+        }
 
-//            var dress = new Dress
-//            {
-//                Id = id,
-//                ModelId = 1,
-//                Size = "M",
-//                Price = 100,
-//                IsActive = true,
-//                Model = new Model { Id = 1, ImgUrl = "img.jpg" }
-//            };
+        [Fact]
+        public async Task GetDressById_NotFound_ReturnsNull()
+        {
+            _dressRepoMock.Setup(r => r.GetDressById(It.IsAny<int>())).ReturnsAsync((Dress)null);
 
-//            _dressRepoMock.Setup(r => r.GetDressById(id))
-//                          .ReturnsAsync(dress);
+            var result = await _dressService.GetDressById(99);
 
-//            var result = await _dressService.GetDressById(id);
+            Assert.Null(result);
+        }
 
-//            Assert.NotNull(result);
-//            Assert.Equal(id, result.Id);
-//            Assert.Equal("M", result.Size);
-//            Assert.Equal("img.jpg", result.ModelImgUrl);
-//        }
+        #endregion
 
-//        [Fact]
-//        public async Task GetDressById_NotFound_ReturnsNull()
-//        {
-//            _dressRepoMock.Setup(r => r.GetDressById(It.IsAny<int>()))
-//                          .ReturnsAsync((Dress)null);
+        #region GetSizesByModelId
 
-//            var result = await _dressService.GetDressById(99);
+        [Fact]
+        public async Task GetSizesByModelId_ReturnsList()
+        {
+            var sizes = new List<string> { "S", "M", "L" };
+            _dressRepoMock.Setup(r => r.GetSizesByModelId(1)).ReturnsAsync(sizes);
 
-//            Assert.Null(result);
-//        }
+            var result = await _dressService.GetSizesByModelId(1);
 
-//        #endregion
+            Assert.Equal(3, result.Count);
+            Assert.Contains("M", result);
+        }
 
-//        #region GetSizesByModelId
+        #endregion
 
-//        [Fact]
-//        public async Task GetSizesByModelId_ReturnsSizesFromRepository()
-//        {
-//            var sizes = new List<string> { "S", "M", "L" };
+        #region AddDress
 
-//            _dressRepoMock.Setup(r => r.GetSizesByModelId(1))
-//                          .ReturnsAsync(sizes);
+        [Fact]
+        public async Task AddDress_MapsAndReturnsDTO()
+        {
+            var newDress = new NewDressDTO(1, "S", 100, "");      
+            _dressRepoMock.Setup(r => r.AddDress(It.IsAny<Dress>()))
+                          .ReturnsAsync((Dress d) => { d.Id = 5; return d; });
 
-//            var result = await _dressService.GetSizesByModelId(1);
+            var result = await _dressService.AddDress(newDress);
 
-//            Assert.Equal(3, result.Count);
-//            Assert.Contains("M", result);
-//        }
+            Assert.NotNull(result);
+            Assert.Equal(5, result.Id);
+            Assert.Equal("S", result.Size);
+        }
 
-//        #endregion
+        #endregion
 
-//        #region GetCount
+        #region UpdateDress
 
-//        [Fact]
-//        public async Task GetCount_ReturnsValueFromRepository()
-//        {
-//            int modelId = 1;
-//            string size = "L";
-//            var date = DateOnly.FromDateTime(DateTime.Now.AddDays(3));
+        [Fact]
+        public async Task UpdateDress_CallsRepository()
+        {
+            var updateDto = new NewDressDTO(1, "L",  150,"" );
 
-//            _dressRepoMock.Setup(r =>
-//                r.GetCountByModelIdAndSizeForDate(modelId, size, date))
-//                .ReturnsAsync(5);
+            await _dressService.UpdateDress(1, updateDto);
 
-//            var result = await _dressService
-//                .GetCountByModelIdAndSizeForDate(modelId, size, date);
+            _dressRepoMock.Verify(r => r.UpdateDress(It.Is<Dress>(d => d.Size == "L")), Times.Once);
+        }
 
-//            Assert.Equal(5, result);
-//        }
+        #endregion
 
-//        #endregion
+        #region DeleteDress
 
-//        #region AddDress
+        [Fact]
+        public async Task DeleteDress_CallsRepository()
+        {
+            await _dressService.DeleteDress(1);
 
-//        [Fact]
-//        public async Task AddDress_Valid_ReturnsMappedDTO()
-//        {
-//            var newDress = new NewDressDTO(1, "M", 150, "Note");
+            _dressRepoMock.Verify(r => r.DeleteDress(1), Times.Once);
+        }
 
-//            _dressRepoMock.Setup(r => r.AddDress(It.IsAny<Dress>()))
-//                          .ReturnsAsync((Dress d) =>
-//                          {
-//                              d.Id = 10;
-//                              return d;
-//                          });
-
-//            var result = await _dressService.AddDress(newDress);
-
-//            Assert.NotNull(result);
-//            Assert.Equal(10, result.Id);
-//            Assert.Equal("M", result.Size);
-//        }
-
-//        #endregion
-
-//        #region UpdateDress
-
-//        [Fact]
-//        public async Task UpdateDress_CallsRepository()
-//        {
-//            int id = 1;
-//            var dto = new DressDTO(id, 1, "M", 200, "", true, "img.jpg");
-
-//            await _dressService.UpdateDress(id, dto);
-
-//            _dressRepoMock.Verify(r =>
-//                r.UpdateDress(It.Is<Dress>(d => d.Id == id)),
-//                Times.Once);
-//        }
-
-//        #endregion
-
-//        #region DeleteDress
-
-//        [Fact]
-//        public async Task DeleteDress_SetsIsActiveFalse_AndCallsRepository()
-//        {
-//            int id = 1;
-//            var dto = new DressDTO(id, 1, "M", 200, "", true, "img.jpg");
-
-//            await _dressService.DeleteDress(id, dto);
-
-//            _dressRepoMock.Verify(r =>
-//                r.DeleteDress(It.Is<Dress>(d =>
-//                    d.Id == id && d.IsActive == false)),
-//                Times.Once);
-//        }
-
-//        #endregion
-//    }
-//}
+        #endregion
+    }
+}

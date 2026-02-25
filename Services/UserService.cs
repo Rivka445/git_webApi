@@ -9,13 +9,11 @@ namespace Services
         private readonly IUserRepository _userRepository;
         private readonly IUserPasswordService _userPasswordService;
         private readonly IMapper _mapper;
-        private readonly ITokenService _tokenService;
-        public UserService(IUserRepository userRepository, IMapper mapper, IUserPasswordService userPasswordService , ITokenService tokenService)
+        public UserService(IUserRepository userRepository, IMapper mapper, IUserPasswordService userPasswordService )
         {
             _userRepository = userRepository;
             _userPasswordService = userPasswordService;
             _mapper = mapper;
-            _tokenService = tokenService;
         }
         public async Task<bool> IsExistsUserById(int id)
         {
@@ -39,38 +37,26 @@ namespace Services
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
             return userDTO;
         }
-        public async Task<AuthenticatedUser> AddUser(UserRegisterDTO newUser)
+        public async Task<UserDTO> AddUser(UserRegisterDTO newUser)
         {
             User userRegister = _mapper.Map<UserRegisterDTO, User>(newUser);
             User user = await _userRepository.AddUser(userRegister);
-            var token = _tokenService.CreateToken(user);
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
-            AuthenticatedUser authenticatedUser = new()
-            {
-                User = userDTO,
-                Token = token
-            };
-            return authenticatedUser;
+            return userDTO;
         }
-        public async Task<AuthenticatedUser> LogIn(UserLoginDTO existUser)
+        public async Task<UserDTO> LogIn(UserLoginDTO existUser)
         {
             User loginUser = _mapper.Map<UserLoginDTO,User>(existUser);
             User? user = await _userRepository.LogIn(loginUser);
             if (user == null)
                 return null;
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
-            var token = _tokenService.CreateToken(user);
-            AuthenticatedUser authenticatedUser = new()
-            {
-                User=userDTO,
-                Token=token
-            };
-            return authenticatedUser;
+            return userDTO;
         }
 
-        public async Task UpdateUser(int id, UserDTO updateUser)
+        public async Task UpdateUser(int id, UserRegisterDTO updateUser)
         {
-            User user = _mapper.Map<UserDTO,User>(updateUser);
+            User user = _mapper.Map<UserRegisterDTO, User>(updateUser);
             await _userRepository.UpdateUser(user);
         }
     }

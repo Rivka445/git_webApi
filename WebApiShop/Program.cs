@@ -1,20 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EventDressRental;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NLog.Web;
 using Repositories;
 using Services;
-using EventDressRental;
-using Microsoft.Extensions.Configuration;
-using NLog.Web;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using System.Text;
+using EventDressRental.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseNLog();
 
-// --- Dependency Injection ---
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
@@ -33,66 +30,17 @@ builder.Services.AddScoped<IDressService, DressService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
-builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IRatingRepository, RatingRepository>();
+builder.Services.AddScoped<IRatingService, RatingService>();
 
-// --- DbContext ---
-builder.Services.AddDbContext<EventDressRentalContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Home")));
 
-// --- Authentication ---
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
-            ValidateIssuer = false,
-            ValidateAudience = false
-        };
-    });
+builder.Services.AddDbContext<EventDressRentalContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Home")));
 
-// --- AutoMapper ---
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-// --- Controllers ---
 builder.Services.AddControllers();
 
-// --- Swagger ---
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-
-    var securityScheme = new OpenApiSecurityScheme
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.Http,
-        Scheme = "bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "Enter 'Bearer' [space] and then your token"
-    };
-    c.AddSecurityDefinition("Bearer", securityScheme);
-
-    var securityRequirement = new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            new string[]{}
-        }
-    };
-    c.AddSecurityRequirement(securityRequirement);
-});
-
-// --- CORS ---
+builder.Services.AddOpenApi();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp",
@@ -106,27 +54,32 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// --- Middleware Order ---
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
 
-app.UseCors("AllowAngularApp");
-app.UseAuthentication();
-app.UseAuthorization();
-
-// --- Swagger Middleware ---
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
+    app.MapOpenApi();
+    app.UseSwaggerUI(options =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-        c.RoutePrefix = ""; // Swagger על '/' או שנה לפי הצורך
+        options.SwaggerEndpoint("/openapi/v1.json", "My API V1");
     });
 }
 
-// --- Map Controllers ---
+
+
+
+app.UseCors("AllowAngularApp");
+
+app.UseHttpsRedirection();
+
+app.UseErrorHandling();
+
+app.UseRating();
+
+app.UseStaticFiles();
+
+app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();
+

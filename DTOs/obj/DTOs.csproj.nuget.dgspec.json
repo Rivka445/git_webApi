@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\PROJECT\\Event_dress_rental\\DTOs\\DTOs.csproj": {}
+    "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\PROJECT\\Event_dress_rental\\DTOs\\DTOs.csproj": {
+    "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\PROJECT\\Event_dress_rental\\DTOs\\DTOs.csproj",
+        "projectUniqueName": "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj",
         "projectName": "DTOs",
-        "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\PROJECT\\Event_dress_rental\\DTOs\\DTOs.csproj",
+        "projectPath": "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\PROJECT\\Event_dress_rental\\DTOs\\obj\\",
+        "outputPath": "c:\\Users\\user1\\Desktop\\API\\DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

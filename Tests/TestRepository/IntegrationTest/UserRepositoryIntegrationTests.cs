@@ -1,165 +1,126 @@
-﻿//using Entities;
-//using Repositories;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using Entities;
+using Repositories;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Tests;
+using Microsoft.EntityFrameworkCore;
 
-//namespace Tests
-//{
-//    [Collection("Database Collection")]
-//    public class UserRepositoryIntegrationTests : IClassFixture<DatabaseFixture>, IAsyncLifetime
-//    {
-//        private readonly WebApiShopContext _dbContext;
-//        private readonly UserRepository _userRepository;
-//        public UserRepositoryIntegrationTests(DatabaseFixture databaseFixture)
-//        {
-//            _dbContext = databaseFixture.Context;
-//            _userRepository = new UserRipository(_dbContext);
-//        }
-//        public async Task InitializeAsync()
-//        {
-//            await ClearDatabase();
-//        }
-//        public async Task DisposeAsync()
-//        {
-//            await ClearDatabase();
-//        }
-//        private async Task ClearDatabase()
-//        {
-//            _dbContext.ChangeTracker.Clear();
-//            // סדר המחיקה קריטי למניעת שגיאות Foreign Key
-//            if (_dbContext.OrderItems.Any()) _dbContext.OrderItems.RemoveRange(_dbContext.OrderItems);
-//            if (_dbContext.Orders.Any()) _dbContext.Orders.RemoveRange(_dbContext.Orders);
-//            if (_dbContext.Products.Any()) _dbContext.Products.RemoveRange(_dbContext.Products);
-//            if (_dbContext.Categories.Any()) _dbContext.Categories.RemoveRange(_dbContext.Categories);
-//            if (_dbContext.Users.Any()) _dbContext.Users.RemoveRange(_dbContext.Users);
-//            _dbContext.SaveChanges();
-//        }
-//        [Fact]
-//        public async Task AddUser()
-//        {
-//            // Arrange
-//            var newUser = new User
-//            {
-//                Email = "newuser@example.com",
-//                FirstName = "New",
-//                LastName = "User",
-//                Password = "securepassword"
-//            };
+namespace TestProject
+{
+	[Collection("Database Collection")]
+	public class UserRepositoryIntegrationTests : IAsyncLifetime
+	{
+		private readonly EventDressRentalContext _dbContext;
+		private readonly UserRepository _userRepository;
 
-//            // Act
-//            var result = await _userRepository.AddUser(newUser);
+		public UserRepositoryIntegrationTests(DatabaseFixture fixture)
+		{
+			_dbContext = fixture.Context;
+			_userRepository = new UserRepository(_dbContext);
+		}
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(newUser.Email, result.Email);
-//        }
+		public async Task InitializeAsync()
+		{
+			await ClearDatabaseAsync();
+		}
 
-//        [Fact]
-//        public async Task GetUserById()
-//        {
-//            // Arrange
-//            var user = new User
-//            {
-//                Email = "existinguser@example.com",
-//                FirstName = "Existing",
-//                LastName = "User",
-//                Password = "securepassword"
-//            };
-//            await _dbContext.Users.AddAsync(user);
-//            await _dbContext.SaveChangesAsync();
+		public async Task DisposeAsync()
+		{
+			await ClearDatabaseAsync();
+		}
 
+		private async Task ClearDatabaseAsync()
+		{
+			_dbContext.ChangeTracker.Clear();
+			_dbContext.OrderItems.RemoveRange(_dbContext.OrderItems);
+			_dbContext.Orders.RemoveRange(_dbContext.Orders);
+			_dbContext.Dresses.RemoveRange(_dbContext.Dresses);
+			await _dbContext.Database.ExecuteSqlRawAsync("DELETE FROM [Models_Categories]");
+			_dbContext.Models.RemoveRange(_dbContext.Models);
+			_dbContext.Categories.RemoveRange(_dbContext.Categories);
+			_dbContext.Statuses.RemoveRange(_dbContext.Statuses);
+			_dbContext.Users.RemoveRange(_dbContext.Users);
+			await _dbContext.SaveChangesAsync();
+		}
 
-//            // Act
-//            var result = await _userRepository.GetUserById(user.Id);
+		[Fact]
+		public async Task AddUser_PersistsUser()
+		{
+			var newUser = new User
+			{
+				Email = "newuser@example.com",
+				FirstName = "New",
+				LastName = "User",
+				Phone = "0500000003",
+				Password = "securepassword",
+				Role = "User"
+			};
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(user.Email, result.Email);
-//        }
+			var result = await _userRepository.AddUser(newUser);
 
-//        [Fact]
-//        public async Task LogIn()
-//        {
-//            // Arrange
-//            var user = new User
-//            {
-//                Email = "loginuser@example.com",
-//                FirstName = "Login",
-//                LastName = "User",
-//                Password = "securepassword!!!11"
-//            };
+			Assert.NotNull(result);
+			var saved = await _dbContext.Users.FindAsync(result.Id);
+			Assert.NotNull(saved);
+			Assert.Equal("newuser@example.com", saved!.Email);
+		}
 
-//            await _userRepository.AddUser(user);
-//            var loginUser = new User { Email = "loginuser@example.com", Password = "securepassword!!!11" };
+		[Fact]
+		public async Task LogIn_ReturnsUser_WhenCredentialsMatch()
+		{
+			var user = new User
+			{
+				Email = "loginuser@example.com",
+				FirstName = "Login",
+				LastName = "User",
+				Phone = "0500000004",
+				Password = "securepassword!!!11",
+				Role = "User"
+			};
 
-//            // Act
-//            var result = await _userRepository.LogIn(loginUser);
+			await _userRepository.AddUser(user);
+			var loginUser = new User
+			{
+				FirstName = "Login",
+				LastName = "User",
+				Password = "securepassword!!!11"
+			};
 
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(user.Email, result.Email);
-//        }
+			var result = await _userRepository.LogIn(loginUser);
 
-//        [Fact]
-//        public async Task LogIn_InvalidCredentials()
-//        {
-//            // Arrange
-//            // Attempt to log in with incorrect credentials
+			Assert.NotNull(result);
+			Assert.Equal(user.Email, result!.Email);
+		}
 
-//            var loginUser = new User { Email = "wronguser@example.com", Password = "wrongpassword!!!!@@@@" };
+		[Fact]
+		public async Task GetUsers_ReturnsAllUsers()
+		{
+			var user1 = new User
+			{
+				Email = "user1@example.com",
+				FirstName = "User1",
+				LastName = "Test",
+				Phone = "0500000005",
+				Password = "password123",
+				Role = "User"
+			};
+			var user2 = new User
+			{
+				Email = "user2@example.com",
+				FirstName = "User2",
+				LastName = "Test",
+				Phone = "0500000006",
+				Password = "password123",
+				Role = "User"
+			};
 
-//            // Act
-//            var result = await _userRepository.LogIn(loginUser);
+			await _userRepository.AddUser(user1);
+			await _userRepository.AddUser(user2);
 
-//            // Assert
-//            Assert.Null(result);
-//        }
+			var result = await _userRepository.GetUsers();
 
-//        [Fact]
-//        public async Task GetUsers()
-//        {
-//            // Arrange
-//            var user1 = new User
-//            {
-//                Email = "user1@example.com",
-//                FirstName = "User1",
-//                LastName = "Test",
-//                Password = "password123"
-//            };
-
-//            var user2 = new User
-//            {
-//                Email = "user2@example.com",
-//                FirstName = "User2",
-//                LastName = "Test",
-//                Password = "password123"
-//            };
-
-//            await _userRepository.AddUser(user1);
-//            await _userRepository.AddUser(user2);
-
-//            // Act
-//            var result = await _userRepository.GetUsers();
-
-//            // Assert
-//            Assert.NotNull(result);
-//            Assert.Equal(2, result.Count);
-//        }
-
-//        [Fact]
-//        public async Task GetUserById_NotFound()
-//        {
-//            // Arrange
-//            // No user with this ID exists
-
-//            // Act
-//            var result = await _userRepository.GetUserById(999); // Assuming 999 does not exist
-
-//            // Assert
-//            Assert.Null(result);
-//        }
-//    }
-//}
+			Assert.Equal(2, result.Count);
+		}
+	}
+}
