@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj": {}
+    "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj": {}
   },
   "projects": {
-    "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj": {
+    "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj",
         "projectName": "DTOs",
-        "projectPath": "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\user1\\Desktop\\API\\DTOs\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\API\\DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "c:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
+    "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "c:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\user1\\Desktop\\API\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\API\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,8 +99,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj": {
-                "projectPath": "c:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj"
+              "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj"
               }
             }
           }
@@ -140,14 +140,14 @@
         }
       }
     },
-    "c:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj": {
+    "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "c:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\user1\\Desktop\\API\\Repositories\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\API\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -169,8 +169,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
-                "projectPath": "c:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj"
+              "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj"
               }
             }
           }
@@ -226,14 +226,14 @@
         }
       }
     },
-    "c:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj": {
+    "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "c:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\user1\\Desktop\\API\\Services\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\API\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -255,11 +255,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
-                "projectPath": "c:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj"
+              "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj"
               },
-              "c:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj": {
-                "projectPath": "c:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj"
+              "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj"
               }
             }
           }

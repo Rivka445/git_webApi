@@ -18,6 +18,7 @@ namespace Services.Tests
         private readonly Mock<IUserService> _userServiceMock;
         private readonly Mock<IDressService> _dressServiceMock;
         private readonly Mock<IMapper> _mapperMock;
+        private readonly Mock<ILogger<OrderService>> _loggerMock;
 
         private readonly OrderService _orderService;
 
@@ -27,6 +28,7 @@ namespace Services.Tests
             _userServiceMock = new Mock<IUserService>();
             _dressServiceMock = new Mock<IDressService>();
             _mapperMock = new Mock<IMapper>();
+            _loggerMock = new Mock<ILogger<OrderService>>();
             _orderService = new OrderService(
                 _orderRepoMock.Object,
                 _mapperMock.Object,

@@ -1,1 +1,0 @@
-Data Source=DESKTOP-1VUANBN;Initial Catalog=Event_dress_rental;Integrated Security=True;Trust Server Certificate=True

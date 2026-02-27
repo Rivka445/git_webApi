@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\imodelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\imodelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testservice\\orderserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testservice\\orderserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\integrationtest\\orderrepositoryintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\integrationtest\\orderrepositoryintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\integrationtest\\dressrepositoryintegratientests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\integrationtest\\dressrepositoryintegratientests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testrepository\\integrationtest\\databasecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testrepository\\integrationtest\\databasecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\dressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{8713E766-D992-4C3F-B5A3-FF7FD8F212AC}|Services\\Services.csproj|solutionrelative:services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|c:\\users\\user1\\desktop\\api\\tests\\testservice\\orderserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EFDCE4EE-9D48-401B-BEBF-36010FF3881B}|Tests\\Tests.csproj|solutionrelative:tests\\testservice\\orderserviceunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|c:\\users\\user1\\desktop\\api\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{50E49E6D-BE2B-4FA5-B25E-F2A8AD8606ED}|DTOs\\DTOs.csproj|solutionrelative:dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -107,10 +119,6 @@
       "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|c:\\users\\user1\\desktop\\api\\repositories\\imodelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAAB1C30-6048-49E7-AC40-2F4545492A90}|Repositories\\Repositories.csproj|solutionrelative:repositories\\imodelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|c:\\users\\user1\\desktop\\api\\webapishop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51EEA669-7255-4272-91D1-1DC27654E101}|WebApiShop\\EventDressRental.csproj|solutionrelative:webapishop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -134,11 +142,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 0,
               "Title": "IModelRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IModelRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IModelRepository.cs",
@@ -147,24 +155,48 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-25T17:29:06.143Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DressRepositoryIntegratienTests.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
-              "RelativeDocumentMoniker": "Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
-              "RelativeToolTip": "Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAowG0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:35:09.713Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "OrderRepositoryIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\OrderRepositoryIntegrationTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\IntegrationTest\\OrderRepositoryIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\OrderRepositoryIntegrationTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\IntegrationTest\\OrderRepositoryIntegrationTests.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAHsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:02:36.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DatabaseCollection.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\DatabaseCollection.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\IntegrationTest\\DatabaseCollection.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\DatabaseCollection.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\IntegrationTest\\DatabaseCollection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:02:32.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DressRepositoryIntegratienTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
+              "RelativeDocumentMoniker": "Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
+              "RelativeToolTip": "Tests\\TestRepository\\IntegrationTest\\DressRepositoryIntegratienTests.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAowGcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T19:35:09.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CategoryRepositoryIntegratienTests.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\IntegrationTest\\CategoryRepositoryIntegratienTests.cs",
               "RelativeDocumentMoniker": "Tests\\TestRepository\\IntegrationTest\\CategoryRepositoryIntegratienTests.cs",
@@ -172,12 +204,11 @@
               "RelativeToolTip": "Tests\\TestRepository\\IntegrationTest\\CategoryRepositoryIntegratienTests.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAkwHkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:29:18.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T19:29:18.75Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\CategoryRepository.cs",
@@ -185,12 +216,11 @@
               "RelativeToolTip": "Repositories\\CategoryRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:28:35.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T19:28:35.99Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "OrderRepositryUnitTests.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
               "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
@@ -198,12 +228,11 @@
               "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\OrderRepositryUnitTests.cs",
               "ViewState": "AgIAAIEAAAAAAAAAAAASwIIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:24:41.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T19:24:41.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "ModelRepositoryUnitTests.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
               "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
@@ -211,12 +240,11 @@
               "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\ModelRepositoryUnitTests.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwDEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:17:54.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T19:17:54.521Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "DressRepositoryUnitTests.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
               "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
@@ -224,12 +252,11 @@
               "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\DressRepositoryUnitTests.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAuwHwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:15:28.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T19:15:28.826Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "CategoryRepositoryUnitTests.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
               "RelativeDocumentMoniker": "Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
@@ -237,12 +264,11 @@
               "RelativeToolTip": "Tests\\TestRepository\\UnitTest\\CategoryRepositoryUnitTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:15:26.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T19:15:26.451Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "UserServiceUnitTests.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\UserServiceUnitTests.cs",
               "RelativeDocumentMoniker": "Tests\\TestService\\UserServiceUnitTests.cs",
@@ -250,12 +276,11 @@
               "RelativeToolTip": "Tests\\TestService\\UserServiceUnitTests.cs",
               "ViewState": "AgIAAKkAAAAAAAAAAAAAALgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:05:38.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T19:05:38.069Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "OrderDTO.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\DTOs\\OrderDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\OrderDTO.cs",
@@ -263,12 +288,11 @@
               "RelativeToolTip": "DTOs\\OrderDTO.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAA6wCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:58:38.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T18:58:38.163Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "NewOrderItemDTO.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\DTOs\\NewOrderItemDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\NewOrderItemDTO.cs",
@@ -276,12 +300,11 @@
               "RelativeToolTip": "DTOs\\NewOrderItemDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:59:04.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T18:59:04.997Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "NewOrderDTO.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\DTOs\\NewOrderDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\NewOrderDTO.cs",
@@ -289,12 +312,11 @@
               "RelativeToolTip": "DTOs\\NewOrderDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:25:42.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T18:25:42.678Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "OrderItemDTO.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\DTOs\\OrderItemDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\OrderItemDTO.cs",
@@ -302,25 +324,24 @@
               "RelativeToolTip": "DTOs\\OrderItemDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:19:05.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T18:19:05.657Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
               "Title": "OrderServiceUnitTests.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\OrderServiceUnitTests.cs",
               "RelativeDocumentMoniker": "Tests\\TestService\\OrderServiceUnitTests.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\OrderServiceUnitTests.cs",
               "RelativeToolTip": "Tests\\TestService\\OrderServiceUnitTests.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAuwLIAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAswPEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-25T18:15:44.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "ModelServiceUnitTests.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Tests\\TestService\\ModelServiceUnitTests.cs",
               "RelativeDocumentMoniker": "Tests\\TestService\\ModelServiceUnitTests.cs",
@@ -328,12 +349,11 @@
               "RelativeToolTip": "Tests\\TestService\\ModelServiceUnitTests.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:15:04.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T18:15:04.515Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IOrderRepository.cs",
@@ -345,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "IModelService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\IModelService.cs",
               "RelativeDocumentMoniker": "Services\\IModelService.cs",
@@ -357,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "ModelRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\ModelRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ModelRepository.cs",
@@ -365,12 +385,11 @@
               "RelativeToolTip": "Repositories\\ModelRepository.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAYwFYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:07:50.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T18:07:50.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\IOrderService.cs",
               "RelativeDocumentMoniker": "Services\\IOrderService.cs",
@@ -382,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "Services\\OrderService.cs",
@@ -395,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\OrderRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\OrderRepository.cs",
@@ -403,12 +422,11 @@
               "RelativeToolTip": "Repositories\\OrderRepository.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAQwE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T17:54:40.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T17:54:40.574Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "ModelService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\ModelService.cs",
               "RelativeDocumentMoniker": "Services\\ModelService.cs",
@@ -420,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\UserService.cs",
@@ -428,12 +446,11 @@
               "RelativeToolTip": "Services\\UserService.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAmwD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T14:08:48.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T14:08:48.154Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "AutoMapping.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\AutoMapping.cs",
               "RelativeDocumentMoniker": "Services\\AutoMapping.cs",
@@ -445,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "WebApiShop\\Controllers\\UsersController.cs",
@@ -457,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\appsettings.json",
               "RelativeDocumentMoniker": "WebApiShop\\appsettings.json",
@@ -469,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "WebApiShop\\Controllers\\OrdersController.cs",
@@ -481,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "IDressRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\IDressRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IDressRepository.cs",
@@ -493,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "DressRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Repositories\\DressRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\DressRepository.cs",
@@ -501,12 +518,11 @@
               "RelativeToolTip": "Repositories\\DressRepository.cs",
               "ViewState": "AgIAAEoAAAAAAAAAAAAmwFkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T09:45:36.539Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T09:45:36.539Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "DressService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\Services\\DressService.cs",
               "RelativeDocumentMoniker": "Services\\DressService.cs",
@@ -518,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\Program.cs",
               "RelativeDocumentMoniker": "WebApiShop\\Program.cs",

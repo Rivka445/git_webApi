@@ -60,3 +60,4 @@
 ├── DressRental.Services     # Business Logic, Interfaces, AutoMapper Profiles, DTOs
 ├── DressRental.Repositories # DB Context, Entities (EF), Repository Implementations
 └── DressRental.Tests        # Unit & Integration Tests
+```
