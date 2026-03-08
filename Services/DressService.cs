@@ -25,17 +25,17 @@ namespace Services
         {
             return await _dressRepository.IsExistsDressById(id);
         }
-        public bool checkPrice(int price)
+        public bool CheckPrice(int price)
         {
             return price > 0;
         }
-        public bool checkDate(DateOnly date)
+        public bool CheckDate(DateOnly date)
         {
             return date > DateOnly.FromDateTime(DateTime.Now);
         }
-        public bool checkDressByDate(int id, DateOnly date)
+        public async Task<bool> IsDressAvailable(int id, DateOnly date)
         {
-            return date > DateOnly.FromDateTime(DateTime.Now);
+            return await _dressRepository.IsDressAvailable(id, date);
         }
         public async Task<int> GetPriceById(int id)
         {
@@ -49,45 +49,34 @@ namespace Services
             DressDTO dressDTO = _mapper.Map<Dress, DressDTO>(dress);
             return dressDTO;
         }
-        public async Task<List<string>> GetSizesByModelId(int modelId)
-        {
-            return await _dressRepository.GetSizesByModelId(modelId);
-        }
-        public async Task<bool> IsDressAvailable(int id, DateOnly date)
-        {
-            return await _dressRepository.IsDressAvailable(id, date);
-        }
-
         public async Task<List<DressDTO>> GetDressesByModelId(int modelId)
         {
             List<Dress> dresses = await _dressRepository.GetDressesByModelId(modelId);
             List<DressDTO> dressesDTO = _mapper.Map<List<Dress>, List<DressDTO>>(dresses);
             return dressesDTO;
         }
-
-        public async Task<int> GetCountByModelIdAndSizeForDate(int modelId, string size, DateOnly date)
-        {
-            return await _dressRepository.GetCountByModelIdAndSizeForDate(modelId, size, date);
-        }
         public async Task<DressDTO> GetDressByModelIdAndSize(int modelId, string size)
         {
-            Dress dress = await _dressRepository.GetDressByModelIdAndSize(modelId, size);
-            if (dress == null) return null;
+            Dress? dress = await _dressRepository.GetDressByModelIdAndSize(modelId, size);
+            if (dress == null) 
+                return null;
             DressDTO dressDTO = _mapper.Map<Dress, DressDTO>(dress);
             return dressDTO;
         }
 
-        public async Task<DressDTO> AddDress(NewDressDTO newDress)
+        public async Task<DressResponseDTO> AddDress(NewDressDTO newDress)
         {
             Dress addedDress = _mapper.Map<NewDressDTO, Dress>(newDress);
             addedDress.IsActive = true;
             Dress dress = await _dressRepository.AddDress(addedDress);
-            DressDTO dressDTO = _mapper.Map<Dress, DressDTO>(dress);
+            DressResponseDTO dressDTO = _mapper.Map<Dress, DressResponseDTO>(dress);
             return dressDTO;
         }
         public async Task UpdateDress(int id, NewDressDTO updateDress)
         {
             Dress update = _mapper.Map<NewDressDTO, Dress>(updateDress);
+            update.IsActive = true;
+            update.Id = id;
             await _dressRepository.UpdateDress(update);
         }
         public async Task DeleteDress(int id)

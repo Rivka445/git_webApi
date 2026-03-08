@@ -36,25 +36,44 @@ namespace Repositories
             && ((maxPrice == null) ? (true) : (product.BasePrice <= maxPrice))
             && (colors.Count() == 0) ? (true) : (colors.Contains(product.Color))
             && ((categoriesId.Count() == 0) ? (true) : product.Categories.Any(c => categoriesId.Contains(c.Id))))
-            .OrderBy(product => product.BasePrice);
-            Console.WriteLine(query.ToQueryString());
-            List<Model> products = await query.Skip((position - 1) * skip)
-            .Take(skip)
-            .Include(product => product.Categories)
-            .ToListAsync();
+                .OrderBy(product => product.BasePrice);
+                Console.WriteLine(query.ToQueryString());
+                List<Model> products = await query.Skip((position - 1) * skip)
+                .Take(skip)
+                .Include(product => product.Categories)
+                .ToListAsync();
             var total = await query.CountAsync();
             return (products, total);
+        }
+        public async Task<List<string>> GetSizesByModelId(int modelId)
+        {
+            return await _eventDressRentalContext.Dresses
+                .Where(d => d.IsActive == true && d.ModelId == modelId)
+                .Select(d => d.Size)
+                .Distinct()
+                .ToListAsync();
+        }
+        public async Task<int> GetCountByModelIdAndSizeForDate(int modelId, string size, DateOnly date)
+        {
+            var dressesCount = await _eventDressRentalContext.Dresses
+                .Where(d => d.IsActive == true && d.ModelId == modelId && d.Size == size)
+                .Include(d => d.OrderItems)
+                    .ThenInclude(oi => oi.Order)
+                .Where(d => !d.OrderItems.Any(oi =>
+                    oi.Order.EventDate >= date.AddDays(-7) &&
+                    oi.Order.EventDate <= date.AddDays(7)))
+                .CountAsync();
+            return dressesCount;
         }
         public async Task<Model> AddModel(Model model)
         {
             await _eventDressRentalContext.Models.AddAsync(model);
             foreach (var category in model.Categories)
             {
-                _eventDressRentalContext.Entry(category).State = EntityState.Unchanged;
+                _eventDressRentalContext.Categories.Attach(category);
             }
             await _eventDressRentalContext.SaveChangesAsync();
-            return await _eventDressRentalContext.Models
-                .FirstAsync(m => m.Id == model.Id);
+            return model;
         }
         public async Task UpdateModel(Model model)
         {
@@ -77,11 +96,10 @@ namespace Repositories
         }
         public async Task DeleteModel(int id)
         {
-            await _eventDressRentalContext.Models
-            .Where(d => d.Id == id)
-            .ExecuteUpdateAsync(s => s
-            .SetProperty(d => d.IsActive, false)
-            );
+            Model? model = await _eventDressRentalContext.Models
+               .FirstOrDefaultAsync(m => m.Id == id);
+            model.IsActive = false;
+            await _eventDressRentalContext.SaveChangesAsync();
         }
     }
 }

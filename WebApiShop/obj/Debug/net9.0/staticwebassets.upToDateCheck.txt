@@ -1,0 +1,8 @@
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\wwwroot\home.html
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\wwwroot\page2.js
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\wwwroot\script.js
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\wwwroot\page2.html
+wwwroot\home.html
+wwwroot\page2.html
+wwwroot\page2.js
+wwwroot\script.js

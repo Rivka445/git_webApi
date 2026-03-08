@@ -43,10 +43,13 @@ namespace Services
             CreateMap<DressDTO, Dress>()
                 .ForPath(d => d.Model.Name, o => o.MapFrom(s => s.ModelName));
             CreateMap<Dress, NewDressDTO>().ReverseMap();
+            CreateMap<DressResponseDTO, Dress>().ReverseMap();
             CreateMap<NewDressDTO, Dress>()
                 .ForMember(d => d.ModelId, o => o.MapFrom(s => s.ModelId));
             CreateMap<Dress, NewDressDTO>().ReverseMap();
             CreateMap<Model, ModelDTO>().ReverseMap();
+            CreateMap<Model, ModelResponseDTO>();
+            CreateMap<ModelResponseDTO, Model>();
             CreateMap<Model, NewModelDTO>();
             CreateMap<NewModelDTO, Model>()
                  .ForMember(d => d.Categories, o => o.MapFrom(s => s.CategoriesId.Select(id => new Category { Id = id }).ToList()));

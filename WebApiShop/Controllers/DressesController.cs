@@ -1,12 +1,9 @@
 ﻿using DTOs;
 using Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repositories;
 using Services;
 using System.Collections.Generic;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using Microsoft.AspNetCore.Authorization; 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,7 +16,6 @@ namespace EventDressRental.Controllers
         private readonly IDressService _dressService;
         private readonly IModelService _modelService;
 
-
         public DressesController(IDressService dressService, IModelService modelService)
         {
             _dressService = dressService;
@@ -31,51 +27,31 @@ namespace EventDressRental.Controllers
         public async Task<ActionResult<DressDTO>> GetDressById(int id)
         {
             DressDTO dress = await _dressService.GetDressById(id);
-            return dress != null ? Ok(dress) : NotFound();
-        }
-        // GET api/<DressesController>/sizes
-        [HttpGet("sizes")]
-        public async Task<ActionResult<List<string>>> GetSizesByModelId(int modelId)
-        {
-            if (await _modelService.GetModelById(modelId) == null)
-                return NotFound(" not founs model wuth id" + modelId);
-
-            List<string> list = await _dressService.GetSizesByModelId(modelId);
-            return Ok(list);
+            if (dress == null)
+                return NotFound("not found dress with ID " + id);
+            return Ok(dress);
         }
 
-        // GET api/<DressesController>/count
-        [HttpGet("count")]
-        public async Task<ActionResult<int>> GetCountByModelIdAndSizeForDate(int modelId, string size, DateOnly date)
-        {
-            if (await _modelService.GetModelById(modelId) == null)
-                return NotFound(" not founs model with id" + modelId);
-            if (!_dressService.checkDate(date))
-                return BadRequest("the date cant be in the past");
-
-            int count = await _dressService.GetCountByModelIdAndSizeForDate(modelId, size, date);
-            return Ok(count);
-        }
-        [HttpGet("id")]
+        [HttpGet("model/{modelId}/size/{size}")]
         public async Task<ActionResult<DressDTO>> GetDressByModelIdAndSize(int modelId, string size)
         {
             if (await _modelService.GetModelById(modelId) == null)
-                return NotFound(" not founs model with id" + modelId);
+                return NotFound("not found model with id" + modelId);
 
             DressDTO dress = await _dressService.GetDressByModelIdAndSize(modelId, size);
-            return dress;
+            return Ok(dress);
         }
 
         // POST api/<DressesController>
         [HttpPost]
-        public async Task<ActionResult<DressDTO>> AddDress([FromBody] NewDressDTO newDress)
+        public async Task<ActionResult<DressResponseDTO>> AddDress([FromBody] NewDressDTO newDress)
         {
-            if (!_dressService.checkPrice(newDress.Price))
+            if (!_dressService.CheckPrice(newDress.Price))
                 return BadRequest("Price must be more than 0.");
             if (!await _modelService.IsExistsModelById(newDress.ModelId))
                 return BadRequest("is not model id.");
 
-            DressDTO dress = await _dressService.AddDress(newDress);
+            DressResponseDTO dress = await _dressService.AddDress(newDress);
             return CreatedAtAction(nameof(GetDressById), new { Id = dress.Id }, dress);
         }
 
@@ -83,7 +59,7 @@ namespace EventDressRental.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateDress(int id, [FromBody] NewDressDTO updateDress)
         {
-            if (!_dressService.checkPrice(updateDress.Price))
+            if (!_dressService.CheckPrice(updateDress.Price))
                 return BadRequest("Price must be more than 0.");
 
             if (!await _dressService.IsExistsDressById(id))
@@ -91,7 +67,6 @@ namespace EventDressRental.Controllers
 
             if (!await _modelService.IsExistsModelById(updateDress.ModelId))
                 return NotFound(" not founs model wuth id" + updateDress.ModelId);
-
 
             await _dressService.UpdateDress(id, updateDress);
             return Ok();
@@ -101,7 +76,7 @@ namespace EventDressRental.Controllers
         public async Task<ActionResult<List<DressDTO>>> GetDressesByModelId(int modelId)
         {
             if (await _modelService.GetModelById(modelId) == null)
-                return NotFound(" not found model with id" + modelId);
+                return NotFound("not found model with id" + modelId);
 
             List<DressDTO> dresses = await _dressService.GetDressesByModelId(modelId);
             return Ok(dresses);

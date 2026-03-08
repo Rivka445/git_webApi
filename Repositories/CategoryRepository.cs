@@ -21,7 +21,8 @@ namespace Repositories
         }
         public async Task<List<Category>> GetCategories()
         {
-            return await _eventDressRentalContext.Categories.ToListAsync();
+            return await _eventDressRentalContext.Categories
+                .ToListAsync();
         }
         public async Task<Category?> GetCategoryById(int id)
         {

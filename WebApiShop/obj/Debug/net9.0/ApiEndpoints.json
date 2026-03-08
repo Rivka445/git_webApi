@@ -87,7 +87,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DTOs.DressDTO",
+        "Type": "DTOs.DressResponseDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -162,73 +162,6 @@
   },
   {
     "ContainingType": "EventDressRental.Controllers.DressesController",
-    "Method": "GetCountByModelIdAndSizeForDate",
-    "RelativePath": "api/Dresses/count",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "modelId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "size",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "date",
-        "Type": "System.DateOnly",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int32",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "EventDressRental.Controllers.DressesController",
-    "Method": "GetDressByModelIdAndSize",
-    "RelativePath": "api/Dresses/id",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "modelId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "size",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "DTOs.DressDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "EventDressRental.Controllers.DressesController",
     "Method": "GetDressesByModelId",
     "RelativePath": "api/Dresses/model/{modelId}",
     "HttpMethod": "GET",
@@ -255,8 +188,8 @@
   },
   {
     "ContainingType": "EventDressRental.Controllers.DressesController",
-    "Method": "GetSizesByModelId",
-    "RelativePath": "api/Dresses/sizes",
+    "Method": "GetDressByModelIdAndSize",
+    "RelativePath": "api/Dresses/model/{modelId}/size/{size}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -264,12 +197,17 @@
       {
         "Name": "modelId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
+      },
+      {
+        "Name": "size",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "DTOs.DressDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -310,7 +248,7 @@
       {
         "Name": "color",
         "Type": "System.String[]",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "position",
@@ -351,7 +289,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DTOs.ModelDTO",
+        "Type": "DTOs.ModelResponseDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -423,6 +361,68 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.ModelsController",
+    "Method": "GetCountByModelIdAndSizeForDate",
+    "RelativePath": "api/Models/{modelId}/size/{size}/date/{date}/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "modelId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "size",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "date",
+        "Type": "System.DateOnly",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.ModelsController",
+    "Method": "GetSizesByModelId",
+    "RelativePath": "api/Models/sizes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "modelId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "EventDressRental.Controllers.OrdersController",

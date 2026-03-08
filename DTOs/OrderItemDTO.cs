@@ -9,7 +9,6 @@ namespace DTOs
 {
     public class OrderItemDTO
     {
-        public OrderItemDTO() { }
 
         [Required]
         public int DressId { get; set; }

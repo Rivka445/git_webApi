@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 
 namespace DTOs
 {
-    public record UserDTO
+    public record DressResponseDTO
     (
         [Required]
         int Id,
         [Required]
-        string FirstName,
+        string ModelId,
         [Required]
-        string LastName,
-        [EmailAddress]
-        string Email,
-        [Required,Phone]
-        string Phone,
+        string Size,
         [Required]
-        string Password
-    );  
+        int Price,
+        string Note
+    );
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\EventDressRental.csproj": {}
+    "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\WebApiShop\\EventDressRental.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj": {
+    "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\DTOs\\DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\DTOs\\DTOs.csproj",
         "projectName": "DTOs",
-        "projectPath": "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\DTOs\\DTOs.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Desktop\\API\\DTOs\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
+    "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Desktop\\API\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,8 +99,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj": {
-                "projectPath": "C:\\Users\\user1\\Desktop\\API\\DTOs\\DTOs.csproj"
+              "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\DTOs\\DTOs.csproj"
               }
             }
           }
@@ -140,14 +140,14 @@
         }
       }
     },
-    "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj": {
+    "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Repositories\\Repositories.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Desktop\\API\\Repositories\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -169,8 +169,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj"
+              "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Entities\\Entities.csproj"
               }
             }
           }
@@ -226,14 +226,14 @@
         }
       }
     },
-    "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj": {
+    "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Desktop\\API\\Services\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -255,11 +255,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\user1\\Desktop\\API\\Entities\\Entities.csproj"
+              "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj": {
-                "projectPath": "C:\\Users\\user1\\Desktop\\API\\Repositories\\Repositories.csproj"
+              "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Repositories\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Repositories\\Repositories.csproj"
               }
             }
           }
@@ -309,14 +309,14 @@
         }
       }
     },
-    "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\EventDressRental.csproj": {
+    "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\WebApiShop\\EventDressRental.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\EventDressRental.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\WebApiShop\\EventDressRental.csproj",
         "projectName": "EventDressRental",
-        "projectPath": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\EventDressRental.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\WebApiShop\\EventDressRental.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Desktop\\API\\WebApiShop\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\WebApiShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -338,8 +338,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\user1\\Desktop\\API\\Services\\Services.csproj"
+              "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\ריקי\\שנה ב'\\API\\Services\\Services.csproj"
               }
             }
           }
