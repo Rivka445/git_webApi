@@ -32,7 +32,7 @@ namespace Services
         {
             return await _orderRepository.IsExistsOrderById(id);
         }
-        public async Task<bool> checkOrderItems(NewOrderDTO newOrder)
+        public async Task<bool> CheckOrderItems(NewOrderDTO newOrder)
         {
             Order postOrder = _mapper.Map<NewOrderDTO, Order>(newOrder);
             foreach (var item in postOrder.OrderItems)
@@ -52,21 +52,7 @@ namespace Services
             _logger.LogInformation("checkOrderItems passed for user {UserId} with {ItemCount} items", postOrder.UserId, postOrder.OrderItems.Count);
             return true;   
         }
-        public async Task<bool> checkOrderItems(OrderDTO newOrder)
-        {
-            Order postOrder = _mapper.Map<OrderDTO, Order>(newOrder);
-            foreach (var item in postOrder.OrderItems)
-            {
-                if (await _dressService.GetDressById(item.DressId) == null)
-                {
-                    _logger.LogWarning("checkOrderItems (OrderDTO) failed: dress {DressId} not found for order {OrderId}", item.DressId, postOrder.Id);
-                    return false;
-                }
-            }
-            _logger.LogInformation("checkOrderItems (OrderDTO) passed for order {OrderId} with {ItemCount} items", postOrder.Id, postOrder.OrderItems.Count);
-            return true;
-        }
-        public bool checkStatus(int status)
+        public bool CheckStatus(int status)
         {
             var isValid = status >= 1 && status <= 4;
             if (!isValid)
@@ -75,7 +61,7 @@ namespace Services
             }
             return isValid;
         }
-        public bool checkDate(DateOnly date)
+        public bool CheckDate(DateOnly date)
         {
             var isValid = date > DateOnly.FromDateTime(DateTime.Now);
             if (!isValid)
@@ -84,7 +70,7 @@ namespace Services
             }
             return isValid;
         }
-        public bool checkDate(DateOnly orderDate, DateOnly eventDate)
+        public bool CheckDate(DateOnly orderDate, DateOnly eventDate)
         {
             var isValid = orderDate >= DateOnly.FromDateTime(DateTime.Now) && eventDate >= DateOnly.FromDateTime(DateTime.Now);
             if (!isValid)
@@ -93,7 +79,7 @@ namespace Services
             }
             return isValid;
         }
-        public async Task<bool> checkPrice(NewOrderDTO order)
+        public async Task<bool> CheckPrice(NewOrderDTO order)
         {
             Order postOrder = _mapper.Map<NewOrderDTO, Order>(order);
             int sum = 0;
@@ -108,23 +94,6 @@ namespace Services
                 return false;
             }
             _logger.LogInformation("checkPrice passed: total {Total} for user {UserId}", sum, postOrder.UserId);
-            return true;
-        }
-        public async Task <bool> checkPrice(OrderDTO order)
-        {
-            Order postOrder = _mapper.Map<OrderDTO, Order>(order);
-            int sum = 0;
-            foreach (var item in postOrder.OrderItems)
-            {
-                int dressSum = await _dressService.GetPriceById(item.DressId);
-                sum += dressSum;
-            }
-            if (sum != postOrder.FinalPrice)
-            {
-                _logger.LogWarning("checkPrice (OrderDTO) failed: expected {Expected} calculated {Calculated} for order {OrderId}", postOrder.FinalPrice, sum, postOrder.Id);
-                return false;
-            }
-            _logger.LogInformation("checkPrice (OrderDTO) passed: total {Total} for order {OrderId}", sum, postOrder.Id);
             return true;
         }
         public async Task<OrderDTO> GetOrderById(int id)

@@ -6,13 +6,11 @@ namespace Services
     {
         Task<bool> IsExistsOrderById(int id);
         Task<OrderDTO> AddOrder(NewOrderDTO newOrder);
-        Task<bool> checkOrderItems(NewOrderDTO newOrder);
-        Task<bool> checkOrderItems(OrderDTO newOrder);
-        bool checkDate(DateOnly date);
-        bool checkDate(DateOnly orderDate, DateOnly eventDate);
-        Task<bool> checkPrice(NewOrderDTO order);
-        Task<bool> checkPrice(OrderDTO order);
-        bool checkStatus(int status);
+        Task<bool> CheckOrderItems(NewOrderDTO newOrder);
+        bool CheckDate(DateOnly date);
+        bool CheckDate(DateOnly orderDate, DateOnly eventDate);
+        Task<bool> CheckPrice(NewOrderDTO order);
+        bool CheckStatus(int status);
         Task<List<OrderDTO>> GetAllOrders();
         Task<OrderDTO> GetOrderById(int id);
         Task<List<OrderDTO>> GetOrderByUserId(int userId);

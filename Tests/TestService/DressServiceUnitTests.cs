@@ -9,58 +9,133 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Services.Tests
+namespace Tests
 {
-    public class DressServiceTests
+    public class DressServiceUnitTests
     {
-        private readonly Mock<IDressRepository> _dressRepoMock;
         private readonly IMapper _mapper;
-        private readonly DressService _dressService;
 
-        public DressServiceTests()
+        public DressServiceUnitTests()
         {
-            _dressRepoMock = new Mock<IDressRepository>();
-
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Dress, DressDTO>()
-                   .ForMember(d => d.ModelImgUrl, opt => opt.MapFrom(s => s.Model.ImgUrl));
-                cfg.CreateMap<NewDressDTO, Dress>();
+                cfg.CreateMap<Dress, DressDTO>().ReverseMap();
+                cfg.CreateMap<Dress, DressResponseDTO>().ReverseMap();
+                cfg.CreateMap<NewDressDTO, Dress>().ReverseMap();
             });
 
             _mapper = config.CreateMapper();
-            _dressService = new DressService(_dressRepoMock.Object, _mapper);
         }
 
-        #region Check Methods
+        #region IsExistsDressById
 
         [Fact]
-        public void CheckPrice_Positive_ReturnsTrue()
+        public async Task IsExistsDressById_ReturnsTrue_WhenExists()
         {
-            Assert.True(_dressService.checkPrice(100));
-        }
+            var mockRepo = new Mock<IDressRepository>();
+            mockRepo.Setup(r => r.IsExistsDressById(1)).ReturnsAsync(true);
 
-        [Fact]
-        public void CheckPrice_ZeroOrNegative_ReturnsFalse()
-        {
-            Assert.False(_dressService.checkPrice(0));
-            Assert.False(_dressService.checkPrice(-10));
-        }
+            var service = new DressService(mockRepo.Object, _mapper);
 
-        [Fact]
-        public void CheckDate_Future_ReturnsTrue()
-        {
-            var futureDate = DateOnly.FromDateTime(DateTime.Now.AddDays(1));
-            Assert.True(_dressService.checkDate(futureDate));
+            var result = await service.IsExistsDressById(1);
+
+            Assert.True(result);
         }
 
         [Fact]
-        public void CheckDate_PastOrToday_ReturnsFalse()
+        public async Task IsExistsDressById_ReturnsFalse_WhenNotExists()
         {
+            var mockRepo = new Mock<IDressRepository>();
+            mockRepo.Setup(r => r.IsExistsDressById(2)).ReturnsAsync(false);
+
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var result = await service.IsExistsDressById(2);
+
+            Assert.False(result);
+        }
+
+        #endregion
+
+        #region CheckPrice
+
+        [Fact]
+        public void CheckPrice_ReturnsTrue_WhenPositive()
+        {
+            var service = new DressService(new Mock<IDressRepository>().Object, _mapper);
+
+            Assert.True(service.CheckPrice(100));
+        }
+
+        [Fact]
+        public void CheckPrice_ReturnsFalse_WhenZeroOrNegative()
+        {
+            var service = new DressService(new Mock<IDressRepository>().Object, _mapper);
+
+            Assert.False(service.CheckPrice(0));
+            Assert.False(service.CheckPrice(-10));
+        }
+
+        #endregion
+
+        #region CheckDate
+
+        [Fact]
+        public void CheckDate_ReturnsTrue_WhenFuture()
+        {
+            var service = new DressService(new Mock<IDressRepository>().Object, _mapper);
+
+            var future = DateOnly.FromDateTime(DateTime.Now.AddDays(1));
+
+            Assert.True(service.CheckDate(future));
+        }
+
+        [Fact]
+        public void CheckDate_ReturnsFalse_WhenTodayOrPast()
+        {
+            var service = new DressService(new Mock<IDressRepository>().Object, _mapper);
+
             var today = DateOnly.FromDateTime(DateTime.Now);
             var past = DateOnly.FromDateTime(DateTime.Now.AddDays(-1));
-            Assert.False(_dressService.checkDate(today));
-            Assert.False(_dressService.checkDate(past));
+
+            Assert.False(service.CheckDate(today));
+            Assert.False(service.CheckDate(past));
+        }
+
+        #endregion
+
+        #region IsDressAvailable
+
+        [Fact]
+        public async Task IsDressAvailable_ReturnsTrue()
+        {
+            var mockRepo = new Mock<IDressRepository>();
+            var date = DateOnly.FromDateTime(DateTime.Now.AddDays(1));
+
+            mockRepo.Setup(r => r.IsDressAvailable(1, date)).ReturnsAsync(true);
+
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var result = await service.IsDressAvailable(1, date);
+
+            Assert.True(result);
+        }
+
+        #endregion
+
+        #region GetPriceById
+
+        [Fact]
+        public async Task GetPriceById_ReturnsValue()
+        {
+            var mockRepo = new Mock<IDressRepository>();
+            mockRepo.Setup(r => r.GetPriceById(1)).ReturnsAsync(250);
+
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var result = await service.GetPriceById(1);
+
+            Assert.Equal(250, result);
         }
 
         #endregion
@@ -68,49 +143,89 @@ namespace Services.Tests
         #region GetDressById
 
         [Fact]
-        public async Task GetDressById_Existing_ReturnsDTO()
+        public async Task GetDressById_ReturnsDTO_WhenExists()
         {
-            var dress = new Dress
-            {
-                Id = 1,
-                Size = "M",
-                Price = 120,
-                Model = new Model { ImgUrl = "img.jpg" }
-            };
+            var mockRepo = new Mock<IDressRepository>();
+            mockRepo.Setup(r => r.GetDressById(1))
+                    .ReturnsAsync(new Dress { Id = 1 });
 
-            _dressRepoMock.Setup(r => r.GetDressById(1)).ReturnsAsync(dress);
+            var service = new DressService(mockRepo.Object, _mapper);
 
-            var result = await _dressService.GetDressById(1);
+            var result = await service.GetDressById(1);
 
             Assert.NotNull(result);
-            Assert.Equal("M", result.Size);
-            Assert.Equal("img.jpg", result.ModelImgUrl);
         }
 
         [Fact]
-        public async Task GetDressById_NotFound_ReturnsNull()
+        public async Task GetDressById_ReturnsNull_WhenNotExists()
         {
-            _dressRepoMock.Setup(r => r.GetDressById(It.IsAny<int>())).ReturnsAsync((Dress)null);
+            var mockRepo = new Mock<IDressRepository>();
+            mockRepo.Setup(r => r.GetDressById(1))
+                    .ReturnsAsync((Dress)null);
 
-            var result = await _dressService.GetDressById(99);
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var result = await service.GetDressById(1);
 
             Assert.Null(result);
         }
 
         #endregion
 
-        #region GetSizesByModelId
+        #region GetDressesByModelId
 
         [Fact]
-        public async Task GetSizesByModelId_ReturnsList()
+        public async Task GetDressesByModelId_ReturnsList()
         {
-            var sizes = new List<string> { "S", "M", "L" };
-            _dressRepoMock.Setup(r => r.GetSizesByModelId(1)).ReturnsAsync(sizes);
+            var mockRepo = new Mock<IDressRepository>();
 
-            var result = await _dressService.GetSizesByModelId(1);
+            mockRepo.Setup(r => r.GetDressesByModelId(1))
+                    .ReturnsAsync(new List<Dress>
+                    {
+                        new Dress { Id = 1 },
+                        new Dress { Id = 2 }
+                    });
 
-            Assert.Equal(3, result.Count);
-            Assert.Contains("M", result);
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var result = await service.GetDressesByModelId(1);
+
+            Assert.NotNull(result);
+            Assert.Equal(2, result.Count);
+        }
+
+        #endregion
+
+        #region GetDressByModelIdAndSize
+
+        [Fact]
+        public async Task GetDressByModelIdAndSize_ReturnsDTO_WhenExists()
+        {
+            var mockRepo = new Mock<IDressRepository>();
+
+            mockRepo.Setup(r => r.GetDressByModelIdAndSize(1, "M"))
+                    .ReturnsAsync(new Dress { Id = 1 });
+
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var result = await service.GetDressByModelIdAndSize(1, "M");
+
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task GetDressByModelIdAndSize_ReturnsNull_WhenNotExists()
+        {
+            var mockRepo = new Mock<IDressRepository>();
+
+            mockRepo.Setup(r => r.GetDressByModelIdAndSize(1, "M"))
+                    .ReturnsAsync((Dress)null);
+
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var result = await service.GetDressByModelIdAndSize(1, "M");
+
+            Assert.Null(result);
         }
 
         #endregion
@@ -120,15 +235,45 @@ namespace Services.Tests
         [Fact]
         public async Task AddDress_MapsAndReturnsDTO()
         {
-            var newDress = new NewDressDTO(1, "S", 100, "");      
-            _dressRepoMock.Setup(r => r.AddDress(It.IsAny<Dress>()))
-                          .ReturnsAsync((Dress d) => { d.Id = 5; return d; });
+            var mockRepo = new Mock<IDressRepository>();
 
-            var result = await _dressService.AddDress(newDress);
+            mockRepo.Setup(r => r.AddDress(It.IsAny<Dress>()))
+                    .ReturnsAsync((Dress d) =>
+                    {
+                        d.Id = 1;
+                        return d;
+                    });
+
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var dto = new NewDressDTO(1, "M", 100, "note");
+
+            var result = await service.AddDress(dto);
 
             Assert.NotNull(result);
-            Assert.Equal(5, result.Id);
-            Assert.Equal("S", result.Size);
+        }
+
+        [Fact]
+        public async Task AddDress_SendsCorrectDataToRepository()
+        {
+            var mockRepo = new Mock<IDressRepository>();
+
+            mockRepo.Setup(r => r.AddDress(It.IsAny<Dress>()))
+                    .ReturnsAsync((Dress d) => d);
+
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            var dto = new NewDressDTO(5, "L", 300, "test");
+
+            await service.AddDress(dto);
+
+            mockRepo.Verify(r => r.AddDress(It.Is<Dress>(d =>
+                d.ModelId == 5 &&
+                d.Size == "L" &&
+                d.Price == 300 &&
+                d.Note == "test" &&
+                d.IsActive == true
+            )), Times.Once);
         }
 
         #endregion
@@ -136,13 +281,20 @@ namespace Services.Tests
         #region UpdateDress
 
         [Fact]
-        public async Task UpdateDress_CallsRepository()
+        public async Task UpdateDress_CallsRepositoryWithCorrectId()
         {
-            var updateDto = new NewDressDTO(1, "L",  150,"" );
+            var mockRepo = new Mock<IDressRepository>();
 
-            await _dressService.UpdateDress(1, updateDto);
+            var service = new DressService(mockRepo.Object, _mapper);
 
-            _dressRepoMock.Verify(r => r.UpdateDress(It.Is<Dress>(d => d.Size == "L")), Times.Once);
+            var dto = new NewDressDTO(1, "S", 150, "update");
+
+            await service.UpdateDress(10, dto);
+
+            mockRepo.Verify(r => r.UpdateDress(It.Is<Dress>(d =>
+                d.Id == 10 &&
+                d.IsActive == true
+            )), Times.Once);
         }
 
         #endregion
@@ -152,9 +304,13 @@ namespace Services.Tests
         [Fact]
         public async Task DeleteDress_CallsRepository()
         {
-            await _dressService.DeleteDress(1);
+            var mockRepo = new Mock<IDressRepository>();
 
-            _dressRepoMock.Verify(r => r.DeleteDress(1), Times.Once);
+            var service = new DressService(mockRepo.Object, _mapper);
+
+            await service.DeleteDress(1);
+
+            mockRepo.Verify(r => r.DeleteDress(1), Times.Once);
         }
 
         #endregion

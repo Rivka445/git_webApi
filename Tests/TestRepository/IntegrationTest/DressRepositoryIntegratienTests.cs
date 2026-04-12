@@ -51,8 +51,8 @@ namespace TestProject
 			var category = new Category { Name = "Evening" };
 			var model = new Model
 			{
-				Name = "Model A",
-				Description = "Desc",
+				Name = "dress A",
+				Description = "sssss",
 				ImgUrl = "img.png",
 				BasePrice = 200,
 				Color = "Black",
@@ -94,8 +94,8 @@ namespace TestProject
 			var category = new Category { Name = "Evening" };
 			var model = new Model
 			{
-				Name = "Model B",
-				Description = "Desc",
+				Name = "MoB",
+				Description = "aaa",
 				ImgUrl = "img.png",
 				BasePrice = 200,
 				Color = "Blue",

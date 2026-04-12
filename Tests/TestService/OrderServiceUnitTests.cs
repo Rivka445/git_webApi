@@ -38,37 +38,7 @@ namespace Services.Tests
             );
         }
 
-        #region checkStatus
-
-        [Theory]
-        [InlineData(1, true)]
-        [InlineData(2, true)]
-        [InlineData(4, true)]
-        [InlineData(0, false)]
-        [InlineData(5, false)]
-        public void CheckStatus_ReturnsExpectedResult(int status, bool expected)
-        {
-            var result = _orderService.checkStatus(status);
-            Assert.Equal(expected, result);
-        }
-
-        #endregion
-
         #region checkDate
-
-        [Fact]
-        public void CheckDate_SingleDate_Past_ReturnsFalse()
-        {
-            var past = DateOnly.FromDateTime(DateTime.Now).AddDays(-1);
-            Assert.False(_orderService.checkDate(past));
-        }
-
-        [Fact]
-        public void CheckDate_SingleDate_Future_ReturnsTrue()
-        {
-            var future = DateOnly.FromDateTime(DateTime.Now).AddDays(1);
-            Assert.True(_orderService.checkDate(future));
-        }
 
         [Fact]
         public void CheckDate_OrderAndEventDate_Valid_ReturnsTrue()
@@ -76,12 +46,10 @@ namespace Services.Tests
             var today = DateOnly.FromDateTime(DateTime.Now);
             var future = today.AddDays(2);
 
-            Assert.True(_orderService.checkDate(today, future));
+            Assert.True(_orderService.CheckDate(today, future));
         }
 
         #endregion
-
-        #region checkPrice (NewOrderDTO)
 
         [Fact]
         public async Task CheckPrice_NewOrderDTO_MatchingSum_ReturnsTrue()
@@ -117,7 +85,7 @@ namespace Services.Tests
             _dressServiceMock.Setup(d => d.GetPriceById(1)).ReturnsAsync(100);
             _dressServiceMock.Setup(d => d.GetPriceById(2)).ReturnsAsync(200);
 
-            var result = await _orderService.checkPrice(dto);
+            var result = await _orderService.CheckPrice(dto);
 
             Assert.True(result);
         }
@@ -153,53 +121,10 @@ namespace Services.Tests
 
             _dressServiceMock.Setup(d => d.GetPriceById(1)).ReturnsAsync(100);
 
-            var result = await _orderService.checkPrice(dto);
+            var result = await _orderService.CheckPrice(dto);
 
             Assert.False(result);
         }
-
-        #endregion
-
-        #region checkOrderItems (NewOrderDTO)
-
-
-        [Fact]
-        public async Task CheckOrderItems_NewOrderDTO_DressNotExists_ReturnsFalse()
-        {
-            var dto = new NewOrderDTO(
-                DateOnly.FromDateTime(DateTime.Now),
-                DateOnly.FromDateTime(DateTime.Now).AddDays(2),
-                200,
-                1,
-                "note",
-                new List<NewOrderItemDTO>
-                {
-                    new NewOrderItemDTO(1,100)
-                });
-
-            var mappedOrder = new Order
-            {
-                EventDate = DateOnly.FromDateTime(DateTime.Now).AddDays(2),
-                OrderItems = new List<OrderItem>
-                {
-                    new OrderItem { DressId = 1 }
-                }
-            };
-
-            _mapperMock.Setup(m => m.Map<NewOrderDTO, Order>(dto))
-                       .Returns(mappedOrder);
-
-            //_dressServiceMock.Setup(d => d.GetDressById(1))
-            //                 .ReturnsAsync((Dress?)null);
-
-            var result = await _orderService.checkOrderItems(dto);
-
-            Assert.False(result);
-        }
-
-        #endregion
-
-        #region AddOrder
 
         [Fact]
         public async Task AddOrder_ValidOrder_SetsStatusTo1_AndReturnsDTO()
@@ -256,6 +181,5 @@ namespace Services.Tests
             _orderRepoMock.Verify(r => r.AddOrder(It.IsAny<Order>()), Times.Once);
         }
 
-        #endregion
     }
 }

@@ -19,8 +19,6 @@ namespace Tests
             return new Mock<EventDressRentalContext>(options);
         }
 
-        #region GetModels - Complex Filtering & Pagination
-
         [Fact]
         public async Task GetModels_Pagination_ReturnsCorrectSlice()
         {
@@ -37,18 +35,12 @@ namespace Tests
             mockContext.Setup(x => x.Models).ReturnsDbSet(models);
             var repository = new ModelRepository(mockContext.Object);
 
-            // עמוד 2, 5 פריטים בעמוד
             var (items, total) = await repository.GetModels(null, null, null, new int[] { }, new string[] { }, position: 2, skip: 5);
 
             Assert.Equal(5, items.Count);
             Assert.Equal(15, total);
-            Assert.Equal(6, items.First().Id); // אחרי ה-5 הראשונים
+            Assert.Equal(6, items.First().Id); 
         }
-
-        #endregion
-
-        #region   Update Logic
-
 
 
         [Fact]
@@ -67,8 +59,6 @@ namespace Tests
             Assert.Equal(999, existingModel.BasePrice);
             mockContext.Verify(x => x.SaveChangesAsync(default), Times.Once);
         }
-
-        #endregion
 
     }
 }

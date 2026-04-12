@@ -46,7 +46,7 @@ namespace EventDressRental.Controllers
         [HttpGet("unpacked")]
         public async Task<ActionResult<List<OrderDTO>>> GetUnpackedOrdersUntilDate(DateOnly date) 
         {
-            if (!_orderService.checkDate(date))
+            if (!_orderService.CheckDate(date))
                 return BadRequest("date cant be in the past");
             List<OrderDTO> list = await _orderService.GetOrdersByDate(date);
             if (list.Count == 0)
@@ -69,12 +69,12 @@ namespace EventDressRental.Controllers
         [HttpPost]
         public async Task<ActionResult<OrderDTO>> AddOrder(NewOrderDTO newOrder)
         {
-            bool isValidOrder = await _orderService.checkOrderItems(newOrder);
+            bool isValidOrder = await _orderService.CheckOrderItems(newOrder);
             if (!isValidOrder)
                 return BadRequest("is not valid order");
-            if (!await _orderService.checkPrice(newOrder))
+            if (!await _orderService.CheckPrice(newOrder))
                 return BadRequest("not match price");
-            if (!_orderService.checkDate(newOrder.OrderDate, newOrder.EventDate))
+            if (!_orderService.CheckDate(newOrder.OrderDate, newOrder.EventDate))
                 return BadRequest("cant match dates");
 
             OrderDTO orderr = await _orderService.AddOrder(newOrder);
@@ -86,7 +86,7 @@ namespace EventDressRental.Controllers
         [HttpPut("status/{statusId}")]
         public async Task<IActionResult> UpdateStatusOrder([FromBody] OrderDTO orderDto, int statusId)
         {
-            if (!_orderService.checkStatus(statusId))
+            if (!_orderService.CheckStatus(statusId))
                 return BadRequest("not status match");
 
             if (!await _orderService.IsExistsOrderById(orderDto.Id))

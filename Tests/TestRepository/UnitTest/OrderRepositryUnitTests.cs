@@ -19,8 +19,6 @@ namespace Tests
             return new Mock<EventDressRentalContext>(options);
         }
 
-        #region Get & Existence
-
         [Fact]
         public async Task IsExistsOrderById_ReturnsTrue_WhenOrderExists()
         {
@@ -59,9 +57,6 @@ namespace Tests
             Assert.Equal("Bridal", result.OrderItems.First().Dress.Model.Name);
         }
 
-        #endregion
-
-        #region Specialized Queries
 
         [Fact]
         public async Task GetOrdersByDate_FiltersCorrectDateAndStatus()
@@ -71,11 +66,8 @@ namespace Tests
 
             var orders = new List<Order>
             {
-                // מתאים: תאריך אירוע לפני היעד וסטטוס 1
                 new Order { Id = 1, EventDate = new DateOnly(2025, 2, 28), StatusId = 1, OrderDate = targetDate },
-                // לא מתאים: תאריך אירוע אחרי היעד
                 new Order { Id = 2, EventDate = new DateOnly(2025, 3, 5), StatusId = 1, OrderDate = targetDate },
-                // לא מתאים: סטטוס לא 1
                 new Order { Id = 3, EventDate = new DateOnly(2025, 2, 20), StatusId = 2, OrderDate = targetDate }
             };
 
@@ -105,20 +97,14 @@ namespace Tests
             var result = await repository.GetOrderByUserId(userId);
 
             Assert.Equal(2, result.Count);
-            Assert.Equal(2, result[0].Id); // המוקדם יותר אמור להיות ראשון (OrderDate)
+            Assert.Equal(2, result[0].Id); 
         }
-
-        #endregion
-
-        #region Write Operations
-
         [Fact]
         public async Task AddOrder_SavesAndReturnsFullObject()
         {
             var mockContext = GetMockContext();
             var newOrder = new Order { Id = 1, UserId = 100 };
 
-            // המוקד של FirstOrDefaultAsync בתוך AddOrder מחייב שהאובייקט יהיה ב-Set
             mockContext.Setup(x => x.Orders).ReturnsDbSet(new List<Order> { newOrder });
             var repository = new OrderRepository(mockContext.Object);
 
@@ -130,6 +116,5 @@ namespace Tests
             Assert.Equal(100, result.UserId);
         }
 
-        #endregion
     }
 }

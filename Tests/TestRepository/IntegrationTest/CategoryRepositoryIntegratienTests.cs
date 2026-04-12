@@ -66,8 +66,8 @@ namespace TestProject
             // Arrange
             var testCategories = new List<Category>
             {
-                new Category { Name = "חסידי" },
-                new Category { Name = "ליטאי" }
+                new Category { Name = "נערות" },
+                new Category { Name = "אירועים" }
             };
             await _dbContext.Categories.AddRangeAsync(testCategories);
             await _dbContext.SaveChangesAsync();
@@ -77,7 +77,7 @@ namespace TestProject
 
             // Assert
             Assert.Equal(2, result.Count);
-            Assert.Contains(result, c => c.Name == "חסידי");
+            Assert.Contains(result, c => c.Name == "נערות");
         }
 
         #endregion
@@ -125,7 +125,7 @@ namespace TestProject
         public async Task AddCategory_SavesCategoryToDatabase()
         {
             // Arrange
-            var newCategory = new Category { Name = "חדש מהניילון" };
+            var newCategory = new Category { Name = "חדש ויוקרתי" };
 
             // Act
             var result = await _categoryRepository.AddCategory(newCategory);
@@ -133,7 +133,7 @@ namespace TestProject
             // Assert
             var categoryInDb = await _dbContext.Categories.FindAsync(result.Id);
             Assert.NotNull(categoryInDb);
-            Assert.Equal("חדש מהניילון", categoryInDb!.Name);
+            Assert.Equal("חדש ויוקרתי", categoryInDb!.Name);
         }
 
         #endregion

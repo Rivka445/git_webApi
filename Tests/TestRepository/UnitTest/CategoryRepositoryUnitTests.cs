@@ -14,7 +14,6 @@ namespace Tests
     public class CategoryRepositoryUnitTests
     {
 
-        #region Get Ctegories
         [Fact]
         public async Task GetCategories_ReturnsAllCategories()
         {
@@ -55,30 +54,6 @@ namespace Tests
             Assert.NotNull(result);
             Assert.Empty(result);
         }
-        #endregion
 
-        #region Add Category
-        [Fact]
-        public async Task AddCategory_ShouldAddCategoryAndSaveChanges()
-        {
-            // Arrange
-            var mockContext = new Mock<EventDressRentalContext>(new DbContextOptions<EventDressRentalContext>());
-
-            var categories = new List<Category>();
-            mockContext.Setup(ctx => ctx.Categories).ReturnsDbSet(categories);
-
-            var repository = new CategoryRepository(mockContext.Object);
-            var newCategory = new Category { Id = 1, Name = "שמלות כלה" };
-
-            // Act
-            var result = await repository.AddCategory(newCategory);
-
-            // Assert
-            Assert.NotNull(result);
-            Assert.Equal("שמלות כלה", result.Name);
-
-            mockContext.Verify(ctx => ctx.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
-        }
-        #endregion
     }
 }

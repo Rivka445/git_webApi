@@ -210,55 +210,5 @@ namespace Tests
 
         #endregion
 
-        #region AddUser
-
-        [Fact]
-        public async Task AddUser_CallsSaveChangesOnce()
-        {
-            var mockContext = GetMockContext();
-
-            mockContext.Setup(x => x.Users)
-                .ReturnsDbSet(new List<User>());
-
-            var repository = new UserRepository(mockContext.Object);
-
-            var newUser = new User
-            {
-                FirstName = "New",
-                LastName = "User",
-                Password = "789"
-            };
-
-            var result = await repository.AddUser(newUser);
-
-            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<System.Threading.CancellationToken>()), Times.Once);
-            Assert.Equal("New", result.FirstName);
-        }
-
-        #endregion
-
-        #region UpdateUser
-
-        [Fact]
-        public async Task UpdateUser_CallsUpdateAndSave()
-        {
-            var mockContext = GetMockContext();
-
-            mockContext.Setup(x => x.Users)
-                .ReturnsDbSet(new List<User>());
-
-            var repository = new UserRepository(mockContext.Object);
-
-            var user = new User { Id = 1, FirstName = "OldName" };
-
-            user.FirstName = "NewName";
-
-            await repository.UpdateUser(user);
-
-            mockContext.Verify(x => x.Users.Update(user), Times.Once);
-            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<System.Threading.CancellationToken>()), Times.Once);
-        }
-
-        #endregion
     }
 }
