@@ -79,7 +79,7 @@ namespace EventDressRental.Controllers
             if (await _userService.IsExistsUserById(id) == false)
             {
                 _logger.LogWarning("User update failed: user {UserId} not found", id);
-                return NotFound(id);
+                return NotFound("user with id : " + id + " not found.");
             }
             int passwordScore = _userPasswordService.CheckPassword(updateUser.Password);
             if (passwordScore < 2)

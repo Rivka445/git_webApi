@@ -4,6 +4,7 @@ namespace Repositories
 {
     public interface IDressRepository
     {
+        Task<List<Dress>> GetDresses();
         Task<int> GetPriceById(int id);
         Task<bool> IsExistsDressById(int id);
         Task<Dress?> GetDressById(int id);

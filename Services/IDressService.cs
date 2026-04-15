@@ -5,6 +5,7 @@ namespace Services
 {
     public interface IDressService
     {
+        Task<List<DressDTO>> GetDresses();
         Task<bool> IsExistsDressById(int id);
         bool CheckDate(DateOnly date);
         bool CheckPrice(int price);

@@ -57,6 +57,7 @@ namespace Services
         public async Task UpdateUser(int id, UserRegisterDTO updateUser)
         {
             User user = _mapper.Map<UserRegisterDTO, User>(updateUser);
+            user.Id = id;
             await _userRepository.UpdateUser(user);
         }
     }

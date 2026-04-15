@@ -198,11 +198,6 @@ public partial class EventDressRentalContext : DbContext
                 .IsRequired()
                 .HasMaxLength(20)
                 .HasColumnName("phone");
-            entity.Property(e => e.Role)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("role");
         });
 
         OnModelCreatingPartial(modelBuilder);

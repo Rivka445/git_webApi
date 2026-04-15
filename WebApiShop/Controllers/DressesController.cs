@@ -22,6 +22,17 @@ namespace EventDressRental.Controllers
             _modelService = modelService;
         }
 
+        // GET api/<DressesController>
+        [HttpGet]
+        public async Task<ActionResult<List<DressDTO>>> GetDresses()
+        {
+            List<DressDTO> dresses = await _dressService.GetDresses();
+            if (dresses.Count == 0)
+                return NoContent();
+            return Ok(dresses);
+        }
+
+
         // GET api/<DressesController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<DressDTO>> GetDressById(int id)

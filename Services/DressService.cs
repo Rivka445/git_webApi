@@ -41,6 +41,13 @@ namespace Services
         {
             return await _dressRepository.GetPriceById(id);
         }
+        public async Task<List<DressDTO>> GetDresses()
+        {
+            List<Dress> dresses = await _dressRepository.GetDresses();
+            List<DressDTO> dressesDTO = _mapper.Map<List<Dress>, List<DressDTO>>(dresses);
+            return dressesDTO;
+        }
+
         public async Task<DressDTO> GetDressById(int id)
         {
             Dress? dress = await _dressRepository.GetDressById(id);

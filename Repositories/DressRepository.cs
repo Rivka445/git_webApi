@@ -31,6 +31,13 @@ namespace Repositories
                 .AnyAsync();
             return isDressAvailable;
         }
+        public async Task<List<Dress>> GetDresses()
+        {
+            return await _eventDressRentalContext.Dresses
+                .Include(d => d.Model)
+                .Where(d => d.IsActive == true)
+                .ToListAsync();
+        }
         public async Task<Dress?> GetDressById(int id)
         {
             return await _eventDressRentalContext.Dresses

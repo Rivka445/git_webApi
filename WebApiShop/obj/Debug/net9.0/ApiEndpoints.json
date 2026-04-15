@@ -73,6 +73,26 @@
   },
   {
     "ContainingType": "EventDressRental.Controllers.DressesController",
+    "Method": "GetDresses",
+    "RelativePath": "api/Dresses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[DTOs.DressDTO, DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EventDressRental.Controllers.DressesController",
     "Method": "AddDress",
     "RelativePath": "api/Dresses",
     "HttpMethod": "POST",
