@@ -1,7 +1,5 @@
 ﻿using DTOs;
-using Entities;
 using Microsoft.AspNetCore.Mvc;
-using Repositories;
 using Services;
 using System.Collections.Generic;
 
@@ -31,7 +29,6 @@ namespace EventDressRental.Controllers
                 return NoContent();
             return Ok(dresses);
         }
-
 
         // GET api/<DressesController>/5
         [HttpGet("{id}")]
@@ -82,6 +79,7 @@ namespace EventDressRental.Controllers
             await _dressService.UpdateDress(id, updateDress);
             return Ok();
         }
+
         // GET api/<DressesController>/model/{modelId}
         [HttpGet("model/{modelId}")]
         public async Task<ActionResult<List<DressDTO>>> GetDressesByModelId(int modelId)

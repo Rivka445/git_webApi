@@ -2,11 +2,6 @@
 using Entities;
 using DTOs;
 using Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services
 {
@@ -40,7 +35,6 @@ namespace Services
         }
         public async Task<CategoryDTO> AddCategory(NewCategoryDTO newCategory)
         {
-  
             Category category = _mapper.Map<NewCategoryDTO ,Category>(newCategory);
             Category addedCategory = await _categoryRepository.AddCategory(category);
             CategoryDTO categoryDTO = _mapper.Map<Category, CategoryDTO>(addedCategory);

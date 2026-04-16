@@ -1,12 +1,13 @@
 ﻿using EventDressRental;
+using EventDressRental.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NLog;
 using NLog.Web;
 using Repositories;
 using Services;
-using EventDressRental.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,18 +1,20 @@
 ﻿using AutoMapper;
-using Entities;
 using DTOs;
+using Entities;
+using Microsoft.Extensions.Logging;
 using Repositories;
 namespace Services
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        private readonly IUserPasswordService _userPasswordService;
         private readonly IMapper _mapper;
-        public UserService(IUserRepository userRepository, IMapper mapper, IUserPasswordService userPasswordService )
+        private readonly ILogger<UserService> _logger;
+
+        public UserService(IUserRepository userRepository, IMapper mapper, ILogger<UserService> logger)
         {
+            _logger = logger;
             _userRepository = userRepository;
-            _userPasswordService = userPasswordService;
             _mapper = mapper;
         }
         public async Task<bool> IsExistsUserById(int id)
@@ -42,6 +44,8 @@ namespace Services
             User userRegister = _mapper.Map<UserRegisterDTO, User>(newUser);
             User user = await _userRepository.AddUser(userRegister);
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
+            if (userDTO != null)
+                _logger.LogInformation("user id: {id} register succecfully", userDTO.Id);
             return userDTO;
         }
         public async Task<UserDTO> LogIn(UserLoginDTO existUser)

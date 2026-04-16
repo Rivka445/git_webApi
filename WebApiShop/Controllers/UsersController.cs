@@ -1,11 +1,6 @@
-﻿using Entities;
-using DTOs;
+﻿using DTOs;
 using Microsoft.AspNetCore.Mvc;
-using Repositories;
 using Services;
-using System.Collections.Generic;
-using System.Text.Json;
-using Microsoft.AspNetCore.Authorization; 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -58,6 +53,7 @@ namespace EventDressRental.Controllers
             _logger.LogInformation("User registered successfully: {FirstName} {LastName}", user.FirstName, user.LastName);
             return CreatedAtAction(nameof(GetUserId), new { Id = user.Id }, user);
         }
+
         // POST api/<UsersController>
         [HttpPost("login")]
         public async Task<ActionResult<UserDTO>> LogIn([FromBody] UserLoginDTO existingUser)

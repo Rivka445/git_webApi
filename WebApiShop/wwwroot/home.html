@@ -100,8 +100,10 @@
     <div class="cont">
         <div class="card existUser">
             <h3>משתמש רשום</h3>
-            <label for="username">שם משתמש</label>
-            <input type="email" id="username" name="usrname" required />
+            <label for="firstName">שם פרטי</label>
+            <input type="text" id="firstName" name="firstName" required />
+            <label for="lastName">שם משפחה</label>
+            <input type="text" id="lastName" name="lastName" required />
             <label for="password">סיסמא</label>
             <input type="password" id="pasword" name="pasword" required />
             <button type="button" onclick="logIn()">כניסה</button>
@@ -109,14 +111,16 @@
 
         <div class="card newUser">
             <h3>משתמש חדש</h3>
-            <label for="userName">שם משתמש</label>
-            <input type="email" id="userName" name="userName" required />
+            <label for="email"> אימייל</label>
+            <input type="email" id="email" name="email" required />
             <label for="firstName">שם פרטי</label>
             <input type="text" id="firstName" name="firstName" required />
             <label for="lastName">שם משפחה</label>
             <input type="text" id="lastName" name="lastName" required />
             <label for="password">סיסמא</label>
             <input type="password" id="password" name="password" required />
+            <label for="phone">פלאפון</label>
+            <input type="tel" id="phone" name="phone" required />
             <button type="button" onclick="checkPassword()">בדיקת חוזק סיסמא</button>
             <div class="bar"></div>
             <button type="button" onclick="registIn()">הרשמה</button>

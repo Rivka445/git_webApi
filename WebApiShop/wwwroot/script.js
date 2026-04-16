@@ -1,34 +1,23 @@
 ﻿
 const extrctDataFromInputUser = () => {
-    const email = document.querySelector("#userName").value
+    const email = document.querySelector("#email").value
     const firstName = document.querySelector("#firstName").value
     const lastName = document.querySelector("#lastName").value
     const password = document.querySelector("#password").value
-    if (email.indexOf("@") < 1 && userName) {
-        alert("השם חייב להכיל @ באמצע")
-        return ""
-    }
-    if (password.length < 4 && password) {
-        alert("אורך הסיסמא קצר מידי")
-        return ""
-    }
-    if (!email || !firstName || !lastName || !password) {
-        alert("לפחות אחד מהנתונים חסרים")
-        return ""
-    }    
-    return { email, firstName, lastName, password }
+    const phone = document.querySelector("#phone").value
+    console.log(email, firstName, lastName, password, phone)
+    return { firstName, lastName, email, phone ,password }
 }
 
 const extrctDataFromInputLogIn = () => {
-    const email = document.querySelector("#username").value
+    const firstName = document.querySelector("#firstName").value
+    const lastName = document.querySelector("#lastName").value
     const password = document.querySelector("#pasword").value
-    return { email, password }
+    return { firstName, lastName, password }
 }
 
 async function registIn() {
     const newUser = extrctDataFromInputUser()
-    if (newUser === "")
-        return
     try {
         const response = await fetch (
             "https://localhost:44362/api/Users",{
@@ -74,9 +63,6 @@ async function logIn() {
 async function checkPassword() {
     const bar = document.querySelector(".bar") 
     let password = document.querySelector("#password").value
-    if (password==="") {
-        password="1"
-    }
     const userPassword = { password }
     try {
         const response = await fetch(

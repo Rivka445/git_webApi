@@ -1,10 +1,7 @@
-﻿using Entities;
-using Microsoft.AspNetCore.Mvc;
-using Repositories;
+﻿using Microsoft.AspNetCore.Mvc;
 using Services;
 using DTOs;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -43,6 +40,7 @@ namespace EventDressRental.Controllers
                 return NotFound();
             return Ok(model);
         }
+
         // GET api/<DressesController>/10/sizes
         [HttpGet("sizes")]
         public async Task<ActionResult<List<string>>> GetSizesByModelId(int modelId)

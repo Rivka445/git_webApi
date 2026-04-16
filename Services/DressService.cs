@@ -1,15 +1,7 @@
 ﻿using AutoMapper;
 using DTOs;
 using Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Repositories;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 namespace Services
 {
     public class DressService : IDressService

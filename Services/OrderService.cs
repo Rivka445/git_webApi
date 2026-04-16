@@ -1,14 +1,8 @@
 ﻿using AutoMapper;
 using DTOs;
 using Entities;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
 using Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Services
 {
     public class OrderService : IOrderService
@@ -64,19 +58,11 @@ namespace Services
         public bool CheckDate(DateOnly date)
         {
             var isValid = date > DateOnly.FromDateTime(DateTime.Now);
-            if (!isValid)
-            {
-                _logger.LogWarning("checkDate failed: date {Date} is not in the future", date);
-            }
             return isValid;
         }
         public bool CheckDate(DateOnly orderDate, DateOnly eventDate)
         {
             var isValid = orderDate >= DateOnly.FromDateTime(DateTime.Now) && eventDate >= DateOnly.FromDateTime(DateTime.Now);
-            if (!isValid)
-            {
-                _logger.LogWarning("checkDate failed: orderDate {OrderDate}, eventDate {EventDate}", orderDate, eventDate);
-            }
             return isValid;
         }
         public async Task<bool> CheckPrice(NewOrderDTO order)

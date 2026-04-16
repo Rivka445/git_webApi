@@ -1,10 +1,7 @@
 ﻿using DTOs;
-using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Services;
 using System.Collections.Generic;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,12 +12,10 @@ namespace EventDressRental.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _orderService;
-        private readonly IModelService _modelService;
         private readonly IUserService _userService;
 
-        public OrdersController(IOrderService orderService, IModelService modelService, IUserService userService)
+        public OrdersController(IOrderService orderService, IUserService userService)
         {
-            _modelService = modelService;
             _orderService = orderService;
             _userService = userService;
         }
@@ -65,6 +60,7 @@ namespace EventDressRental.Controllers
                 return NoContent();
             return Ok(list);
         }
+
         // POST api/<OrdersController>
         [HttpPost]
         public async Task<ActionResult<OrderDTO>> AddOrder(NewOrderDTO newOrder)

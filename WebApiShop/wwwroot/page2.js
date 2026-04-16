@@ -3,33 +3,20 @@ const firstName = (JSON.parse(sessionStorage.getItem("currentUser"))).firstName
 titleName.textContent = `ברוכה הבאה ${firstName} מייד נצלול פנימה`
 
 const extrctDataFromInput = () => {
-    const id = Number(JSON.parse(sessionStorage.getItem("currentUser")).id)
-    const email = document.querySelector("#userName").value
+    const email = document.querySelector("#email").value
     const firstName = document.querySelector("#firstName").value
     const lastName = document.querySelector("#lastName").value
     const password = document.querySelector("#password").value
-    if (email.indexOf("@") < 1 && email) {
-        alert("השם חייב להכיל @ באמצע")
-        return ""
-    }
-    if (password.length < 4 && password) {
-        alert("אורך הסיסמא קצר מידי")
-        return ""
-    }
-    if (!email || !firstName || !lastName || !password) {
-        alert("לפחות אחד מהנתונים חסרים")
-        return ""
-    }    
-    return { id, email, firstName, lastName, password }
+    const phone = document.querySelector("#phone").value
+    return { firstName, lastName, email,phone,password }
 }
 
 async function upDate() {
     const currenrtUser = extrctDataFromInput()
-    if (currenrtUser == "")
-        return
+    const id = Number(JSON.parse(sessionStorage.getItem("currentUser")).id)
     try {
         const response = await fetch(
-            `https://localhost:44362/api/Users/${currenrtUser.id}`,
+            `https://localhost:44362/api/Users/${id}`,
             {
                 method: `PUT`,
                 headers: { 'Content-Type': 'application/json' },
@@ -50,9 +37,6 @@ async function upDate() {
 async function checkPassword() {
     const bar = document.querySelector(".bar")
     let password = document.querySelector("#password").value
-    if (password === "") {
-        password = "1"
-    }
     const userPassword = { password }
     try {
         const response = await fetch(
