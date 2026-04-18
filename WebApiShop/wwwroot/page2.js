@@ -27,7 +27,7 @@ async function upDate() {
             throw new Error(`HTTP error! status ${response.status}`);
         }
         else {
-            sessionStorage.setItem("currentUser", JSON.stringify(currenrtUser))
+            sessionStorage.setItem("currentUser", JSON.stringify({ id, currenrtUser }))
             alert("המשתמש עודכן בהצלחה")
         }
     }

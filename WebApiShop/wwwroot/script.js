@@ -10,9 +10,9 @@ const extrctDataFromInputUser = () => {
 }
 
 const extrctDataFromInputLogIn = () => {
-    const firstName = document.querySelector("#firstName").value
-    const lastName = document.querySelector("#lastName").value
-    const password = document.querySelector("#pasword").value
+    const firstName = document.querySelector("#firstName1").value
+    const lastName = document.querySelector("#lastName1").value
+    const password = document.querySelector("#pasword1").value
     return { firstName, lastName, password }
 }
 
