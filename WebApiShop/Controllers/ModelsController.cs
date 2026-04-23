@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DTOs;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Configuration;
 using Services;
-using DTOs;
 using System.Collections.Generic;
+using System.Text.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,7 +15,6 @@ namespace EventDressRental.Controllers
     public class ModelsController : ControllerBase
     {
         private readonly IModelService _modelService;
-
         public ModelsController(IModelService modelService)
         {
             _modelService = modelService;
@@ -28,6 +30,7 @@ namespace EventDressRental.Controllers
             FinalModels products = await _modelService.GetModelds(description, minPrice, maxPrice, categoriesId, color, position, skip);
             if (products.Items.Count() == 0)
                 return NoContent();
+
             return Ok(products);
         }
 

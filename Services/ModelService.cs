@@ -2,6 +2,11 @@
 using Entities;
 using DTOs;
 using Repositories;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
+using System.Text.Json;
+using StackExchange.Redis;
 
 namespace Services
 {
@@ -11,12 +16,18 @@ namespace Services
         private readonly IDressService _dressService;
         private readonly ICategoryService _categoryService;
         private readonly IMapper _mapper;
-        public ModelService(IModelRepository modelRepository, IMapper mapper, IDressService dressService, ICategoryService categoryService)
+        private readonly IDistributedCache _cache;
+        private readonly IConfiguration _configuration;
+
+        public ModelService(IModelRepository modelRepository, IMapper mapper, IDressService dressService,
+             ICategoryService categoryService, IDistributedCache cache, IConfiguration configuration)
         {
             _mapper = mapper;
             _dressService = dressService;
             _modelRepository = modelRepository;
             _categoryService = categoryService;
+            _cache = cache;
+            _configuration = configuration;
         }
         public async Task<bool> IsExistsModelById(int id)
         {
@@ -56,6 +67,15 @@ namespace Services
         public async Task<FinalModels> GetModelds(string? description, int? minPrice, int? maxPrice,
             int[] categoriesId, string[] colors, int position = 1, int skip = 8)
         {
+            string categoriesString = categoriesId != null ? string.Join("-", categoriesId) : "";
+            string cacheKey = $"Models_pos{position}_skip{skip}_min{minPrice}_max{maxPrice}_cat{categoriesString}_desc{description}";
+            string? cachedJson = await _cache.GetStringAsync(cacheKey);
+            if (!string.IsNullOrEmpty(cachedJson))
+            {
+                var cachedResult = JsonSerializer.Deserialize<FinalModels>(cachedJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (cachedResult != null && cachedResult.Items != null && cachedResult.Items.Any())
+                    return cachedResult;
+            }
             (List<Model> Items, int TotalCount) products = await _modelRepository
                         .GetModels(description, minPrice, maxPrice, categoriesId, colors, position, skip);
             List<ModelDTO> productsDTO = _mapper.Map<List<Model>, List<ModelDTO>>(products.Items);
@@ -68,6 +88,15 @@ namespace Services
                 HasNext = hasNext,
                 HasPrev = hasPrev
             };
+            var ttlFromConfig = _configuration.GetValue<int>("RedisCacheOptions:TTL_In_Seconds", 3600);
+            var options = new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(ttlFromConfig)
+            };
+            var json = JsonSerializer.Serialize(finalProducts, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+
+            await _cache.SetStringAsync(cacheKey, json, options);
+
             return finalProducts;
         }
         public async Task<List<string>> GetSizesByModelId(int modelId)
@@ -85,6 +114,14 @@ namespace Services
             addedModel.IsActive = true;
             Model model = await _modelRepository.AddModel(addedModel);
             ModelResponseDTO modelDTO = _mapper.Map<Model, ModelResponseDTO>(model);
+            var connection = await ConnectionMultiplexer.ConnectAsync(_configuration.GetConnectionString("Redis"));
+            var server = connection.GetServer(connection.GetEndPoints().First());
+            var database = connection.GetDatabase();
+            var keys = server.Keys(pattern: "*Models_*").ToArray();
+            foreach (var key in keys)
+            {
+                await database.KeyDeleteAsync(key);
+            }
             return modelDTO;
         }
         public async Task UpdateModel(int id, NewModelDTO updateModel)
@@ -93,6 +130,14 @@ namespace Services
             update.Id = id;
             update.IsActive = true;
             await _modelRepository.UpdateModel(update);
+            var connection = await ConnectionMultiplexer.ConnectAsync(_configuration.GetConnectionString("Redis"));
+            var server = connection.GetServer(connection.GetEndPoints().First());
+            var database = connection.GetDatabase();
+            var keys = server.Keys(pattern: "*Models_*").ToArray();
+            foreach (var key in keys)
+            {
+                await database.KeyDeleteAsync(key);
+            }
         }
         public async Task DeleteModel(int id)
         {
@@ -103,6 +148,14 @@ namespace Services
                 await _dressService.DeleteDress(dress.Id);
             }
             await _modelRepository.DeleteModel(id);
+            var connection = await ConnectionMultiplexer.ConnectAsync(_configuration.GetConnectionString("Redis"));
+            var server = connection.GetServer(connection.GetEndPoints().First());
+            var database = connection.GetDatabase();
+            var keys = server.Keys(pattern: "*Models_*").ToArray();
+            foreach (var key in keys)
+            {
+                await database.KeyDeleteAsync(key);
+            }
         }
     }
 }
