@@ -1,0 +1,8 @@
+services:
+  cache-redis:
+    image: redis:latest
+    container_name: my_redis_container
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass YourStrongPassword123
+    restart: always

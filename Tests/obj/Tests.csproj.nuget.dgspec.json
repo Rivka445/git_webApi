@@ -284,6 +284,18 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[9.0.15, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[9.0.15, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.12.14, )"
+            },
             "zxcvbn-core": {
               "target": "Package",
               "version": "[7.0.92, )"
@@ -472,6 +484,10 @@
               "target": "Package",
               "version": "[9.0.11, )"
             },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            },
             "NLog.MailKit": {
               "target": "Package",
               "version": "[6.0.5, )"
@@ -479,6 +495,10 @@
             "NLog.Web.AspNetCore": {
               "target": "Package",
               "version": "[6.1.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.12.14, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

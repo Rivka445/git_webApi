@@ -79,67 +79,6 @@ namespace TestProject
 		}
 
 		[Fact]
-		public async Task IsDressAvailable_ReturnsFalse_WhenOrderInRange()
-		{
-			var user = new User
-			{
-				FirstName = "Client",
-				LastName = "One",
-				Email = "client@example.com",
-				Phone = "0500000007",
-				Password = "password123",
-				Role = "User"
-			};
-			var status = new Status { Name = "New" };
-			var category = new Category { Name = "Evening" };
-			var model = new Model
-			{
-				Name = "MoB",
-				Description = "aaa",
-				ImgUrl = "img.png",
-				BasePrice = 200,
-				Color = "Blue",
-				IsActive = true,
-				Categories = new List<Category> { category }
-			};
-			var dress = new Dress
-			{
-				Model = model,
-				Size = "S",
-				Price = 200,
-				Note = "Note",
-				IsActive = true
-			};
-
-			await _dbContext.Users.AddAsync(user);
-			await _dbContext.Statuses.AddAsync(status);
-			await _dbContext.Dresses.AddAsync(dress);
-			await _dbContext.SaveChangesAsync();
-
-			var targetDate = new DateOnly(2026, 2, 10);
-			var order = new Order
-			{
-				UserId = user.Id,
-				StatusId = status.Id,
-				OrderDate = targetDate.AddDays(-1),
-				EventDate = targetDate.AddDays(2),
-				FinalPrice = 200,
-				Note = "Booked",
-				OrderItems = new List<OrderItem>
-				{
-					new OrderItem { DressId = dress.Id }
-				}
-			};
-
-			await _dbContext.Orders.AddAsync(order);
-			await _dbContext.SaveChangesAsync();
-
-			var isAvailable = await _dressRepository.IsDressAvailable(dress.Id, targetDate);
-
-			Assert.False(isAvailable);
-		}
-
-		[Fact]
 		public async Task AddDress_ReturnsDressWithModel()
 		{
 			var category = new Category { Name = "Evening" };

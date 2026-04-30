@@ -334,3 +334,9 @@ C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\obj\Debug\net9.0\compr
 C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\obj\Debug\net9.0\compressed\7aiwzej4gd-gmsg5gzrdz.gz
 C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\obj\Debug\net9.0\compressed\byj2qutp79-f5hst720nu.gz
 C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\obj\Debug\net9.0\compressed\bdi11ismdl-8vvr79rtcr.gz
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\StackExchange.Redis.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\System.IO.Hashing.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
