@@ -1,0 +1,43 @@
+# Ignore Visual Studio temporary files, build results, and user-specific files
+.vs/
+bin/
+obj/
+**/bin/
+**/obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+logs/
+WebApiShop/logs/
+
+# Docker files
+.dockerignore
+Dockerfile
+
+# Secrets and configuration
+appsettings.Development.json
+**/appsettings.*.json
+
+# Rider/IDE files
+.idea/
+
+# Node modules (if any)
+node_modules/
+
+# npm/yarn lockfiles (no need to copy)
+package-lock.json
+yarn.lock
+
+# Publish outputs
+/app/publish
+
+# Git
+.git
+.gitattributes
+.gitignore
