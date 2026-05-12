@@ -50,29 +50,7 @@ The project is built using a **3-Layer Architecture**, which allows for easy mai
 
 ---
 
-# 👗 Dress Rental System - Server Side (REST API)
 
-A backend system for managing dress rentals, implemented as a modern **REST API** using **ASP.NET 9** and **C#**. The system focuses on performance, scalability and separation of concerns.
-
----
-
-## 🏗 Architecture & Project Structure
-
-The project uses a 3-layer architecture:
-
-1. Application Layer (Web API) - Controllers, routing and middlewares.
-2. Services Layer - Business logic and validation.
-3. Repositories Layer - EF Core data access (database-first) and repositories.
-
----
-
-## 🛠 Highlights
-
-- Asynchronous `async/await` throughout the stack.
-- DTOs and AutoMapper for safe data transfer.
-- NLog and centralized error handling middleware.
-
----
 
 ## 📂 Folder Structure
 
