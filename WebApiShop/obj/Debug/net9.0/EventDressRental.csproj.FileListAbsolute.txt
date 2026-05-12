@@ -341,3 +341,4 @@ C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\Micro
 C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\user1\Desktop\ריקי\שנה ב'\API\WebApiShop\bin\Debug\net9.0\BCrypt-Net-Next.dll

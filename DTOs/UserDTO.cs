@@ -18,8 +18,6 @@ namespace DTOs
         [EmailAddress]
         string Email,
         [Required,Phone]
-        string Phone,
-        [Required]
-        string Password
+        string Phone
     );  
 }

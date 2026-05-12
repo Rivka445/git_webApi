@@ -16,14 +16,16 @@ namespace Services
         private readonly IMapper _mapper;
         private readonly ILogger<UserService> _logger;
         private readonly IConfiguration _config;
+        private readonly IUserPasswordService _userPasswordService;
 
 
-        public UserService(IUserRepository userRepository, IMapper mapper, ILogger<UserService> logger, IConfiguration config)
+        public UserService(IUserRepository userRepository, IMapper mapper, ILogger<UserService> logger, IConfiguration config, IUserPasswordService userPasswordService)
         {
             _logger = logger;
             _userRepository = userRepository;
             _mapper = mapper;
             _config = config;
+            _userPasswordService = userPasswordService;
         }
         private string GenerateToken(string role, int userId)
         {
@@ -71,6 +73,7 @@ namespace Services
         public async Task<AuthResponseDto> AddUser(UserRegisterDTO newUser)
         {
             User userRegister = _mapper.Map<UserRegisterDTO, User>(newUser);
+            userRegister.Password = _userPasswordService.HashPassword(newUser.Password);
             User user = await _userRepository.AddUser(userRegister);
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
             if (userDTO != null)
@@ -88,6 +91,11 @@ namespace Services
             User? user = await _userRepository.LogIn(loginUser);
             if (user == null)
                 return null;
+            bool isValid = _userPasswordService.VerifyPassword(loginUser.Password, user.Password);
+
+            if (!isValid)
+                return null;
+
             UserDTO userDTO = _mapper.Map<User, UserDTO>(user);
             string token = GenerateToken(existUser.Role, userDTO.Id);
             return new AuthResponseDto

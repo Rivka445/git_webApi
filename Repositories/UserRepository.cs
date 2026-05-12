@@ -29,7 +29,6 @@ namespace Repositories
         {
             User? currentUser = await _eventDressRentalContext.Users
                 .FirstOrDefaultAsync(u => u.FirstName == user.FirstName 
-                                       && u.Password == user.Password 
                                        && u.LastName==user.LastName);
             return currentUser;
      

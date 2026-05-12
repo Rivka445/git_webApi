@@ -73,7 +73,7 @@ namespace EventDressRental.Controllers
         {
             _logger.LogInformation("Login attempt for {FirstName} {LastName}", existingUser.FirstName, existingUser.LastName);
             AuthResponseDto user = await _userService.LogIn(existingUser);
-            if(user.User == null)
+            if (user == null || user.User == null)
             {
                 _logger.LogWarning("Login failed for {FirstName} {LastName}", existingUser.FirstName, existingUser.LastName);
                 return Unauthorized("user name or password are wrong");
