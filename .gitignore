@@ -1,1 +1,51 @@
-WebApiShop\appsettings.Development.json
+ # .gitignore for .NET / Visual Studio projects
+ # Ignore appsettings.Development (keep secrets out of the repo)
+ WebApiShop/appsettings.Development.json
+
+ # Build outputs
+ bin/
+ obj/
+ **/bin/
+ **/obj/
+
+ # Visual Studio
+ .vs/
+ *.suo
+ *.user
+ *.userosscache
+ *.sln.docstates
+
+ # Rider
+ .idea/
+
+ # Build artifacts
+ *.dll
+ *.pdb
+ *.exe
+ *.cache
+ *.log
+ *.vsix
+
+ # NuGet
+ *.nupkg
+ packages/
+ project.lock.json
+ project.fragment.lock.json
+
+ # Publish and deployment
+ publish/
+
+ # OS files
+ Thumbs.db
+ .DS_Store
+
+ # DotCover
+ *.dotCover
+
+ # Others
+ *.db
+ *.sqlite
+
+ # Keep any intentionally checked-in binaries by negating above patterns
+ # e.g. if you have /lib you can add:
+ # !lib/**WebApiShop\appsettings.Development.json
